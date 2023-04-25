@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
 
     public void SavePlayerData()
     {
-        //SaveSystem.SavePlayerProgress(this);
+        SaveSystem.SavePlayerProgress(this);
     }
 
     public void LoadPlayer()

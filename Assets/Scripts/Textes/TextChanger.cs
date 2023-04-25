@@ -5,18 +5,12 @@ using UnityEngine.UI;
 public class TextChanger : MonoBehaviour
 {
     [SerializeField] private Text _gameBarText;
-    [SerializeField] private string buttonName;
+    [SerializeField] private string _buttonName;
 
-    private void Start()
-    {
-        _gameBarText.text = PlayerPrefs.GetString(buttonName);
-        PlayerPrefs.Save();
-    }
-
-    public void ChangeText()
+    public void ChangeText(string text)
     {   
-        _gameBarText.text = PlayerPrefs.GetString(buttonName);
-        PlayerPrefs.SetString(buttonName, $"Игра была сохранена {DateTime.Now.ToString("dd/MM/yyyy")}");
+        _gameBarText.text = PlayerPrefs.GetString(_buttonName);
+        PlayerPrefs.SetString(_buttonName, text);
         PlayerPrefs.Save();
     }
 }
