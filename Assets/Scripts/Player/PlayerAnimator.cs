@@ -1,6 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+
+public enum Moves
+{
+    Left,
+    Right,
+    Down,
+    Up,
+    Idle
+}
 
 public class PlayerAnimator : MonoBehaviour
 {
@@ -8,52 +15,53 @@ public class PlayerAnimator : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.A))
-            ChangeBoolParameters(
-                "isPlayerMoveLeft", 
-                "isPlayerMoveRight", 
-                "isPlayerMoveUp", 
-                "isPlayerMoveDown", 
-                "isPlayerIdle");
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+            ChangeBoolParameter(Moves.Left);
 
-        else if (Input.GetKey(KeyCode.D))
-            ChangeBoolParameters(
-                "isPlayerMoveRight", 
-                "isPlayerMoveLeft", 
-                "isPlayerMoveUp", 
-                "isPlayerMoveDown", 
-                "isPlayerIdle");
+        else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+            ChangeBoolParameter(Moves.Right);
 
-        else if(Input.GetKey(KeyCode.W))
-            ChangeBoolParameters(
-                "isPlayerMoveUp",
-                "isPlayerMoveRight", 
-                "isPlayerMoveLeft", 
-                "isPlayerMoveDown", 
-                "isPlayerIdle");
+        else if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
+            ChangeBoolParameter(Moves.Up);
 
-        else if(Input.GetKey(KeyCode.S))
-            ChangeBoolParameters(
-                "isPlayerMoveDown", 
-                "isPlayerMoveRight", 
-                "isPlayerMoveUp", 
-                "isPlayerMoveLeft", 
-                "isPlayerIdle");
+        else if(Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
+            ChangeBoolParameter(Moves.Down);
         else
-            ChangeBoolParameters(
-                "isPlayerIdle", 
-                "isPlayerMoveRight", 
-                "isPlayerMoveUp", 
-                "isPlayerMoveLeft", 
-                "isPlayerMoveDown");
+            ChangeBoolParameter(Moves.Idle);
     }
     
-    private void ChangeBoolParameters(params string[] moves)
+    private void ChangeBoolParameter(Moves move)
     {
-        _playerAnimator.SetBool(moves[0], true);
-        _playerAnimator.SetBool(moves[1], false);
-        _playerAnimator.SetBool(moves[2], false);
-        _playerAnimator.SetBool(moves[3], false);
-        _playerAnimator.SetBool(moves[4], false);
+        switch (move)
+        {
+            case Moves.Left: SetParameterTrue("isPlayerMoveLeft");
+                break;
+            case Moves.Right: SetParameterTrue("isPlayerMoveRight");
+                break;
+            case Moves.Up: SetParameterTrue("isPlayerMoveUp");
+                break;
+            case Moves.Down: SetParameterTrue("isPlayerMoveDown");
+                break;
+            case Moves.Idle: SetParameterTrue("isPlayerIdle");
+                break;
+            default: 
+                break;
+        }
+    }
+
+    private void SetParameterTrue(string parameter)
+    {
+        string[] parameters = new string[]
+        {
+            "isPlayerMoveLeft",
+            "isPlayerMoveRight",
+            "isPlayerMoveUp",
+            "isPlayerMoveDown",
+            "isPlayerIdle"
+        };
+        
+        for (int i = 0; i < parameters.Length; i++)
+            if (parameters[i] == parameter) _playerAnimator.SetBool(parameters[i], true);
+            else _playerAnimator.SetBool(parameters[i], false);
     }
 }
