@@ -7,20 +7,15 @@ public class PauseHandler : MonoBehaviour
     private void Update()
     {
         if (Input.GetKey(KeyCode.Escape))
-        {
             _pauseMenu?.SetActive(true);
-            Time.timeScale = 0;
-        }
+
+        if (_pauseMenu.activeSelf) Time.timeScale = 0;
+        else Time.timeScale = 1;
     }
 
     public void ClosePause()
     {
         _pauseMenu?.SetActive(false);
         Time.timeScale = 1;
-    }
-
-    public void SetPauseMenuActive()
-    {
-        _pauseMenu.SetActive(true);
     }
 }
