@@ -6,10 +6,10 @@ public class SaveSystem
 {
     public static void SavePlayerProgress(Player player)
     {
-        BinaryFormatter formatter = new BinaryFormatter();
-        string path = Application.persistentDataPath + "/player.cs";
-        FileStream stream = new FileStream(path, FileMode.Create);
-        PlayerData data = new PlayerData(player);
+        var formatter = new BinaryFormatter();
+        var playerPath = Application.persistentDataPath + "/player.cs";
+        var stream = new FileStream(playerPath, FileMode.Create);
+        var data = new PlayerData(player);
 
         formatter.Serialize(stream, data);
         stream.Close();
