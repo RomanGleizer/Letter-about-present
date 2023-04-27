@@ -974,8 +974,8 @@ RectTransform:
   m_Children:
   - {fileID: 1191134592}
   - {fileID: 250332508}
-  - {fileID: 780974278}
   - {fileID: 782753714}
+  - {fileID: 780974278}
   m_Father: {fileID: 1004642155}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -29081,7 +29081,7 @@ MonoBehaviour:
       - m_Target: {fileID: 1317282038}
         m_TargetAssemblyTypeName: TilePainter, Assembly-CSharp
         m_MethodName: DeleteCells
-        m_Mode: 3
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

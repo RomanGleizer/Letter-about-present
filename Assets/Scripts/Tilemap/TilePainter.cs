@@ -1,6 +1,4 @@
-using System;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -25,7 +23,8 @@ public class TilePainter : MonoBehaviour
 
         for (int i = 0; i < _tiles.Length; i++)
         {
-            if (!cells.Contains(currentCell))
+            if (!cells.Contains(currentCell) || 
+                (cells.Contains(currentCell) && _tilemap.GetTile(currentCell) == null))
             {
                 cells.Add(currentCell);
 
@@ -41,13 +40,12 @@ public class TilePainter : MonoBehaviour
         }
     }
 
-    public void DeleteCells(int number)
+    public void DeleteCells()
     {
-        var cell = cells[number];
-
-        if (_tiles.Length > 0)
+        for (int i = cells.Count - 1; i >= 0; i--)
         {
-            _tilemap.SetTile(cell, null);
+            var cell = cells[i];
+            if (_tiles.Length > 0) _tilemap.SetTile(cell, null);
         }
     }
 }
