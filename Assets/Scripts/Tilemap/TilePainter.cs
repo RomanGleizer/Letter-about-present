@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -8,6 +9,7 @@ public class TilePainter : MonoBehaviour
     [SerializeField] private Tile[] _tiles;
     [SerializeField] private GameObject _farm;
     [SerializeField] private Player _player;
+    [SerializeField] private GameObject _farmMenu;
 
     private List<Vector3Int> cells = new List<Vector3Int>();
 
@@ -42,10 +44,7 @@ public class TilePainter : MonoBehaviour
 
     public void DeleteCells()
     {
-        for (int i = cells.Count - 1; i >= 0; i--)
-        {
-            var cell = cells[i];
-            if (_tiles.Length > 0) _tilemap.SetTile(cell, null);
-        }
+        for (int i = 0; i < cells.Count; i++)
+            if (_tiles.Length > 0) _tilemap.SetTile(cells[i], null);
     }
 }
