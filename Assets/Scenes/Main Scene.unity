@@ -1067,7 +1067,7 @@ GameObject:
   - component: {fileID: 132272738}
   - component: {fileID: 132272737}
   m_Layer: 0
-  m_Name: Image (2)
+  m_Name: Wheat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2139,6 +2139,61 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 341204648}
   m_CullTransparentMesh: 1
+--- !u!1 &353858032
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 353858033}
+  - component: {fileID: 353858034}
+  m_Layer: 0
+  m_Name: Planter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &353858033
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 353858032}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1004642155}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &353858034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 353858032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bac32446192e6549af3ffed47ff1678, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _vegetableMenu: {fileID: 1004642161}
+  _tilePainter: {fileID: 1317282038}
+  _tiles:
+  - {fileID: 11400000, guid: 0917719069bbcc14fb1c225c12bb9a3d, type: 2}
+  - {fileID: 11400000, guid: 6a1886fe83bec6c45bc0b1cdf8244a60, type: 2}
+  - {fileID: 11400000, guid: 51561eefe090175469d4261cb7e95833, type: 2}
 --- !u!1 &370825562
 GameObject:
   m_ObjectHideFlags: 0
@@ -4524,7 +4579,7 @@ GameObject:
   - component: {fileID: 477503654}
   - component: {fileID: 477503653}
   m_Layer: 0
-  m_Name: Image (1)
+  m_Name: Patato
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30476,7 +30531,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &697243610
 RectTransform:
   m_ObjectHideFlags: 0
@@ -31077,7 +31132,7 @@ GameObject:
   - component: {fileID: 826182684}
   - component: {fileID: 826182683}
   m_Layer: 0
-  m_Name: Image
+  m_Name: Carrot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31796,6 +31851,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 353858033}
   - {fileID: 234784758}
   - {fileID: 697243610}
   - {fileID: 1653486254}
@@ -32483,10 +32539,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1317282038}
-        m_TargetAssemblyTypeName: TilePainter, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 353858034}
+        m_TargetAssemblyTypeName: VegetablePlanter, Assembly-CSharp
+        m_MethodName: PlantVegetable
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -32595,8 +32651,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tilemap: {fileID: 968820519}
   _tiles:
-  - {fileID: 11400000, guid: 08eb89821d9b4f94da288a0b73e858a2, type: 2}
-  - {fileID: 11400000, guid: b5c369954ab4619489d280542d590c4c, type: 2}
   - {fileID: 11400000, guid: 08eb89821d9b4f94da288a0b73e858a2, type: 2}
   - {fileID: 11400000, guid: b5c369954ab4619489d280542d590c4c, type: 2}
   _farm: {fileID: 968820516}

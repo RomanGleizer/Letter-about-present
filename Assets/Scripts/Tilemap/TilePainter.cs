@@ -13,12 +13,13 @@ public class TilePainter : MonoBehaviour
     [SerializeField] private GameObject _farmMenu;
     [SerializeField] private TextMeshProUGUI _bedsAmountText;
 
-    private List<Vector3Int> cells = new List<Vector3Int>();
+    private List<Vector3Int> _cells = new List<Vector3Int>();
     private float _bedsAmountSpawnTimer;
     private int _bedsCount = 1;
 
     public int BedsCount { get => _bedsCount; set => _bedsCount = value; }
-    public Tile[] Tiles { get => _tiles; }
+    public List<Vector3Int> Cells { get => _cells; }
+    public Tilemap TileMap { get => _tilemap; }
 
     private void Start()
     {
@@ -59,11 +60,11 @@ public class TilePainter : MonoBehaviour
                 BedsCount--;
                 _bedsAmountText.text = "Доступно грядок: " + _bedsCount.ToString();
 
-                if (!cells.Contains(currentCell) ||
-                (cells.Contains(currentCell) && _tilemap.GetTile(currentCell) == null))
+                if (!_cells.Contains(currentCell) ||
+                (_cells.Contains(currentCell) && _tilemap.GetTile(currentCell) == null))
                 {
                     _bedsAmountText.text = "Доступно грядок: " + _bedsCount.ToString();
-                    cells.Add(currentCell);
+                    _cells.Add(currentCell);
 
                     _tilemap.SetTile(currentCell, _tiles[i]);
                     currentCell.x++;
@@ -80,7 +81,7 @@ public class TilePainter : MonoBehaviour
 
     public void DeleteCells()
     {
-        for (int i = 0; i < cells.Count; i++)
-            if (_tiles.Length > 0) _tilemap.SetTile(cells[i], null);
+        for (int i = 0; i < _cells.Count; i++)
+            if (_tiles.Length > 0) _tilemap.SetTile(_cells[i], null);
     }
 }
