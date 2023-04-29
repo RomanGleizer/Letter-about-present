@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+п»їusing System.Collections.Generic;
 using System.IO;
 using TMPro;
 using UnityEngine;
@@ -18,13 +18,17 @@ public class TilePainter : MonoBehaviour
     private int _bedsCount = 1;
 
     public int BedsCount { get => _bedsCount; set => _bedsCount = value; }
+    public Tile[] Tiles { get => _tiles; }
 
     private void Start()
     {
-        var json = File.ReadAllText(Application.dataPath + "/FarmData.json");
+        var json = File.ReadAllText(
+            Application.dataPath + "/FarmData.json", 
+            encoding: System.Text.Encoding.UTF8);
+
         FarmData data = JsonUtility.FromJson<FarmData>(json);
 
-        _bedsAmountText.text = "Доступно грядок: " + data.BedsCounter.ToString();
+        _bedsAmountText.text = "Р”РѕСЃС‚СѓРїРЅРѕ РіСЂСЏРґРѕРє: " + data.BedsCounter.ToString();
     }
 
     private void Update()
@@ -33,7 +37,7 @@ public class TilePainter : MonoBehaviour
         if (_bedsAmountSpawnTimer > 2000 && _bedsAmountSpawnTimer < 2500)
         {
             BedsCount++;
-            _bedsAmountText.text = "Доступно грядок: " + BedsCount.ToString();
+            _bedsAmountText.text = "Р”РѕСЃС‚СѓРїРЅРѕ РіСЂСЏРґРѕРє: " + BedsCount.ToString();
             _bedsAmountSpawnTimer = 0;
         }
     }
@@ -53,12 +57,12 @@ public class TilePainter : MonoBehaviour
             if (BedsCount > 0)
             {
                 BedsCount--;
-                _bedsAmountText.text = "Доступно грядок: " + _bedsCount.ToString();
+                _bedsAmountText.text = "Р”РѕСЃС‚СѓРїРЅРѕ РіСЂСЏРґРѕРє: " + _bedsCount.ToString();
 
                 if (!cells.Contains(currentCell) ||
                 (cells.Contains(currentCell) && _tilemap.GetTile(currentCell) == null))
                 {
-                    _bedsAmountText.text = "Доступно грядок: " + _bedsCount.ToString();
+                    _bedsAmountText.text = "Р”РѕСЃС‚СѓРїРЅРѕ РіСЂСЏРґРѕРє: " + _bedsCount.ToString();
                     cells.Add(currentCell);
 
                     _tilemap.SetTile(currentCell, _tiles[i]);

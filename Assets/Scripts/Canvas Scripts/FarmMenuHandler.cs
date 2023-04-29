@@ -10,8 +10,8 @@ public class FarmMenuHandler : MonoBehaviour
         if (Input.GetKey(KeyCode.U)) _farmMenu.SetActive(true);
     }
 
-    public void CloseMenu()
-    { 
-        _farmMenu.SetActive(false); 
+    public void CloseMenu(GameObject menu)
+    {
+        menu.SetActive(false); 
     }
 }

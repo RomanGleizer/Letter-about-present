@@ -23,13 +23,19 @@ public class Farm : MonoBehaviour
             }
 
         var json = JsonUtility.ToJson(data, true);
-        File.WriteAllText(Application.dataPath + "/FarmData.json", json);
-        print("Save");
+
+        File.WriteAllText(
+            Application.dataPath + "/FarmData.json", 
+            json, 
+            encoding: System.Text.Encoding.UTF8);
     }
 
     public void LoadFarm()
     {
-        var json = File.ReadAllText(Application.dataPath + "/FarmData.json");
+        var json = File.ReadAllText(
+            Application.dataPath + "/FarmData.json", 
+            encoding: System.Text.Encoding.UTF8);
+
         FarmData data = JsonUtility.FromJson<FarmData>(json);
 
         _farmTileMap.ClearAllTiles();

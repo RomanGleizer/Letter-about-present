@@ -7,15 +7,13 @@ public class LoadGameCanvasHandler : MonoBehaviour
 
     private void Update()
     {
-        if (_loadScene.activeSelf)
-        {
-            _player.GetComponent<PlayerMover>().enabled = false;
-            _player.GetComponent<PlayerAnimator>().enabled = false;
-        }
-        else
-        {
-            _player.GetComponent<PlayerMover>().enabled = true;
-            _player.GetComponent<PlayerAnimator>().enabled = true;
-        }
+        if (_loadScene.activeSelf) SetPlayerComponentState(false);
+        else SetPlayerComponentState(true);
+    }
+
+    public void SetPlayerComponentState(bool state)
+    {
+        _player.GetComponent<PlayerMover>().enabled = state;
+        _player.GetComponent<PlayerAnimator>().enabled = state;
     }
 }
