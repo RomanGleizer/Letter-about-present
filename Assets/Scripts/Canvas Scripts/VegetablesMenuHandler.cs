@@ -8,9 +8,14 @@ public class VegetablesMenuHandler : MonoBehaviour
     [SerializeField] private TextMeshProUGUI[] _vegetableMenuTextes;
     private int[] _vegetableCounters;
 
-    public TextMeshProUGUI[] StockTextes { get => _stockTextes; }
-    public TextMeshProUGUI[] VegetableMenuTextes { get => _vegetableMenuTextes; }
-    public int[] VegetableCounters { get => _vegetableCounters; set => _vegetableCounters = value; }
+    public TextMeshProUGUI[] StockTextes { get => _stockTextes; set => _stockTextes = value; }
+    public TextMeshProUGUI[] VegetableMenuTextes 
+    { 
+        get => _vegetableMenuTextes; 
+        set => _vegetableMenuTextes = value; 
+    }
+
+    public int[] VegetableCounters { get => _vegetableCounters; }
 
     private void Start()
     {
@@ -30,7 +35,7 @@ public class VegetablesMenuHandler : MonoBehaviour
             _vegetableMenuTextes[i].text = SetVegetableMenuAmountText(_stockTextes[i]);
     }
 
-    private string SetVegetableMenuAmountText(TextMeshProUGUI stockAmountText)
+    public string SetVegetableMenuAmountText(TextMeshProUGUI stockAmountText)
     {
         return "Доступно: " + stockAmountText.text;
     }
