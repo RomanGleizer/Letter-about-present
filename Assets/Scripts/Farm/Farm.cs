@@ -24,6 +24,7 @@ public class Farm : MonoBehaviour
         for (int i = 0; i < 3; i++)
         {
             data.VegetableCounters.Add(_vegetableMenu.VegetableCounters[i]);
+            
             _vegetableMenu.StockTextes[i].text = _vegetableMenu.VegetableCounters[i].ToString();
             _vegetableMenu.VegetableMenuTextes[i].text = _vegetableMenu.VegetableCounters[i].ToString();
 
@@ -58,7 +59,6 @@ public class Farm : MonoBehaviour
             _vegetableMenu.VegetableCounters[i] = data.VegetableCounters[i];
             _vegetableMenu.StockTextes[i].text = data.VegetableCounters[i].ToString();
             _vegetableMenu.VegetableMenuTextes[i].text = data.VegetableCounters[i].ToString();
-
         }
 
         _tilePainter.BedsCount = data.BedsCounter;

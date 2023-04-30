@@ -16,10 +16,13 @@ public class TilePainter : MonoBehaviour
     private List<Vector3Int> _cells = new List<Vector3Int>();
     private float _bedsAmountSpawnTimer;
     private int _bedsCount = 1;
+    private Vector3 _harvestSpawn;
 
     public int BedsCount { get => _bedsCount; set => _bedsCount = value; }
     public List<Vector3Int> Cells { get => _cells; }
     public Tilemap TileMap { get => _tilemap; }
+    public Tile[] Tiles { get => _tiles; }
+    public Vector3 HarvestSpawn { get => _harvestSpawn; private set => _harvestSpawn = value; }
 
     private void Start()
     {
@@ -34,8 +37,8 @@ public class TilePainter : MonoBehaviour
 
     private void Update()
     {
-        _bedsAmountSpawnTimer++;
-        if (_bedsAmountSpawnTimer > 2000 && _bedsAmountSpawnTimer < 2500)
+        _bedsAmountSpawnTimer += Time.deltaTime;
+        if (_bedsAmountSpawnTimer > 15 && _bedsAmountSpawnTimer < 15.1)
         {
             BedsCount++;
             _bedsAmountText.text = "Доступно грядок: " + BedsCount.ToString();
@@ -45,6 +48,7 @@ public class TilePainter : MonoBehaviour
 
     public void DrawCells()
     {
+        HarvestSpawn = new Vector3(_player.transform.position.x, _player.transform.position.y, 0);
         Vector3Int currentCell = _tilemap.WorldToCell(
             new Vector3
             (

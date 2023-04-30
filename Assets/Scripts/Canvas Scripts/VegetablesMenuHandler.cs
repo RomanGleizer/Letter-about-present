@@ -20,10 +20,6 @@ public class VegetablesMenuHandler : MonoBehaviour
     private void Start()
     {
         _vegetableCounters = new int[_stockTextes.Length];
-
-        for (int i = 0; i < _vegetableCounters.Length; i++)
-            _vegetableCounters[i] = int.Parse(_stockTextes[i].text);
-
     }
 
     private void Update()
@@ -31,8 +27,11 @@ public class VegetablesMenuHandler : MonoBehaviour
         if (Input.GetKey(KeyCode.I))
             _vegetablesMenu.SetActive(true);
 
+        for (int i = 0; i < _vegetableCounters.Length; i++)
+            _vegetableCounters[i] = int.Parse(_stockTextes[i].text);
+
         for (int i = 0; i < _stockTextes.Length; i++)
-            _vegetableMenuTextes[i].text = SetVegetableMenuAmountText(_stockTextes[i]);
+            _vegetableMenuTextes[i].text = SetVegetableMenuAmountText(_stockTextes[i]); 
     }
 
     public string SetVegetableMenuAmountText(TextMeshProUGUI stockAmountText)
