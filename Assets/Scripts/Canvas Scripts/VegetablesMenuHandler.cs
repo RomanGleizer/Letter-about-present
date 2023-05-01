@@ -8,12 +8,8 @@ public class VegetablesMenuHandler : MonoBehaviour
     [SerializeField] private TextMeshProUGUI[] _vegetableMenuTextes;
     private int[] _vegetableCounters;
 
-    public TextMeshProUGUI[] StockTextes { get => _stockTextes; set => _stockTextes = value; }
-    public TextMeshProUGUI[] VegetableMenuTextes 
-    { 
-        get => _vegetableMenuTextes; 
-        set => _vegetableMenuTextes = value; 
-    }
+    public TextMeshProUGUI[] StockTextes { get => _stockTextes; }
+    public TextMeshProUGUI[] VegetableMenuTextes { get => _vegetableMenuTextes; }
 
     public int[] VegetableCounters { get => _vegetableCounters; }
 

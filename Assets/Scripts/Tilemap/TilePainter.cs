@@ -11,6 +11,7 @@ public class TilePainter : MonoBehaviour
     [SerializeField] private Tile[] _vegetableTiles;
     [SerializeField] private Player _player;
     [SerializeField] private TextMeshProUGUI _bedsAmountText;
+    [SerializeField] private float _bedTimeSpawn;
 
     private List<Vector3Int> _cells = new List<Vector3Int>();
     private float _bedsAmountSpawnTimer;
@@ -45,7 +46,7 @@ public class TilePainter : MonoBehaviour
     private void Update()
     {
         _bedsAmountSpawnTimer += Time.deltaTime;
-        if (_bedsAmountSpawnTimer > 15 && _bedsAmountSpawnTimer < 15.1)
+        if (_bedsAmountSpawnTimer > _bedTimeSpawn && _bedsAmountSpawnTimer < _bedTimeSpawn + 0.1)
         {
             _bedsCount++;
             _bedsAmountText.text = "Доступно грядок: " + _bedsCount.ToString();
@@ -55,9 +56,7 @@ public class TilePainter : MonoBehaviour
 
     public void DrawCells()
     {
-        HarvestSpawn = new Vector3(_player.transform.position.x, _player.transform.position.y, 0);
-
-        Vector3Int currentCell = _tilemap.WorldToCell(
+        var currentCell = _tilemap.WorldToCell(
             new Vector3
             (
                 _player.transform.position.x,
@@ -65,7 +64,12 @@ public class TilePainter : MonoBehaviour
                 0
             ));
 
-        if (BedsCount > 0)
+        float x, y;
+        x = y = Random.Range(-0.5f, 0.5f);
+
+        HarvestSpawn = new Vector3(_player.transform.position.x + x, _player.transform.position.y + y, 0);
+
+        if (_bedsCount > 0)
         {
             _bedsCount--;
             _bedsAmountText.text = "Доступно грядок: " + _bedsCount.ToString();
