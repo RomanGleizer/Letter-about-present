@@ -17,9 +17,7 @@ public class VegetablePlanter : MonoBehaviour
                 0
             ));
 
-        if (_vegetableMenu.VegetableCounters[vegetableIndex] > 0
-            && _tilePainter.Cells.Contains(currentCell) 
-            && _tilePainter.TileMap.GetTile(currentCell) == _tilePainter.GroundTile)
+        if (_vegetableMenu.VegetableCounters[vegetableIndex] > 0 && _tilePainter.Cells.Contains(currentCell) )
         {
             _vegetableMenu.VegetableCounters[vegetableIndex]--;
 
@@ -28,7 +26,6 @@ public class VegetablePlanter : MonoBehaviour
             _vegetableMenu.StockTextes[vegetableIndex].text = counter.ToString();
 
             _tilePainter.TileMap.SetTile(currentCell, _tilePainter.VegetableTiles[vegetableIndex]);
-            _collector.CollectHarvest(vegetableIndex);
         }
     }
 }

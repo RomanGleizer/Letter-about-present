@@ -17,12 +17,21 @@ public class TilePainter : MonoBehaviour
     private int _bedsCount = 1;
     private Vector3 _harvestSpawn;
 
-    public int BedsCount { get => _bedsCount; set => _bedsCount = value; }
     public List<Vector3Int> Cells { get => _cells; }
     public Tile[] VegetableTiles { get => _vegetableTiles; }
     public Tilemap TileMap { get => _tilemap; }
     public Tile GroundTile { get => _groundTile; }
-    public Vector3 HarvestSpawn { get => _harvestSpawn; private set => _harvestSpawn = value; }
+    public Vector3 HarvestSpawn 
+    { 
+        get => _harvestSpawn; 
+        private set => _harvestSpawn = value; 
+    }
+
+    public int BedsCount 
+    { 
+        get => _bedsCount; 
+        set => _bedsCount = value; 
+    }
 
     private void Start()
     {
@@ -69,7 +78,7 @@ public class TilePainter : MonoBehaviour
 
     public void DeleteCells()
     {
-        for (int i = 0; i < BedsCount; i++)
-            if (_bedsCount > 0) _tilemap.SetTile(_cells[i], null);
+        for (int i = 0; i < Cells.Count; i++)
+            if (_bedsCount > 0) _tilemap.SetTile(Cells[i], null);
     }
 }

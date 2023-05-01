@@ -18,14 +18,20 @@ public class HarvestCollector : MonoBehaviour
                 _player.transform.position.y,
                 0
             ));
-
+        
         StartCoroutine(GrowVegetable(_vegetablePrefabs[vegetableIndex], _tilePainter.HarvestSpawn, currentCell));
     }
 
     private IEnumerator GrowVegetable(GameObject obj, Vector3 position, Vector3Int cell)
     {
-        yield return new WaitForSeconds(5);
-        Instantiate(obj, position, Quaternion.identity);
-        _tilePainter.TileMap.SetTile(cell, _tilePainter.GroundTile);
+        var tile = _tilePainter.TileMap.GetTile(cell);
+
+        if (tile != _tilePainter.GroundTile
+            && _tilePainter.TileMap.ContainsTile(tile))
+        {
+            yield return new WaitForSeconds(2);
+            Instantiate(obj, position, Quaternion.identity);
+            _tilePainter.TileMap.SetTile(cell, _tilePainter.GroundTile);
+        }
     }
 }
