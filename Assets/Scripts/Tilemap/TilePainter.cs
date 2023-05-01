@@ -48,6 +48,7 @@ public class TilePainter : MonoBehaviour
     public void DrawCells()
     {
         HarvestSpawn = new Vector3(_player.transform.position.x, _player.transform.position.y, 0);
+
         Vector3Int currentCell = _tilemap.WorldToCell(
             new Vector3
             (
