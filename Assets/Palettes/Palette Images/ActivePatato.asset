@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: CarrotGround
+  m_Name: ActivePatato
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: -1737493185, guid: 06307db8f42094e41968c9f696cf6fa8, type: 3}
+  m_Sprite: {fileID: 931526971, guid: 06307db8f42094e41968c9f696cf6fa8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1

@@ -26,7 +26,6 @@ public class TilePainter : MonoBehaviour
         get => _harvestSpawn; 
         private set => _harvestSpawn = value; 
     }
-
     public int BedsCount 
     { 
         get => _bedsCount; 
@@ -48,8 +47,8 @@ public class TilePainter : MonoBehaviour
         _bedsAmountSpawnTimer += Time.deltaTime;
         if (_bedsAmountSpawnTimer > 15 && _bedsAmountSpawnTimer < 15.1)
         {
-            BedsCount++;
-            _bedsAmountText.text = "Доступно грядок: " + BedsCount.ToString();
+            _bedsCount++;
+            _bedsAmountText.text = "Доступно грядок: " + _bedsCount.ToString();
             _bedsAmountSpawnTimer = 0;
         }
     }
@@ -68,8 +67,8 @@ public class TilePainter : MonoBehaviour
 
         if (BedsCount > 0)
         {
-            BedsCount--;
-            _bedsAmountText.text = "Доступно грядок: " + BedsCount.ToString();
+            _bedsCount--;
+            _bedsAmountText.text = "Доступно грядок: " + _bedsCount.ToString();
 
             _cells.Add(currentCell);
             _tilemap.SetTile(currentCell, _groundTile);
