@@ -2190,14 +2190,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _vegetableMenu: {fileID: 1004642161}
   _tilePainter: {fileID: 1317282038}
-  _tiles:
-  - {fileID: 11400000, guid: 0917719069bbcc14fb1c225c12bb9a3d, type: 2}
-  - {fileID: 11400000, guid: 6a1886fe83bec6c45bc0b1cdf8244a60, type: 2}
-  - {fileID: 11400000, guid: 51561eefe090175469d4261cb7e95833, type: 2}
-  _vegetablePrefabs:
-  - {fileID: 7936529006152284036, guid: 1d617a01f9ecc3b4aa84d8dc62870d54, type: 3}
-  - {fileID: 7936529006152284036, guid: 5405f8d00ba3f9f45b421ec0e9c271b9, type: 3}
-  - {fileID: 7936529006152284036, guid: 47ac4fd9ec13c6a4bb3235afca6b96e2, type: 3}
+  _collector: {fileID: 681258833}
 --- !u!1 &370825562
 GameObject:
   m_ObjectHideFlags: 0
@@ -30566,6 +30559,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tilePainter: {fileID: 1317282038}
+  _vegetablePrefabs:
+  - {fileID: 7936529006152284036, guid: 1d617a01f9ecc3b4aa84d8dc62870d54, type: 3}
+  - {fileID: 7936529006152284036, guid: 5405f8d00ba3f9f45b421ec0e9c271b9, type: 3}
+  - {fileID: 7936529006152284036, guid: 47ac4fd9ec13c6a4bb3235afca6b96e2, type: 3}
 --- !u!1 &697243609
 GameObject:
   m_ObjectHideFlags: 0
@@ -32702,12 +32699,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tilemap: {fileID: 968820519}
-  _tiles:
-  - {fileID: 11400000, guid: 08eb89821d9b4f94da288a0b73e858a2, type: 2}
-  - {fileID: 11400000, guid: b5c369954ab4619489d280542d590c4c, type: 2}
-  _farm: {fileID: 968820516}
+  _groundTile: {fileID: 11400000, guid: 08eb89821d9b4f94da288a0b73e858a2, type: 2}
+  _vegetableTiles:
+  - {fileID: 11400000, guid: 0917719069bbcc14fb1c225c12bb9a3d, type: 2}
+  - {fileID: 11400000, guid: 6a1886fe83bec6c45bc0b1cdf8244a60, type: 2}
+  - {fileID: 11400000, guid: 51561eefe090175469d4261cb7e95833, type: 2}
   _player: {fileID: 73242449}
-  _farmMenu: {fileID: 234784757}
   _bedsAmountText: {fileID: 1826891840}
 --- !u!1 &1337196416
 GameObject:

@@ -7,10 +7,9 @@ using UnityEngine.Tilemaps;
 public class TilePainter : MonoBehaviour
 {
     [SerializeField] private Tilemap _tilemap;
-    [SerializeField] private Tile[] _tiles;
-    [SerializeField] private GameObject _farm;
+    [SerializeField] private Tile _groundTile;
+    [SerializeField] private Tile[] _vegetableTiles;
     [SerializeField] private Player _player;
-    [SerializeField] private GameObject _farmMenu;
     [SerializeField] private TextMeshProUGUI _bedsAmountText;
 
     private List<Vector3Int> _cells = new List<Vector3Int>();
@@ -20,8 +19,9 @@ public class TilePainter : MonoBehaviour
 
     public int BedsCount { get => _bedsCount; set => _bedsCount = value; }
     public List<Vector3Int> Cells { get => _cells; }
+    public Tile[] VegetableTiles { get => _vegetableTiles; }
     public Tilemap TileMap { get => _tilemap; }
-    public Tile[] Tiles { get => _tiles; }
+    public Tile GroundTile { get => _groundTile; }
     public Vector3 HarvestSpawn { get => _harvestSpawn; private set => _harvestSpawn = value; }
 
     private void Start()
@@ -31,7 +31,6 @@ public class TilePainter : MonoBehaviour
             encoding: System.Text.Encoding.UTF8);
 
         FarmData data = JsonUtility.FromJson<FarmData>(json);
-
         _bedsAmountText.text = "Доступно грядок: " + data.BedsCounter.ToString();
     }
 
@@ -57,35 +56,19 @@ public class TilePainter : MonoBehaviour
                 0
             ));
 
-        for (int i = 0; i < _tiles.Length; i++)
+        if (BedsCount > 0)
         {
-            if (BedsCount > 0)
-            {
-                BedsCount--;
-                _bedsAmountText.text = "Доступно грядок: " + _bedsCount.ToString();
+            BedsCount--;
+            _bedsAmountText.text = "Доступно грядок: " + BedsCount.ToString();
 
-                if (!_cells.Contains(currentCell) ||
-                (_cells.Contains(currentCell) && _tilemap.GetTile(currentCell) == null))
-                {
-                    _bedsAmountText.text = "Доступно грядок: " + _bedsCount.ToString();
-                    _cells.Add(currentCell);
-
-                    _tilemap.SetTile(currentCell, _tiles[i]);
-                    currentCell.x++;
-
-                    if (i % 2 != 0)
-                    {
-                        currentCell.y--;
-                        currentCell.x -= 2;
-                    }
-                }
-            }
+            _cells.Add(currentCell);
+            _tilemap.SetTile(currentCell, _groundTile);
         }
     }
 
     public void DeleteCells()
     {
-        for (int i = 0; i < _cells.Count; i++)
-            if (_tiles.Length > 0) _tilemap.SetTile(_cells[i], null);
+        for (int i = 0; i < BedsCount; i++)
+            if (_bedsCount > 0) _tilemap.SetTile(_cells[i], null);
     }
 }
