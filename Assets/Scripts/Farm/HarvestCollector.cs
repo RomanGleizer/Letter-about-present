@@ -31,7 +31,7 @@ public class HarvestCollector : MonoBehaviour
         if (tile != _tilePainter.GroundTile
             && _tilePainter.TileMap.ContainsTile(tile))
         {
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(10);
             Instantiate(obj, position, Quaternion.identity);
             _tilePainter.TileMap.SetTile(cell, _tilePainter.GroundTile);
         }

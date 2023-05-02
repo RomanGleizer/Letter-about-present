@@ -16,6 +16,10 @@ public class VegetableTaker : MonoBehaviour
     private int _patatoCounter;
     private int _wheatCounter;
 
+    public int CarrotCounter { get => _carrotCounter; set => _carrotCounter = value; }
+    public int PatatoCounter { get => _carrotCounter; set => _carrotCounter = value; }
+    public int WheatCounter { get => _carrotCounter; set => _carrotCounter = value; }
+
     private void Update()
     {
         _carrotCounter = int.Parse(_menu.StockTextes[0].text);

@@ -79,16 +79,20 @@ public class TilePainter : MonoBehaviour
 
     public void DeleteCells()
     {
-        Vector3Int currentCell;
-        if (_bedsCount > 1) currentCell = _cells[Cells.Count - 1];
-        else currentCell = _cells[0];
+        if (_bedsCount > 0)
+        {
+            Vector3Int currentCell;
+            if (_bedsCount > 1) currentCell = _cells[Cells.Count - 1];
+            else currentCell = _cells[0];
 
-        if (_bedsCount > 0
-            && _tilemap.GetTile(currentCell).name != "CarrotGround"
-            && _tilemap.GetTile(currentCell).name != "PatatoGround"
-            && _tilemap.GetTile(currentCell).name != "WheatGround")
-            _tilemap.SetTile(currentCell, null);
+            if (_tilemap.GetTile(currentCell).name != "CarrotGround"
+                && _tilemap.GetTile(currentCell).name != "PatatoGround"
+                && _tilemap.GetTile(currentCell).name != "WheatGround")
 
-        _cells.Remove(currentCell);
+            {
+                _tilemap.SetTile(currentCell, null);
+                _cells.Remove(currentCell);
+            }
+        }
     }
 }
