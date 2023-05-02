@@ -17,7 +17,8 @@ public class VegetablePlanter : MonoBehaviour
                 0
             ));
 
-        if (_vegetableMenu.VegetableCounters[vegetableIndex] > 0 && _tilePainter.Cells.Contains(currentCell) )
+        if (_vegetableMenu.VegetableCounters[vegetableIndex] > 0 
+            && _tilePainter.Cells.Contains(currentCell))
         {
             _vegetableMenu.VegetableCounters[vegetableIndex]--;
 

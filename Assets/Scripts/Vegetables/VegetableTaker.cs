@@ -48,17 +48,11 @@ public class VegetableTaker : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.GetComponent<Carrot>())
-        {
             collision.gameObject.GetComponent<SpriteRenderer>().sprite = _carrotDefault;
-        }
         if (collision.GetComponent<Patato>())
-        {
             collision.gameObject.GetComponent<SpriteRenderer>().sprite = _patatoDefault;
-        }
         if (collision.GetComponent<Wheat>())
-        {
             collision.gameObject.GetComponent<SpriteRenderer>().sprite = _wheatDefault;
-        }
     }
 
     private void TakeVegetable(ref int counter, TextMeshProUGUI stockText, TextMeshProUGUI menuText, Collider2D collision)

@@ -64,10 +64,8 @@ public class TilePainter : MonoBehaviour
                 0
             ));
 
-        float x, y;
-        x = y = Random.Range(-0.5f, 0.5f);
-
-        HarvestSpawn = new Vector3(_player.transform.position.x + x, _player.transform.position.y + y, 0);
+        var delta = Random.Range(-0.5f, 0.5f);
+        HarvestSpawn = new Vector3(_player.transform.position.x + delta, _player.transform.position.y + delta, 0);
 
         if (_bedsCount > 0)
         {
@@ -81,7 +79,16 @@ public class TilePainter : MonoBehaviour
 
     public void DeleteCells()
     {
-        for (int i = 0; i < Cells.Count; i++)
-            if (_bedsCount > 0) _tilemap.SetTile(Cells[i], null);
+        Vector3Int currentCell;
+        if (_bedsCount > 1) currentCell = _cells[Cells.Count - 1];
+        else currentCell = _cells[0];
+
+        if (_bedsCount > 0
+            && _tilemap.GetTile(currentCell).name != "CarrotGround"
+            && _tilemap.GetTile(currentCell).name != "PatatoGround"
+            && _tilemap.GetTile(currentCell).name != "WheatGround")
+            _tilemap.SetTile(currentCell, null);
+
+        _cells.Remove(currentCell);
     }
 }
