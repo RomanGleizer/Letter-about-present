@@ -65012,7 +65012,6 @@ MonoBehaviour:
   _tilePainter: {fileID: 1317282038}
   _vegetableMenu: {fileID: 1004642161}
   _harvestCollector: {fileID: 681258833}
-  _player: {fileID: 73242449}
 --- !u!1 &986885897
 GameObject:
   m_ObjectHideFlags: 0
@@ -66798,7 +66797,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 11bec0410aa939e4ab06844718d2834f, type: 2}
   _player: {fileID: 73242449}
   _bedsAmountText: {fileID: 1826891840}
-  _bedTimeSpawn: 5
+  _bedTimeSpawn: 10
 --- !u!1 &1369631421
 GameObject:
   m_ObjectHideFlags: 0

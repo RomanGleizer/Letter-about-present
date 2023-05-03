@@ -21,7 +21,6 @@ public class Farm : MonoBehaviour
                 var tile = _farmTileMap.GetTile(new Vector3Int(x, y, 0));
                 data.Tiles.Add(tile);
                 data.Cells.Add(new Vector3Int(x, y, 0));
-                data.LocalCells.Add(_farmTileMap.WorldToLocal(new Vector3(x, y, 0)));
             }
 
         for (int i = 0; i < 3; i++)
@@ -53,28 +52,26 @@ public class Farm : MonoBehaviour
         FarmData data = JsonUtility.FromJson<FarmData>(json);
         _farmTileMap.ClearAllTiles();
 
+        for (int i = 0; i < data.Cells.Count; i++)
+            _farmTileMap.SetTile(data.Cells[i], data.Tiles[i]);
+
         for (int i = 0; i < data.Tiles.Count; i++)
         {
             try
             {
+                var cell = _farmTileMap.CellToLocalInterpolated(data.Cells[i]);
+                _tilePainter.Cells.Add(data.Cells[i]);
+                _farmTileMap.SetTile(data.Cells[i], data.Tiles[i]);
+
                 if (data.Tiles[i].name == "CarrotGround")
-                {
-                    var cell = _farmTileMap.CellToLocalInterpolated(data.Cells[i]);
-                    _tilePainter.Cells.Add(data.Cells[i]);
-                    _farmTileMap.SetTile(data.Cells[i], data.Tiles[i]);
                     StartCoroutine(_harvestCollector.GrowVegetable
                         (_harvestCollector.VegetablePrefabs[0], cell, data.Cells[i]));
-                }
-                //if (data.Tiles[i].name == "PatatoGround")
-                //{
-                //    _farmTileMap.SetTile(data.Poses[i], data.Tiles[i]);
-                //    print("Patato");
-                //}
-                //if (data.Tiles[i].name == "WheatGround")
-                //{
-                //    _farmTileMap.SetTile(data.Poses[i], data.Tiles[i]);
-                //    print("Wheat");
-                //}
+                if (data.Tiles[i].name == "PatatoGround")
+                    StartCoroutine(_harvestCollector.GrowVegetable
+                            (_harvestCollector.VegetablePrefabs[1], cell, data.Cells[i]));
+                if (data.Tiles[i].name == "WheatGround")
+                    StartCoroutine(_harvestCollector.GrowVegetable
+                            (_harvestCollector.VegetablePrefabs[2], cell, data.Cells[i]));
             }
             catch (Exception) { }
         }

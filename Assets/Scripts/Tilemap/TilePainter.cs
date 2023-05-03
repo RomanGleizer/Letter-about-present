@@ -17,6 +17,7 @@ public class TilePainter : MonoBehaviour
     private float _bedsAmountSpawnTimer;
     private int _bedsCount;
     private Vector3 _harvestSpawn;
+    private FarmData _data;
 
     public List<Vector3Int> Cells { get => _cells; }
     public Tile[] VegetableTiles { get => _vegetableTiles; }
@@ -39,8 +40,8 @@ public class TilePainter : MonoBehaviour
             Application.dataPath + "/FarmData.json", 
             encoding: System.Text.Encoding.UTF8);
 
-        FarmData data = JsonUtility.FromJson<FarmData>(json);
-        _bedsAmountText.text = "Доступно грядок: " + data.BedsCounter.ToString();
+        _data = JsonUtility.FromJson<FarmData>(json);
+        _bedsAmountText.text = "Доступно грядок: " + _data.BedsCounter.ToString();
     }
 
     private void Update()
