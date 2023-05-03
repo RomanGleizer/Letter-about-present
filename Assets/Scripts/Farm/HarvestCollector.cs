@@ -1,4 +1,6 @@
 using System.Collections;
+using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 public class HarvestCollector : MonoBehaviour
@@ -25,13 +27,19 @@ public class HarvestCollector : MonoBehaviour
         }
     }
 
-    private IEnumerator GrowVegetable(GameObject obj, Vector3 position, Vector3Int cell)
+    public IEnumerator GrowVegetable(GameObject obj, Vector3 position, Vector3Int cell)
     {
         var tile = _tilePainter.TileMap.GetTile(cell);
+        var json = File.ReadAllText(
+            Application.dataPath + "/FarmData.json",
+            encoding: System.Text.Encoding.UTF8);
+
+        FarmData data = JsonUtility.FromJson<FarmData>(json);
+
         if (tile != _tilePainter.GroundTile
-            && _tilePainter.TileMap.ContainsTile(tile))
+            && (_tilePainter.TileMap.ContainsTile(tile) || data.Tiles.Contains(tile)))
         {
-            yield return new WaitForSeconds(10);
+            yield return new WaitForSeconds(3);
             Instantiate(obj, position, Quaternion.identity);
             _tilePainter.TileMap.SetTile(cell, _tilePainter.GroundTile);
         }

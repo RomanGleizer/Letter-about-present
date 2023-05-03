@@ -1,3 +1,4 @@
+using System;
 using System.IO;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -7,6 +8,7 @@ public class Farm : MonoBehaviour
     [SerializeField] private Tilemap _farmTileMap;
     [SerializeField] private TilePainter _tilePainter;
     [SerializeField] private VegetablesMenuHandler _vegetableMenu;
+    [SerializeField] private HarvestCollector _harvestCollector;
 
     public void SaveFarm()
     {
@@ -15,10 +17,11 @@ public class Farm : MonoBehaviour
 
         for (int x = bounds.min.x; x < bounds.max.x; x++)
             for (int y = bounds.min.y; y < bounds.max.y; y++)
-            {
-                var temp = _farmTileMap.GetTile(new Vector3Int(x, y, 0));
-                data.Tiles.Add(temp);
-                data.Poses.Add(new Vector3Int(x, y, 0));
+            {       
+                var tile = _farmTileMap.GetTile(new Vector3Int(x, y, 0));
+                data.Tiles.Add(tile);
+                data.Cells.Add(new Vector3Int(x, y, 0));
+                data.LocalCells.Add(_farmTileMap.WorldToLocal(new Vector3(x, y, 0)));
             }
 
         for (int i = 0; i < 3; i++)
@@ -33,7 +36,6 @@ public class Farm : MonoBehaviour
         }
 
         data.BedsCounter = _tilePainter.BedsCount;
-
         var json = JsonUtility.ToJson(data, true);
 
         File.WriteAllText(
@@ -51,8 +53,31 @@ public class Farm : MonoBehaviour
         FarmData data = JsonUtility.FromJson<FarmData>(json);
         _farmTileMap.ClearAllTiles();
 
-        for (int i = 0; i < data.Poses.Count; i++)
-            _farmTileMap.SetTile(data.Poses[i], data.Tiles[i]);
+        for (int i = 0; i < data.Tiles.Count; i++)
+        {
+            try
+            {
+                if (data.Tiles[i].name == "CarrotGround")
+                {
+                    var cell = _farmTileMap.CellToLocalInterpolated(data.Cells[i]);
+                    _tilePainter.Cells.Add(data.Cells[i]);
+                    _farmTileMap.SetTile(data.Cells[i], data.Tiles[i]);
+                    StartCoroutine(_harvestCollector.GrowVegetable
+                        (_harvestCollector.VegetablePrefabs[0], cell, data.Cells[i]));
+                }
+                //if (data.Tiles[i].name == "PatatoGround")
+                //{
+                //    _farmTileMap.SetTile(data.Poses[i], data.Tiles[i]);
+                //    print("Patato");
+                //}
+                //if (data.Tiles[i].name == "WheatGround")
+                //{
+                //    _farmTileMap.SetTile(data.Poses[i], data.Tiles[i]);
+                //    print("Wheat");
+                //}
+            }
+            catch (Exception) { }
+        }
 
         for (int i = 0; i < 3; i++)
         {

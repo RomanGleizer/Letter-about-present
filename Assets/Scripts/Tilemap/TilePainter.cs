@@ -15,7 +15,7 @@ public class TilePainter : MonoBehaviour
 
     private List<Vector3Int> _cells = new List<Vector3Int>();
     private float _bedsAmountSpawnTimer;
-    private int _bedsCount = 1;
+    private int _bedsCount;
     private Vector3 _harvestSpawn;
 
     public List<Vector3Int> Cells { get => _cells; }
@@ -79,10 +79,10 @@ public class TilePainter : MonoBehaviour
 
     public void DeleteCells()
     {
-        if (_bedsCount > 0)
+        if (_cells.Count > 0)
         {
             Vector3Int currentCell;
-            if (_bedsCount > 1) currentCell = _cells[Cells.Count - 1];
+            if (_cells.Count > 1) currentCell = _cells[Cells.Count - 1];
             else currentCell = _cells[0];
 
             if (_tilemap.GetTile(currentCell).name != "CarrotGround"
