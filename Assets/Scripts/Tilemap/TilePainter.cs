@@ -23,21 +23,21 @@ public class TilePainter : MonoBehaviour
     public Tile[] VegetableTiles { get => _vegetableTiles; }
     public Tilemap TileMap { get => _tilemap; }
     public Tile GroundTile { get => _groundTile; }
-    public Vector3 HarvestSpawn 
-    { 
-        get => _harvestSpawn; 
-        private set => _harvestSpawn = value; 
+    public Vector3 HarvestSpawn
+    {
+        get => _harvestSpawn;
+        private set => _harvestSpawn = value;
     }
-    public int BedsCount 
-    { 
-        get => _bedsCount; 
-        set => _bedsCount = value; 
+    public int BedsCount
+    {
+        get => _bedsCount;
+        set => _bedsCount = value;
     }
 
     private void Start()
     {
         var json = File.ReadAllText(
-            Application.dataPath + "/FarmData.json", 
+            Application.dataPath + "/FarmData.json",
             encoding: System.Text.Encoding.UTF8);
 
         _data = JsonUtility.FromJson<FarmData>(json);
@@ -80,20 +80,5 @@ public class TilePainter : MonoBehaviour
 
     public void DeleteCells()
     {
-        if (_cells.Count > 0)
-        {
-            Vector3Int currentCell;
-            if (_cells.Count > 1) currentCell = _cells[Cells.Count - 1];
-            else currentCell = _cells[0];
-
-            if (_tilemap.GetTile(currentCell).name != "CarrotGround"
-                && _tilemap.GetTile(currentCell).name != "PatatoGround"
-                && _tilemap.GetTile(currentCell).name != "WheatGround")
-
-            {
-                _tilemap.SetTile(currentCell, null);
-                _cells.Remove(currentCell);
-            }
-        }
     }
 }

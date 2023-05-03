@@ -55,27 +55,6 @@ public class Farm : MonoBehaviour
         for (int i = 0; i < data.Cells.Count; i++)
             _farmTileMap.SetTile(data.Cells[i], data.Tiles[i]);
 
-        for (int i = 0; i < data.Tiles.Count; i++)
-        {
-            try
-            {
-                var cell = _farmTileMap.CellToLocalInterpolated(data.Cells[i]);
-                _tilePainter.Cells.Add(data.Cells[i]);
-                _farmTileMap.SetTile(data.Cells[i], data.Tiles[i]);
-
-                if (data.Tiles[i].name == "CarrotGround")
-                    StartCoroutine(_harvestCollector.GrowVegetable
-                        (_harvestCollector.VegetablePrefabs[0], cell, data.Cells[i]));
-                if (data.Tiles[i].name == "PatatoGround")
-                    StartCoroutine(_harvestCollector.GrowVegetable
-                            (_harvestCollector.VegetablePrefabs[1], cell, data.Cells[i]));
-                if (data.Tiles[i].name == "WheatGround")
-                    StartCoroutine(_harvestCollector.GrowVegetable
-                            (_harvestCollector.VegetablePrefabs[2], cell, data.Cells[i]));
-            }
-            catch (Exception) { }
-        }
-
         for (int i = 0; i < 3; i++)
         {
             _vegetableMenu.VegetableCounters[i] = data.VegetableCounters[i];

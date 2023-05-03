@@ -30,14 +30,7 @@ public class HarvestCollector : MonoBehaviour
     public IEnumerator GrowVegetable(GameObject obj, Vector3 position, Vector3Int cell)
     {
         var tile = _tilePainter.TileMap.GetTile(cell);
-        var json = File.ReadAllText(
-            Application.dataPath + "/FarmData.json",
-            encoding: System.Text.Encoding.UTF8);
-
-        FarmData data = JsonUtility.FromJson<FarmData>(json);
-
-        if (tile != _tilePainter.GroundTile
-            && (_tilePainter.TileMap.ContainsTile(tile) || data.Tiles.Contains(tile)))
+        if (tile != _tilePainter.GroundTile && _tilePainter.TileMap.ContainsTile(tile))
         {
             yield return new WaitForSeconds(6);
             Instantiate(obj, position, Quaternion.identity);
