@@ -37,7 +37,7 @@
             "instanceID": 0
         },
         {
-            "instanceID": 25222
+            "instanceID": 25214
         },
         {
             "instanceID": 0
@@ -76,7 +76,7 @@
             "instanceID": 0
         },
         {
-            "instanceID": 25234
+            "instanceID": 25214
         },
         {
             "instanceID": 0
@@ -2188,31 +2188,31 @@
         }
     ],
     "VegetableCounters": [
-        8,
+        4,
         0,
-        6
+        5
     ],
     "StockTextes": [
         {
-            "instanceID": 50752
+            "instanceID": 26042
         },
         {
-            "instanceID": 50280
+            "instanceID": 25570
         },
         {
-            "instanceID": 50196
+            "instanceID": 25486
         }
     ],
     "VegetableMenuTextes": [
         {
-            "instanceID": 50152
+            "instanceID": 25442
         },
         {
-            "instanceID": 50048
+            "instanceID": 25338
         },
         {
-            "instanceID": 50094
+            "instanceID": 25384
         }
     ],
-    "BedsCounter": 5
+    "BedsCounter": 6
 }

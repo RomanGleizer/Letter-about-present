@@ -9,7 +9,7 @@ public class VegetablePlanter : MonoBehaviour
 
     public void PlantVegetable(int vegetableIndex)
     {
-        Vector3Int currentCell = _tilePainter.TileMap.WorldToCell(
+        Vector3Int currentCell = _tilePainter.FarmTileMap.WorldToCell(
             new Vector3
             (
                 _player.transform.position.x,
@@ -26,7 +26,7 @@ public class VegetablePlanter : MonoBehaviour
             _vegetableMenu.VegetableMenuTextes[vegetableIndex].text = counter.ToString();
             _vegetableMenu.StockTextes[vegetableIndex].text = counter.ToString();
 
-            _tilePainter.TileMap.SetTile(currentCell, _tilePainter.VegetableTiles[vegetableIndex]);
+            _tilePainter.FarmTileMap.SetTile(currentCell, _tilePainter.VegetableTiles[vegetableIndex]);
         }
     }
 }

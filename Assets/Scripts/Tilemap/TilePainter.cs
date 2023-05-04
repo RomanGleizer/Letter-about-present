@@ -6,7 +6,7 @@ using UnityEngine.Tilemaps;
 
 public class TilePainter : MonoBehaviour
 {
-    [SerializeField] private Tilemap _tilemap;
+    [SerializeField] private Tilemap _framTileMap;
     [SerializeField] private Tile _groundTile;
     [SerializeField] private Tile[] _vegetableTiles;
     [SerializeField] private Player _player;
@@ -17,11 +17,10 @@ public class TilePainter : MonoBehaviour
     private float _bedsAmountSpawnTimer;
     private int _bedsCount;
     private Vector3 _harvestSpawn;
-    private FarmData _data;
 
     public List<Vector3Int> Cells { get => _cells; }
     public Tile[] VegetableTiles { get => _vegetableTiles; }
-    public Tilemap TileMap { get => _tilemap; }
+    public Tilemap FarmTileMap { get => _framTileMap; }
     public Tile GroundTile { get => _groundTile; }
     public Vector3 HarvestSpawn
     {
@@ -37,11 +36,10 @@ public class TilePainter : MonoBehaviour
     private void Start()
     {
         var json = File.ReadAllText(
-            Application.dataPath + "/FarmData.json",
-            encoding: System.Text.Encoding.UTF8);
-
-        _data = JsonUtility.FromJson<FarmData>(json);
-        _bedsAmountText.text = "Доступно грядок: " + _data.BedsCounter.ToString();
+             Application.dataPath + "/FarmData.json",
+             encoding: System.Text.Encoding.UTF8);
+        FarmData data = JsonUtility.FromJson<FarmData>(json);
+        _bedsAmountText.text = "Доступно грядок: " + data.BedsCounter.ToString();
     }
 
     private void Update()
@@ -57,7 +55,13 @@ public class TilePainter : MonoBehaviour
 
     public void DrawCells()
     {
-        var currentCell = _tilemap.WorldToCell(
+        var json = File.ReadAllText(
+            Application.dataPath + "/FarmData.json",
+            encoding: System.Text.Encoding.UTF8);
+
+        FarmData data = JsonUtility.FromJson<FarmData>(json);
+
+        var currentCell = _framTileMap.WorldToCell(
             new Vector3
             (
                 _player.transform.position.x,
@@ -68,13 +72,13 @@ public class TilePainter : MonoBehaviour
         var delta = Random.Range(-0.5f, 0.5f);
         HarvestSpawn = new Vector3(_player.transform.position.x + delta, _player.transform.position.y + delta, 0);
 
-        if (_bedsCount > 0)
+        if (_bedsCount > 0 && !data.Cells.Contains(currentCell) && !_cells.Contains(currentCell))
         {
             _bedsCount--;
             _bedsAmountText.text = "Доступно грядок: " + _bedsCount.ToString();
 
             _cells.Add(currentCell);
-            _tilemap.SetTile(currentCell, _groundTile);
+            _framTileMap.SetTile(currentCell, _groundTile);
         }
     }
 
