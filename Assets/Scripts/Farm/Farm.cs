@@ -63,9 +63,21 @@ public class Farm : MonoBehaviour
                 _tilePainter.Cells.Add(data.Cells[i]);
                 _farmTileMap.SetTile(data.Cells[i], data.Tiles[i]);
 
-                if (data.Tiles[i].name == "CarrotGround") _harvestCollector.CollectHarvest(0);
-                if (data.Tiles[i].name == "PatatoGround") _harvestCollector.CollectHarvest(1);
-                if (data.Tiles[i].name == "WheatGround") _harvestCollector.CollectHarvest(2);
+                if (data.Tiles[i].name == "CarrotGround")
+                {
+                    StartCoroutine(_harvestCollector.GrowVegetable
+                        (_harvestCollector.VegetablePrefabs[0], cell, data.Cells[i]));
+                }
+                if (data.Tiles[i].name == "PatatoGround")
+                {
+                    StartCoroutine(_harvestCollector.GrowVegetable
+                        (_harvestCollector.VegetablePrefabs[1], cell, data.Cells[i]));
+                }
+                if (data.Tiles[i].name == "WheatGround")
+                {
+                    StartCoroutine(_harvestCollector.GrowVegetable
+                        (_harvestCollector.VegetablePrefabs[2], cell, data.Cells[i]));
+                }
             }
             catch (Exception) { }
         }
