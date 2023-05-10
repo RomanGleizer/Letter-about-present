@@ -1,4 +1,3 @@
-using System;
 using System.IO;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -9,6 +8,8 @@ public class Farm : MonoBehaviour
     [SerializeField] private TilePainter _tilePainter;
     [SerializeField] private VegetablesMenuHandler _vegetableMenu;
     [SerializeField] private HarvestCollector _harvestCollector;
+
+    private int _cellsIndex;
 
     public void SaveFarm()
     {
@@ -48,18 +49,18 @@ public class Farm : MonoBehaviour
         var json = File.ReadAllText(
             Application.dataPath + "/FarmData.json", 
             encoding: System.Text.Encoding.UTF8);
-
         FarmData data = JsonUtility.FromJson<FarmData>(json);
 
         for (int i = 0; i < data.Cells.Count; i++)
         {
             _farmTileMap.SetTile(data.Cells[i], data.Tiles[i]);
-
             if (_farmTileMap.GetTile(data.Cells[i]) != null)
             {
-                if (data.Tiles[i].name == "CarrotGround") GrowVegetable(data, i, 0);
-                if (data.Tiles[i].name == "PatatoGround") GrowVegetable(data, i, 1);
-                if (data.Tiles[i].name == "WheatGround") GrowVegetable(data, i, 2);
+                var tile = _farmTileMap.GetTile(data.Cells[i]);
+                _cellsIndex = i;
+                if (tile.name == "CarrotGround") GrowVegetable(data, 0);
+                if (tile.name == "PatatoGround") GrowVegetable(data, 1);
+                if (tile.name == "WheatGround") GrowVegetable(data, 2);
             }
         }
 
@@ -69,18 +70,17 @@ public class Farm : MonoBehaviour
             _vegetableMenu.StockTextes[i].text = data.VegetableCounters[i].ToString();
             _vegetableMenu.VegetableMenuTextes[i].text = data.VegetableCounters[i].ToString();
         }
-
         _tilePainter.BedsCounter = data.BedsCounter;
     }
 
-    private void GrowVegetable(FarmData data, int cellsIndex, int vegetableIndex)
+    private void GrowVegetable(FarmData data, int vegetableIndex)
     {
-        var cell = _farmTileMap.CellToLocalInterpolated(data.Cells[cellsIndex]);
+        var cell = _farmTileMap.CellToLocalInterpolated(data.Cells[_cellsIndex]);
 
         StartCoroutine(
-            _harvestCollector.GrowVegetable(_harvestCollector.VegetablePrefabs[vegetableIndex], cell, data.Cells[cellsIndex])
+            _harvestCollector.GrowVegetable(_harvestCollector.VegetablePrefabs[vegetableIndex], cell, data.Cells[_cellsIndex])
             );
 
-        _farmTileMap.SetTile(data.Cells[cellsIndex], data.Tiles[cellsIndex]);
+        _farmTileMap.SetTile(data.Cells[_cellsIndex], data.Tiles[_cellsIndex]);
     }
 }

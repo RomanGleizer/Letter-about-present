@@ -17,7 +17,9 @@ public class VegetablePlanter : MonoBehaviour
                 0
             ));
 
-        if (_vegetableMenu.VegetableCounters[vegetableIndex] > 0)
+        if (_vegetableMenu.VegetableCounters[vegetableIndex] > 0 
+            && _tilePainter.FarmTileMap.GetTile(currentCell) != null
+            && _tilePainter.FarmTileMap.GetTile(currentCell).name == "MainGround")
         {
             _vegetableMenu.VegetableCounters[vegetableIndex]--;
 
