@@ -1,6 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
-using System.IO;
 using UnityEngine;
 
 public class HarvestCollector : MonoBehaviour
@@ -17,7 +15,7 @@ public class HarvestCollector : MonoBehaviour
         var worldCurrentCell = _tilePainter.FarmTileMap.WorldToCell(playerPosition);
         var localCurrentCell = _tilePainter.FarmTileMap.WorldToLocal(playerPosition);
 
-        var vegetableAmount = Random.Range(1, 3);
+        var vegetableAmount = Random.Range(1, 4);
         for (int i = 0; i < vegetableAmount; i++)
         {
             StartCoroutine(GrowVegetable(_vegetablePrefabs[vegetableIndex], localCurrentCell, worldCurrentCell));
@@ -30,7 +28,7 @@ public class HarvestCollector : MonoBehaviour
     public IEnumerator GrowVegetable(GameObject obj, Vector3 position, Vector3Int cell)
     {
         var tile = _tilePainter.FarmTileMap.GetTile(cell);
-        if (tile != _tilePainter.GroundTile && _tilePainter.FarmTileMap.ContainsTile(tile))
+        if (tile != _tilePainter.GroundTile)
         {
             yield return new WaitForSeconds(5);
             Instantiate(obj, position, Quaternion.identity);

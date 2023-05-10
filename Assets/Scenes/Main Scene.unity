@@ -66283,6 +66283,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _farmMenu: {fileID: 234784757}
   _loadGameCanvas: {fileID: 604387632}
+  _pauseMenu: {fileID: 1692088815}
+  _stockMenu: {fileID: 1653486253}
 --- !u!114 &1004642160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66296,9 +66298,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _stockMenu: {fileID: 1653486253}
-  _player: {fileID: 73242449}
   _loadGameCanvas: {fileID: 519420036}
   _loadGameMenu: {fileID: 604387632}
+  _pauseMenu: {fileID: 1692088815}
+  _vegetableMenu: {fileID: 697243609}
+  _farmMenu: {fileID: 234784757}
 --- !u!114 &1004642161
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66321,6 +66325,8 @@ MonoBehaviour:
   - {fileID: 93104608}
   - {fileID: 173427792}
   _loadGameCanvas: {fileID: 604387632}
+  _pauseMenu: {fileID: 1692088815}
+  _stockMenu: {fileID: 1653486253}
 --- !u!114 &1004642162
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -7,6 +7,8 @@ public class VegetablesMenuHandler : MonoBehaviour
     [SerializeField] private TextMeshProUGUI[] _stockTextes;
     [SerializeField] private TextMeshProUGUI[] _vegetableMenuTextes;
     [SerializeField] private GameObject _loadGameCanvas;
+    [SerializeField] private GameObject _pauseMenu;
+    [SerializeField] private GameObject _stockMenu;
 
     private int[] _vegetableCounters;
 
@@ -22,7 +24,8 @@ public class VegetablesMenuHandler : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.I) && !_loadGameCanvas.activeSelf)
+        if (Input.GetKey(KeyCode.I)
+            && !_loadGameCanvas.activeSelf && !_pauseMenu.activeSelf)
             _vegetablesMenu.SetActive(true);
 
         for (int i = 0; i < _vegetableCounters.Length; i++)

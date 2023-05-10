@@ -10,6 +10,12 @@ public class Farm : MonoBehaviour
     [SerializeField] private HarvestCollector _harvestCollector;
 
     private int _cellsIndex;
+    private FarmData _farmData;
+
+    private void Start()
+    {
+        _farmData = new FarmData();
+    }
 
     public void SaveFarm()
     {
@@ -49,38 +55,41 @@ public class Farm : MonoBehaviour
         var json = File.ReadAllText(
             Application.dataPath + "/FarmData.json", 
             encoding: System.Text.Encoding.UTF8);
-        FarmData data = JsonUtility.FromJson<FarmData>(json);
+        _farmData = JsonUtility.FromJson<FarmData>(json);
 
-        for (int i = 0; i < data.Cells.Count; i++)
+        for (int i = 0; i < _farmData.Cells.Count; i++)
         {
-            _farmTileMap.SetTile(data.Cells[i], data.Tiles[i]);
-            if (_farmTileMap.GetTile(data.Cells[i]) != null)
+            _farmTileMap.SetTile(_farmData.Cells[i], _farmData.Tiles[i]);
+            if (_farmTileMap.GetTile(_farmData.Cells[i]) != null)
             {
-                var tile = _farmTileMap.GetTile(data.Cells[i]);
+                var tile = _farmTileMap.GetTile(_farmData.Cells[i]);
                 _cellsIndex = i;
-                if (tile.name == "CarrotGround") GrowVegetable(data, 0);
-                if (tile.name == "PatatoGround") GrowVegetable(data, 1);
-                if (tile.name == "WheatGround") GrowVegetable(data, 2);
+                if (tile.name == "CarrotGround") GrowVegetable(0);
+                if (tile.name == "PatatoGround") GrowVegetable(1);
+                if (tile.name == "WheatGround") GrowVegetable(2);
             }
         }
 
         for (int i = 0; i < 3; i++)
         {
-            _vegetableMenu.VegetableCounters[i] = data.VegetableCounters[i];
-            _vegetableMenu.StockTextes[i].text = data.VegetableCounters[i].ToString();
-            _vegetableMenu.VegetableMenuTextes[i].text = data.VegetableCounters[i].ToString();
+            _vegetableMenu.VegetableCounters[i] = _farmData.VegetableCounters[i];
+            _vegetableMenu.StockTextes[i].text = _farmData.VegetableCounters[i].ToString();
+            _vegetableMenu.VegetableMenuTextes[i].text = _farmData.VegetableCounters[i].ToString();
         }
-        _tilePainter.BedsCounter = data.BedsCounter;
+        _tilePainter.BedsCounter = _farmData.BedsCounter;
     }
 
-    private void GrowVegetable(FarmData data, int vegetableIndex)
+    private void GrowVegetable(int vegetableIndex)
     {
-        var cell = _farmTileMap.CellToLocalInterpolated(data.Cells[_cellsIndex]);
+        var cell = _farmTileMap.CellToLocalInterpolated(_farmData.Cells[_cellsIndex]);
 
         StartCoroutine(
-            _harvestCollector.GrowVegetable(_harvestCollector.VegetablePrefabs[vegetableIndex], cell, data.Cells[_cellsIndex])
-            );
+            _harvestCollector.GrowVegetable(
+                _harvestCollector.VegetablePrefabs[vegetableIndex], 
+                cell, 
+                _farmData.Cells[_cellsIndex]
+            ));
 
-        _farmTileMap.SetTile(data.Cells[_cellsIndex], data.Tiles[_cellsIndex]);
+        _farmTileMap.SetTile(_farmData.Cells[_cellsIndex], _farmData.Tiles[_cellsIndex]);
     }
 }

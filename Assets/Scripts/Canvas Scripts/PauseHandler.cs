@@ -19,6 +19,7 @@ public class PauseHandler : MonoBehaviour
             _stockMenu?.SetActive(false);
             Time.timeScale = 0;
         }
+        if (_pauseMenu.activeSelf) Time.timeScale = 0;
         else Time.timeScale = 1;
     }
 
