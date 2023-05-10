@@ -13,13 +13,11 @@ public class TilePainter : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _bedsAmountText;
     [SerializeField] private float _bedTimeSpawn;
 
-    private List<Vector3Int> _farmCells = new List<Vector3Int>();
     private float _bedsAmountSpawnTimer;
     private int _bedsCounter;
     private Vector3 _harvestSpawn;
     private FarmData _data;
 
-    public List<Vector3Int> FarmCells { get => _farmCells; }
     public Tile[] VegetableTiles { get => _vegetableTiles; }
     public Tilemap FarmTileMap { get => _framTileMap; }
     public Tile GroundTile { get => _groundTile; }
@@ -69,14 +67,10 @@ public class TilePainter : MonoBehaviour
         var delta = Random.Range(-0.5f, 0.5f);
         HarvestSpawn = new Vector3(_player.transform.position.x + delta, _player.transform.position.y + delta, 0);
 
-        if (_bedsCounter > 0 
-            && !_farmCells.Contains(currentCell) 
-            && !_data.Cells.Contains(currentCell))
+        if (_bedsCounter > 0 && _framTileMap.GetTile(currentCell) == null)
         {
             _bedsCounter--;
             _bedsAmountText.text = "Доступно грядок: " + _bedsCounter.ToString();
-
-            _farmCells.Add(currentCell);
             _framTileMap.SetTile(currentCell, _groundTile);
         }
     }

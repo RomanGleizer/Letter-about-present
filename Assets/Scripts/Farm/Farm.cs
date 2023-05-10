@@ -50,21 +50,17 @@ public class Farm : MonoBehaviour
             encoding: System.Text.Encoding.UTF8);
 
         FarmData data = JsonUtility.FromJson<FarmData>(json);
-        _farmTileMap.ClearAllTiles();
-
-
-        for (int i = 0; i < data.Cells.Count; i++)
-            _farmTileMap.SetTile(data.Cells[i], data.Tiles[i]);
 
         for (int i = 0; i < data.Cells.Count; i++)
         {
-            try
+            _farmTileMap.SetTile(data.Cells[i], data.Tiles[i]);
+
+            if (_farmTileMap.GetTile(data.Cells[i]) != null)
             {
                 if (data.Tiles[i].name == "CarrotGround") GrowVegetable(data, i, 0);
                 if (data.Tiles[i].name == "PatatoGround") GrowVegetable(data, i, 1);
                 if (data.Tiles[i].name == "WheatGround") GrowVegetable(data, i, 2);
             }
-            catch (Exception) { }
         }
 
         for (int i = 0; i < 3; i++)
@@ -85,7 +81,6 @@ public class Farm : MonoBehaviour
             _harvestCollector.GrowVegetable(_harvestCollector.VegetablePrefabs[vegetableIndex], cell, data.Cells[cellsIndex])
             );
 
-        _tilePainter.FarmCells.Add(data.Cells[cellsIndex]);
         _farmTileMap.SetTile(data.Cells[cellsIndex], data.Tiles[cellsIndex]);
     }
 }
