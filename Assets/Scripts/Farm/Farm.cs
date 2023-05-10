@@ -34,7 +34,7 @@ public class Farm : MonoBehaviour
             data.VegetableMenuTextes.Add(_vegetableMenu.VegetableMenuTextes[i]);
         }
 
-        data.BedsCounter = _tilePainter.BedsCount;
+        data.BedsCounter = _tilePainter.BedsCounter;
         var json = JsonUtility.ToJson(data, true);
 
         File.WriteAllText(
@@ -52,32 +52,17 @@ public class Farm : MonoBehaviour
         FarmData data = JsonUtility.FromJson<FarmData>(json);
         _farmTileMap.ClearAllTiles();
 
+
         for (int i = 0; i < data.Cells.Count; i++)
             _farmTileMap.SetTile(data.Cells[i], data.Tiles[i]);
 
-        for (int i = 0; i < data.Tiles.Count; i++)
+        for (int i = 0; i < data.Cells.Count; i++)
         {
             try
             {
-                var cell = _farmTileMap.CellToLocalInterpolated(data.Cells[i]);
-                _tilePainter.Cells.Add(data.Cells[i]);
-                _farmTileMap.SetTile(data.Cells[i], data.Tiles[i]);
-
-                if (data.Tiles[i].name == "CarrotGround")
-                {
-                    StartCoroutine(_harvestCollector.GrowVegetable
-                        (_harvestCollector.VegetablePrefabs[0], cell, data.Cells[i]));
-                }
-                if (data.Tiles[i].name == "PatatoGround")
-                {
-                    StartCoroutine(_harvestCollector.GrowVegetable
-                        (_harvestCollector.VegetablePrefabs[1], cell, data.Cells[i]));
-                }
-                if (data.Tiles[i].name == "WheatGround")
-                {
-                    StartCoroutine(_harvestCollector.GrowVegetable
-                        (_harvestCollector.VegetablePrefabs[2], cell, data.Cells[i]));
-                }
+                if (data.Tiles[i].name == "CarrotGround") GrowVegetable(data, i, 0);
+                if (data.Tiles[i].name == "PatatoGround") GrowVegetable(data, i, 1);
+                if (data.Tiles[i].name == "WheatGround") GrowVegetable(data, i, 2);
             }
             catch (Exception) { }
         }
@@ -89,6 +74,18 @@ public class Farm : MonoBehaviour
             _vegetableMenu.VegetableMenuTextes[i].text = data.VegetableCounters[i].ToString();
         }
 
-        _tilePainter.BedsCount = data.BedsCounter;
+        _tilePainter.BedsCounter = data.BedsCounter;
+    }
+
+    private void GrowVegetable(FarmData data, int cellsIndex, int vegetableIndex)
+    {
+        var cell = _farmTileMap.CellToLocalInterpolated(data.Cells[cellsIndex]);
+
+        StartCoroutine(
+            _harvestCollector.GrowVegetable(_harvestCollector.VegetablePrefabs[vegetableIndex], cell, data.Cells[cellsIndex])
+            );
+
+        _tilePainter.FarmCells.Add(data.Cells[cellsIndex]);
+        _farmTileMap.SetTile(data.Cells[cellsIndex], data.Tiles[cellsIndex]);
     }
 }

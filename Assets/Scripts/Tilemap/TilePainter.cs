@@ -13,12 +13,13 @@ public class TilePainter : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _bedsAmountText;
     [SerializeField] private float _bedTimeSpawn;
 
-    private List<Vector3Int> _cells = new List<Vector3Int>();
+    private List<Vector3Int> _farmCells = new List<Vector3Int>();
     private float _bedsAmountSpawnTimer;
-    private int _bedsCount;
+    private int _bedsCounter;
     private Vector3 _harvestSpawn;
+    private FarmData _data;
 
-    public List<Vector3Int> Cells { get => _cells; }
+    public List<Vector3Int> FarmCells { get => _farmCells; }
     public Tile[] VegetableTiles { get => _vegetableTiles; }
     public Tilemap FarmTileMap { get => _framTileMap; }
     public Tile GroundTile { get => _groundTile; }
@@ -27,10 +28,10 @@ public class TilePainter : MonoBehaviour
         get => _harvestSpawn;
         private set => _harvestSpawn = value;
     }
-    public int BedsCount
+    public int BedsCounter
     {
-        get => _bedsCount;
-        set => _bedsCount = value;
+        get => _bedsCounter;
+        set => _bedsCounter = value;
     }
 
     private void Start()
@@ -38,8 +39,10 @@ public class TilePainter : MonoBehaviour
         var json = File.ReadAllText(
              Application.dataPath + "/FarmData.json",
              encoding: System.Text.Encoding.UTF8);
-        FarmData data = JsonUtility.FromJson<FarmData>(json);
-        _bedsAmountText.text = "Доступно грядок: " + data.BedsCounter.ToString();
+
+        _data = JsonUtility.FromJson<FarmData>(json);
+
+        _bedsAmountText.text = "Доступно грядок: " + _data.BedsCounter.ToString();
     }
 
     private void Update()
@@ -47,20 +50,14 @@ public class TilePainter : MonoBehaviour
         _bedsAmountSpawnTimer += Time.deltaTime;
         if (_bedsAmountSpawnTimer > _bedTimeSpawn && _bedsAmountSpawnTimer < _bedTimeSpawn + 0.1)
         {
-            _bedsCount++;
-            _bedsAmountText.text = "Доступно грядок: " + _bedsCount.ToString();
+            _bedsCounter++;
+            _bedsAmountText.text = "Доступно грядок: " + _bedsCounter.ToString();
             _bedsAmountSpawnTimer = 0;
         }
     }
 
     public void DrawCells()
     {
-        var json = File.ReadAllText(
-            Application.dataPath + "/FarmData.json",
-            encoding: System.Text.Encoding.UTF8);
-
-        FarmData data = JsonUtility.FromJson<FarmData>(json);
-
         var currentCell = _framTileMap.WorldToCell(
             new Vector3
             (
@@ -72,17 +69,15 @@ public class TilePainter : MonoBehaviour
         var delta = Random.Range(-0.5f, 0.5f);
         HarvestSpawn = new Vector3(_player.transform.position.x + delta, _player.transform.position.y + delta, 0);
 
-        if (_bedsCount > 0 && !data.Cells.Contains(currentCell) && !_cells.Contains(currentCell))
+        if (_bedsCounter > 0 
+            && !_farmCells.Contains(currentCell) 
+            && !_data.Cells.Contains(currentCell))
         {
-            _bedsCount--;
-            _bedsAmountText.text = "Доступно грядок: " + _bedsCount.ToString();
+            _bedsCounter--;
+            _bedsAmountText.text = "Доступно грядок: " + _bedsCounter.ToString();
 
-            _cells.Add(currentCell);
+            _farmCells.Add(currentCell);
             _framTileMap.SetTile(currentCell, _groundTile);
         }
-    }
-
-    public void DeleteCells()
-    {
     }
 }
