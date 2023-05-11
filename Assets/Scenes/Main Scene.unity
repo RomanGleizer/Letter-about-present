@@ -1555,8 +1555,8 @@ GameObject:
   - component: {fileID: 73242449}
   - component: {fileID: 73242454}
   - component: {fileID: 73242456}
-  - component: {fileID: 73242457}
   - component: {fileID: 73242458}
+  - component: {fileID: 73242459}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1786,18 +1786,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerAnimator: {fileID: 73242455}
---- !u!114 &73242457
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 73242448}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c31c6b2edf35ce499a6000e8f2c98a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &73242458
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1817,6 +1805,20 @@ MonoBehaviour:
   _carrotActive: {fileID: 1989687295, guid: 06307db8f42094e41968c9f696cf6fa8, type: 3}
   _patatoActive: {fileID: 931526971, guid: 06307db8f42094e41968c9f696cf6fa8, type: 3}
   _wheatActive: {fileID: 1073729989, guid: 06307db8f42094e41968c9f696cf6fa8, type: 3}
+--- !u!114 &73242459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 73242448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4596967050a83aa478d5f70d6c7775bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _vegetableMenu: {fileID: 1004642161}
+  _balanceText: {fileID: 678729384}
 --- !u!1 &84551947
 GameObject:
   m_ObjectHideFlags: 0
@@ -2963,7 +2965,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 229887545}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 73242459}
+        m_TargetAssemblyTypeName: VegetableSeller, Assembly-CSharp
+        m_MethodName: SellVegetable
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &229887545
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4130,7 +4144,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 328505432}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 73242459}
+        m_TargetAssemblyTypeName: VegetableSeller, Assembly-CSharp
+        m_MethodName: SellVegetable
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &328505432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66018,6 +66044,7 @@ MonoBehaviour:
   _tilePainter: {fileID: 1317282038}
   _vegetableMenu: {fileID: 1004642161}
   _harvestCollector: {fileID: 681258833}
+  _vegetableSeller: {fileID: 73242459}
 --- !u!1 &986885897
 GameObject:
   m_ObjectHideFlags: 0
@@ -66857,7 +66884,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1172408889}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 73242459}
+        m_TargetAssemblyTypeName: VegetableSeller, Assembly-CSharp
+        m_MethodName: SellVegetable
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1172408889
 MonoBehaviour:
   m_ObjectHideFlags: 0

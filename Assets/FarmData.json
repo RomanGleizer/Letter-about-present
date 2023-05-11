@@ -499,13 +499,13 @@
             "instanceID": 0
         },
         {
-            "instanceID": 25236
+            "instanceID": 0
         },
         {
-            "instanceID": 0
+            "instanceID": 25216
         },
         {
-            "instanceID": 0
+            "instanceID": 25216
         },
         {
             "instanceID": 0
@@ -604,13 +604,13 @@
             "instanceID": 0
         },
         {
-            "instanceID": 25236
+            "instanceID": 0
         },
         {
-            "instanceID": 0
+            "instanceID": 25216
         },
         {
-            "instanceID": 0
+            "instanceID": 25216
         },
         {
             "instanceID": 0
@@ -709,7 +709,7 @@
             "instanceID": 0
         },
         {
-            "instanceID": 25236
+            "instanceID": 0
         },
         {
             "instanceID": 0
@@ -7566,29 +7566,30 @@
     "VegetableCounters": [
         8,
         0,
-        13
+        12
     ],
     "StockTextes": [
         {
-            "instanceID": 26164
+            "instanceID": 41150
         },
         {
-            "instanceID": 25626
+            "instanceID": 40612
         },
         {
-            "instanceID": 25516
+            "instanceID": 40502
         }
     ],
     "VegetableMenuTextes": [
         {
-            "instanceID": 25472
+            "instanceID": 40458
         },
         {
-            "instanceID": 25348
+            "instanceID": 40334
         },
         {
-            "instanceID": 25394
+            "instanceID": 40380
         }
     ],
-    "BedsCounter": 14
+    "BedsCounter": 12,
+    "Balance": 4
 }

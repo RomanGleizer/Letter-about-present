@@ -8,6 +8,7 @@ public class Farm : MonoBehaviour
     [SerializeField] private TilePainter _tilePainter;
     [SerializeField] private VegetablesMenuHandler _vegetableMenu;
     [SerializeField] private HarvestCollector _harvestCollector;
+    [SerializeField] private VegetableSeller _vegetableSeller;
 
     private int _cellsIndex;
     private FarmData _farmData;
@@ -42,8 +43,9 @@ public class Farm : MonoBehaviour
         }
 
         data.BedsCounter = _tilePainter.BedsCounter;
-        var json = JsonUtility.ToJson(data, true);
+        data.Balance = _vegetableSeller.Balance;
 
+        var json = JsonUtility.ToJson(data, true);
         File.WriteAllText(
             Application.dataPath + "/FarmData.json", 
             json, 
@@ -77,6 +79,7 @@ public class Farm : MonoBehaviour
             _vegetableMenu.VegetableMenuTextes[i].text = _farmData.VegetableCounters[i].ToString();
         }
         _tilePainter.BedsCounter = _farmData.BedsCounter;
+        _vegetableSeller.Balance = _farmData.Balance;
     }
 
     private void GrowVegetable(int vegetableIndex)

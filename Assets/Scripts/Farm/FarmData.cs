@@ -11,4 +11,5 @@ public class FarmData
     public List<TextMeshProUGUI> StockTextes = new List<TextMeshProUGUI>();
     public List<TextMeshProUGUI> VegetableMenuTextes = new List<TextMeshProUGUI>();
     public int BedsCounter = 0;
+    public int Balance = 0;
 }

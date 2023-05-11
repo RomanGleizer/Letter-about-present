@@ -14,8 +14,8 @@ public class HarvestCollector : MonoBehaviour
         var playerPosition = new Vector3(_player.transform.position.x, _player.transform.position.y, 0);
         var worldCurrentCell = _tilePainter.FarmTileMap.WorldToCell(playerPosition);
         var localCurrentCell = _tilePainter.FarmTileMap.WorldToLocal(playerPosition);
+        var vegetableAmount = Random.Range(1, 3);
 
-        var vegetableAmount = Random.Range(1, 4);
         for (int i = 0; i < vegetableAmount; i++)
         {
             StartCoroutine(GrowVegetable(_vegetablePrefabs[vegetableIndex], localCurrentCell, worldCurrentCell));
