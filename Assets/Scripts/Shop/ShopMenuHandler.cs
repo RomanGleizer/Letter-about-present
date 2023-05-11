@@ -24,12 +24,8 @@ public class ShopMenuHandler : MonoBehaviour
 
     private void Start()
     {
-        _bedsSpawnSpeedPrice = 5;
-        _vagetableChancePrice = 5;
-        _playerMovePrice = 5;
-        _bedsSpawnSpeedLevel = 1;
-        _vegetableChanceLevel = 1;
-        _playerMoveSpeedLevel = 1;
+        _bedsSpawnSpeedPrice = _vagetableChancePrice = _playerMovePrice = 5;
+        _bedsSpawnSpeedLevel = _vegetableChanceLevel = _playerMoveSpeedLevel = 1;
     }
 
     private void Update()
@@ -54,37 +50,37 @@ public class ShopMenuHandler : MonoBehaviour
 
     public void BuyBoost(Button boostButton)
     {
-        if (_vegetableSeller.Balance >= 5 && _vegetableSeller.Balance >= _bedsSpawnSpeedPrice)
+        if (boostButton.GetComponent("BedsGrowButton")
+            && _vegetableSeller.Balance >= _bedsSpawnSpeedPrice)
         {
-            if (boostButton.GetComponent("BedsGrowButton"))
-            {
-                _vegetableSeller.Balance -= _bedsSpawnSpeedPrice;
-                ChangeTextValues(
-                    ref _bedsSpawnSpeedLevel,
-                    ref _bedsSpawnSpeedPrice,
-                    _bedsSpawnSpeedText, 
-                    _bedsSpawnPriceText);
-            }
-            if (boostButton.GetComponent("VegetableChanceButton"))
-            {
-                _vegetableSeller.Balance -= _vagetableChancePrice;
-                ChangeTextValues(
-                    ref _vegetableChanceLevel,
-                    ref _vagetableChancePrice,
-                    _vagetableChanceText,
-                    _vagetableSpawnPriceText);
-            }
-            if (boostButton.GetComponent("PlayerMoveButton"))
-            {
-                _vegetableSeller.Balance -= _playerMovePrice;
-                ChangeTextValues(
-                    ref _playerMoveSpeedLevel,
-                    ref _playerMovePrice,
-                    _playerMoveText,
-                    _playerMovePriceText);
-            }
-            _vegetableSeller.BalanceText.text = "Баланс: " + _vegetableSeller.Balance.ToString();
+            _vegetableSeller.Balance -= _bedsSpawnSpeedPrice;
+            ChangeTextValues(
+                ref _bedsSpawnSpeedLevel,
+                ref _bedsSpawnSpeedPrice,
+                _bedsSpawnSpeedText,
+                _bedsSpawnPriceText);
         }
+        if (boostButton.GetComponent("VegetableChanceButton")
+            && _vegetableSeller.Balance >= _vagetableChancePrice)
+        {
+            _vegetableSeller.Balance -= _vagetableChancePrice;
+            ChangeTextValues(
+                ref _vegetableChanceLevel,
+                ref _vagetableChancePrice,
+                _vagetableChanceText,
+                _vagetableSpawnPriceText);
+        }
+        if (boostButton.GetComponent("PlayerMoveButton")
+            && _vegetableSeller.Balance >= _playerMovePrice)
+        {
+            _vegetableSeller.Balance -= _playerMovePrice;
+            ChangeTextValues(
+                ref _playerMoveSpeedLevel,
+                ref _playerMovePrice,
+                _playerMoveText,
+                _playerMovePriceText);
+        }
+        _vegetableSeller.BalanceText.text = "Баланс: " + _vegetableSeller.Balance.ToString();
     }
 
     private void ChangeTextValues(

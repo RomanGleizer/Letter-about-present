@@ -65114,6 +65114,7 @@ GameObject:
   - component: {fileID: 682705113}
   - component: {fileID: 682705112}
   - component: {fileID: 682705111}
+  - component: {fileID: 682705114}
   m_Layer: 0
   m_Name: Buy wheat seeds
   m_TagString: Untagged
@@ -65186,7 +65187,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 682705112}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1004642163}
+        m_TargetAssemblyTypeName: VegetableShopHandler, Assembly-CSharp
+        m_MethodName: BuyVegetable
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 682705111}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &682705112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65225,6 +65238,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 682705109}
   m_CullTransparentMesh: 1
+--- !u!114 &682705114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 682705109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e25b4e8892fd935409cab0ea9daea1c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &697243609
 GameObject:
   m_ObjectHideFlags: 0
@@ -65573,6 +65598,7 @@ GameObject:
   - component: {fileID: 752612730}
   - component: {fileID: 752612729}
   - component: {fileID: 752612728}
+  - component: {fileID: 752612731}
   m_Layer: 0
   m_Name: Buy carrot seeds
   m_TagString: Untagged
@@ -65645,7 +65671,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 752612729}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1004642163}
+        m_TargetAssemblyTypeName: VegetableShopHandler, Assembly-CSharp
+        m_MethodName: BuyVegetable
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 752612728}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &752612729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65684,6 +65722,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 752612726}
   m_CullTransparentMesh: 1
+--- !u!114 &752612731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 752612726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38b09910195c50b43a10f7efda920187, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &780974277
 GameObject:
   m_ObjectHideFlags: 0
@@ -66041,6 +66091,7 @@ GameObject:
   - component: {fileID: 846423678}
   - component: {fileID: 846423677}
   - component: {fileID: 846423676}
+  - component: {fileID: 846423679}
   m_Layer: 0
   m_Name: Buy patato seeds
   m_TagString: Untagged
@@ -66113,7 +66164,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 846423677}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1004642163}
+        m_TargetAssemblyTypeName: VegetableShopHandler, Assembly-CSharp
+        m_MethodName: BuyVegetable
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 846423676}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &846423677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66152,6 +66215,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 846423674}
   m_CullTransparentMesh: 1
+--- !u!114 &846423679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 846423674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9eef028802b20c24b9796d73b4d02228, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &878047516
 GameObject:
   m_ObjectHideFlags: 0
@@ -67021,6 +67096,11 @@ MonoBehaviour:
   - {fileID: 234784757}
   - {fileID: 365984280}
   _loadGameCanvas: {fileID: 519420036}
+  _vegetablesMenu: {fileID: 1004642161}
+  _vegetableSeller: {fileID: 73242459}
+  _carrotPriceText: {fileID: 78485607}
+  _patatoPriceText: {fileID: 1366605397}
+  _wheatPriceText: {fileID: 1329266617}
 --- !u!1 &1022423675
 GameObject:
   m_ObjectHideFlags: 0

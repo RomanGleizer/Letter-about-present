@@ -4,7 +4,6 @@ using UnityEngine;
 public class VegetableTaker : MonoBehaviour
 {
     [SerializeField] private VegetablesMenuHandler _menu;
-
     [SerializeField] private Sprite _carrotDefault;
     [SerializeField] private Sprite _patatoDefault;
     [SerializeField] private Sprite _wheatDefault;
@@ -15,10 +14,6 @@ public class VegetableTaker : MonoBehaviour
     private int _carrotCounter;
     private int _patatoCounter;
     private int _wheatCounter;
-
-    public int CarrotCounter { get => _carrotCounter; set => _carrotCounter = value; }
-    public int PatatoCounter { get => _carrotCounter; set => _carrotCounter = value; }
-    public int WheatCounter { get => _carrotCounter; set => _carrotCounter = value; }
 
     private void Update()
     {
