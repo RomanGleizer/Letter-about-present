@@ -3,9 +3,7 @@ using UnityEngine;
 public class PauseHandler : MonoBehaviour
 {
     [SerializeField] private GameObject _pauseMenu;
-    [SerializeField] private GameObject _firstVegetableMenu;
-    [SerializeField] private GameObject _secondVegetableMenu;
-    [SerializeField] private GameObject _stockMenu;
+    [SerializeField] private GameObject[] _menues;
 
     private void Update()
     {
@@ -14,9 +12,8 @@ public class PauseHandler : MonoBehaviour
 
         if (_pauseMenu.activeSelf)
         {
-            _firstVegetableMenu?.SetActive(false);
-            _secondVegetableMenu?.SetActive(false);
-            _stockMenu?.SetActive(false);
+            foreach (var menu in _menues)
+                menu.SetActive(false);
             Time.timeScale = 0;
         }
         if (_pauseMenu.activeSelf) Time.timeScale = 0;

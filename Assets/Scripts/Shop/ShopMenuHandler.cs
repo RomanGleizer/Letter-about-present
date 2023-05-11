@@ -3,10 +3,13 @@ using UnityEngine;
 
 public class ShopMenuHandler : MonoBehaviour
 {
-    [SerializeField] private GameObject _shop;
+    [SerializeField] private GameObject _boostShop;
+    [SerializeField] private GameObject[] _menues;
+    [SerializeField] private LoadGameCanvasHandler _loadGameCanvas;
     [SerializeField] private TextMeshProUGUI _bedsSpawnSpeedText;
     [SerializeField] private TextMeshProUGUI _vagetableChanceText;
     [SerializeField] private TextMeshProUGUI _playerMoveText;
+
 
     private int _bedsSpawnSpeed;
     private int _vegetableChance;
@@ -26,6 +29,13 @@ public class ShopMenuHandler : MonoBehaviour
         _playerMoveText.text = "Уровень : " + _playerMoveSpeed.ToString();
 
         if (Input.GetKey(KeyCode.O))
-            _shop.SetActive(true);
+        {
+            _boostShop.SetActive(true);
+            foreach (var menu in _menues)
+                menu.SetActive(false);
+        }
+        
+        if (_boostShop.activeSelf) _loadGameCanvas.SetPlayerComponentState(false);
+        else _loadGameCanvas.SetPlayerComponentState(true);
     }
 }
