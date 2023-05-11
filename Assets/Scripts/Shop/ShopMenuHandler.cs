@@ -1,3 +1,4 @@
+using System.IO;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,30 +13,24 @@ public class ShopMenuHandler : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _bedsSpawnPriceText;
     [SerializeField] private TextMeshProUGUI _vagetableChanceText;
     [SerializeField] private TextMeshProUGUI _vagetableSpawnPriceText;
-    [SerializeField] private TextMeshProUGUI _playerMoveText;
-    [SerializeField] private TextMeshProUGUI _playerMovePriceText;
+    [SerializeField] private TextMeshProUGUI _playerMoveSpeedText;
+    [SerializeField] private TextMeshProUGUI _playerMovePriceSpeedText;
 
     private int _bedsSpawnSpeedLevel;
     private int _bedsSpawnSpeedPrice;
     private int _vegetableChanceLevel;
-    private int _vagetableChancePrice;
+    private int _vegetableChancePrice;
     private int _playerMoveSpeedLevel;
-    private int _playerMovePrice;
-
-    private void Start()
-    {
-        _bedsSpawnSpeedPrice = _vagetableChancePrice = _playerMovePrice = 5;
-        _bedsSpawnSpeedLevel = _vegetableChanceLevel = _playerMoveSpeedLevel = 1;
-    }
+    private int _playerMoveSpeedPrice;
 
     private void Update()
     {
         _bedsSpawnSpeedText.text = "Уровень : " + _bedsSpawnSpeedLevel.ToString();
         _vagetableChanceText.text = "Уровень : " + _vegetableChanceLevel.ToString();
-        _playerMoveText.text = "Уровень : " + _playerMoveSpeedLevel.ToString();
+        _playerMoveSpeedText.text = "Уровень : " + _playerMoveSpeedLevel.ToString();
         _bedsSpawnPriceText.text = "Стоимость : " + _bedsSpawnSpeedPrice.ToString();
-        _vagetableSpawnPriceText.text = "Стоимость : " + _vagetableChancePrice.ToString();
-        _playerMovePriceText.text = "Стоимость : " + _playerMovePrice.ToString();
+        _vagetableSpawnPriceText.text = "Стоимость : " + _vegetableChancePrice.ToString();
+        _playerMovePriceSpeedText.text = "Стоимость : " + _playerMoveSpeedPrice.ToString();
 
         if (Input.GetKey(KeyCode.O))
         {
@@ -54,33 +49,56 @@ public class ShopMenuHandler : MonoBehaviour
             && _vegetableSeller.Balance >= _bedsSpawnSpeedPrice)
         {
             _vegetableSeller.Balance -= _bedsSpawnSpeedPrice;
-            ChangeTextValues(
-                ref _bedsSpawnSpeedLevel,
-                ref _bedsSpawnSpeedPrice,
-                _bedsSpawnSpeedText,
-                _bedsSpawnPriceText);
+            ChangeTextValues(ref _bedsSpawnSpeedLevel, ref _bedsSpawnSpeedPrice, _bedsSpawnSpeedText, _bedsSpawnPriceText);
         }
         if (boostButton.GetComponent("VegetableChanceButton")
-            && _vegetableSeller.Balance >= _vagetableChancePrice)
+            && _vegetableSeller.Balance >= _vegetableChancePrice)
         {
-            _vegetableSeller.Balance -= _vagetableChancePrice;
-            ChangeTextValues(
-                ref _vegetableChanceLevel,
-                ref _vagetableChancePrice,
-                _vagetableChanceText,
-                _vagetableSpawnPriceText);
+            _vegetableSeller.Balance -= _vegetableChancePrice;
+            ChangeTextValues(ref _vegetableChanceLevel, ref _vegetableChancePrice, _vagetableChanceText, _vagetableSpawnPriceText);
         }
         if (boostButton.GetComponent("PlayerMoveButton")
-            && _vegetableSeller.Balance >= _playerMovePrice)
+            && _vegetableSeller.Balance >= _playerMoveSpeedPrice)
         {
-            _vegetableSeller.Balance -= _playerMovePrice;
-            ChangeTextValues(
-                ref _playerMoveSpeedLevel,
-                ref _playerMovePrice,
-                _playerMoveText,
-                _playerMovePriceText);
+            _vegetableSeller.Balance -= _playerMoveSpeedPrice;
+            ChangeTextValues(ref _playerMoveSpeedLevel, ref _playerMoveSpeedPrice, _playerMoveSpeedText, _playerMovePriceSpeedText);
         }
         _vegetableSeller.BalanceText.text = "Баланс: " + _vegetableSeller.Balance.ToString();
+    }
+
+    public void SaveBoostShopData()
+    {
+        BoostShopData data = new BoostShopData();
+        #region Values
+        data.BedsSpawnSpeedPrice = _bedsSpawnSpeedPrice;
+        data.VegetableChancePrice = _vegetableChancePrice;
+        data.PlayerMovePrice = _playerMoveSpeedPrice;
+        data.BedsSpawnSpeedLevel = _bedsSpawnSpeedLevel;
+        data.VegetableChanceLevel = _vegetableChanceLevel;
+        data.PlayerMovePrice = _playerMoveSpeedPrice;
+        #endregion
+        var json = JsonUtility.ToJson(data, true);
+        File.WriteAllText(
+            Application.dataPath + "/BoostShopData.json",
+            json,
+            encoding: System.Text.Encoding.UTF8);
+    }
+
+    public void LoadBoostShopData()
+    {
+        var json = File.ReadAllText(
+            Application.dataPath + "/BoostShopData.json",
+            encoding: System.Text.Encoding.UTF8);
+        var data = JsonUtility.FromJson<BoostShopData>(json);
+
+        #region Values
+        _bedsSpawnSpeedPrice = data.BedsSpawnSpeedPrice;
+        _vegetableChancePrice = data.VegetableChancePrice;
+        _playerMoveSpeedPrice = data.PlayerMovePrice;
+        _bedsSpawnSpeedLevel = data.BedsSpawnSpeedLevel;
+        _vegetableChanceLevel = data.VegetableChanceLevel;
+        _playerMoveSpeedPrice = data.PlayerMovePrice;
+        #endregion
     }
 
     private void ChangeTextValues(

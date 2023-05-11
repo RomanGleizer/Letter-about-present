@@ -2420,6 +2420,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1004642162}
+        m_TargetAssemblyTypeName: ShopMenuHandler, Assembly-CSharp
+        m_MethodName: LoadBoostShopData
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &136791535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67075,8 +67087,8 @@ MonoBehaviour:
   _bedsSpawnPriceText: {fileID: 1357709526}
   _vagetableChanceText: {fileID: 145541457}
   _vagetableSpawnPriceText: {fileID: 569300290}
-  _playerMoveText: {fileID: 1252329037}
-  _playerMovePriceText: {fileID: 1928629076}
+  _playerMoveSpeedText: {fileID: 1252329037}
+  _playerMovePriceSpeedText: {fileID: 1928629076}
 --- !u!114 &1004642163
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68050,7 +68062,7 @@ GameObject:
   - component: {fileID: 1252329038}
   - component: {fileID: 1252329037}
   m_Layer: 0
-  m_Name: Level text (1)
+  m_Name: Level text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69163,6 +69175,18 @@ MonoBehaviour:
       - m_Target: {fileID: 968820523}
         m_TargetAssemblyTypeName: Farm, Assembly-CSharp
         m_MethodName: SaveFarm
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1004642162}
+        m_TargetAssemblyTypeName: ShopMenuHandler, Assembly-CSharp
+        m_MethodName: SaveBoostShopData
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

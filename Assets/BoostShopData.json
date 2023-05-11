@@ -1,0 +1,8 @@
+﻿{
+    "BedsSpawnSpeedPrice": 7,
+    "VegetableChancePrice": 5,
+    "PlayerMovePrice": 5,
+    "BedsSpawnSpeedLevel": 2,
+    "VegetableChanceLevel": 1,
+    "PlayerMoveLevel": 0
+}

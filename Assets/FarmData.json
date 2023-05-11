@@ -712,7 +712,7 @@
             "instanceID": 0
         },
         {
-            "instanceID": 25206
+            "instanceID": 25220
         },
         {
             "instanceID": 0
@@ -7566,7 +7566,7 @@
     "VegetableCounters": [
         7,
         0,
-        12
+        6
     ],
     "StockTextes": [
         {
@@ -7591,5 +7591,5 @@
         }
     ],
     "BedsCounter": 12,
-    "Balance": 4
+    "Balance": 0
 }
