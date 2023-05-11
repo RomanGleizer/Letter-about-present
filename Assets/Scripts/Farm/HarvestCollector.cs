@@ -28,7 +28,7 @@ public class HarvestCollector : MonoBehaviour
     public IEnumerator GrowVegetable(GameObject obj, Vector3 position, Vector3Int cell)
     {
         var tile = _tilePainter.FarmTileMap.GetTile(cell);
-        if (tile != _tilePainter.GroundTile)
+        if (tile != _tilePainter.GroundTile && tile != null)
         {
             yield return new WaitForSeconds(5);
             Instantiate(obj, position, Quaternion.identity);

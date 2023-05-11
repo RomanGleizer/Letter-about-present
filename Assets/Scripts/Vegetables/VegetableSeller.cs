@@ -14,6 +14,11 @@ public class VegetableSeller : MonoBehaviour
         get => _balance; 
         set => _balance = value;
     }
+    public TextMeshProUGUI BalanceText
+    {
+        get => _balanceText;
+        set => _balanceText = value;
+    }
 
     private void Start()
     {
@@ -32,7 +37,7 @@ public class VegetableSeller : MonoBehaviour
         var stockText = _vegetableMenu.StockTextes[index];
         var vegetableAmount = _vegetableMenu.VegetableCounters[index];
 
-        if (vegetableAmount > 0 && index >= 0)
+        if (vegetableAmount > 0 && index >= 0 && index <= 3)
         {
             _balance++;
             vegetableAmount--;
