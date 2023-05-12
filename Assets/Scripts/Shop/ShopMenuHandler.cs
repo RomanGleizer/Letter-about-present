@@ -75,7 +75,7 @@ public class ShopMenuHandler : MonoBehaviour
         data.PlayerMovePrice = _playerMoveSpeedPrice;
         data.BedsSpawnSpeedLevel = _bedsSpawnSpeedLevel;
         data.VegetableChanceLevel = _vegetableChanceLevel;
-        data.PlayerMovePrice = _playerMoveSpeedPrice;
+        data.PlayerMoveLevel = _playerMoveSpeedLevel;
         #endregion
         var json = JsonUtility.ToJson(data, true);
         File.WriteAllText(
@@ -97,7 +97,7 @@ public class ShopMenuHandler : MonoBehaviour
         _playerMoveSpeedPrice = data.PlayerMovePrice;
         _bedsSpawnSpeedLevel = data.BedsSpawnSpeedLevel;
         _vegetableChanceLevel = data.VegetableChanceLevel;
-        _playerMoveSpeedPrice = data.PlayerMovePrice;
+        _playerMoveSpeedLevel = data.PlayerMoveLevel;
         #endregion
     }
 

@@ -1,4 +1,5 @@
 using System.IO;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -30,6 +31,13 @@ public class Farm : MonoBehaviour
                 data.Tiles.Add(tile);
                 data.Cells.Add(new Vector3Int(x, y, 0));
             }
+
+        foreach (GameObject obj in FindObjectsOfType(typeof(GameObject)))
+        {
+            if (obj.GetComponent<Carrot>()) SaveDroppedVegetables(obj, data, "carrot");
+            if (obj.GetComponent<Patato>()) SaveDroppedVegetables(obj, data, "patato");
+            if (obj.GetComponent<Wheat>()) SaveDroppedVegetables(obj, data, "wheat");
+        }
 
         for (int i = 0; i < 3; i++)
         {
@@ -72,6 +80,14 @@ public class Farm : MonoBehaviour
             }
         }
 
+        var droppedVegetables = _farmData.DroppedVegetables.ToList();
+        for (int i = 0; i < droppedVegetables.Count; i++)
+        {
+            if (droppedVegetables[i] == "carrot") InstantiateDroppedVegetables(0, i);
+            if (droppedVegetables[i] == "patato") InstantiateDroppedVegetables(1, i);
+            if (droppedVegetables[i] == "wheat") InstantiateDroppedVegetables(2, i);
+        }
+
         for (int i = 0; i < 3; i++)
         {
             _vegetableMenu.VegetableCounters[i] = _farmData.VegetableCounters[i];
@@ -94,5 +110,19 @@ public class Farm : MonoBehaviour
             ));
 
         _farmTileMap.SetTile(_farmData.Cells[_cellsIndex], _farmData.Tiles[_cellsIndex]);
+    }
+
+    private void SaveDroppedVegetables(GameObject obj, FarmData data, string name)
+    {
+        data.DroppedVegetables.Add(name);
+        data.DroppedVegetablesPositions.Add(obj.transform.position);
+    }
+
+    private void InstantiateDroppedVegetables(int vegetableIndex, int positonIndex)
+    {
+        Instantiate(
+            _harvestCollector.VegetablePrefabs[vegetableIndex],
+            _farmData.DroppedVegetablesPositions[positonIndex],
+            Quaternion.identity);
     }
 }

@@ -925,7 +925,7 @@
             "instanceID": 0
         },
         {
-            "instanceID": 0
+            "instanceID": 25260
         },
         {
             "instanceID": 0
@@ -1030,7 +1030,7 @@
             "instanceID": 0
         },
         {
-            "instanceID": 0
+            "instanceID": 25260
         },
         {
             "instanceID": 0
@@ -7564,32 +7564,48 @@
         }
     ],
     "VegetableCounters": [
-        7,
+        3,
         0,
-        6
+        2
+    ],
+    "DroppedVegetables": [
+        "patato",
+        "patato"
+    ],
+    "DroppedVegetablesPositions": [
+        {
+            "x": -10.574075698852539,
+            "y": 5.665930271148682,
+            "z": 0.0
+        },
+        {
+            "x": -10.449995994567871,
+            "y": 5.790010452270508,
+            "z": 0.0
+        }
     ],
     "StockTextes": [
         {
-            "instanceID": 26254
+            "instanceID": 37616
         },
         {
-            "instanceID": 25634
+            "instanceID": 36808
         },
         {
-            "instanceID": 25542
+            "instanceID": 36712
         }
     ],
     "VegetableMenuTextes": [
         {
-            "instanceID": 25498
+            "instanceID": 36664
         },
         {
-            "instanceID": 25368
+            "instanceID": 36522
         },
         {
-            "instanceID": 25414
+            "instanceID": 36568
         }
     ],
-    "BedsCounter": 15,
+    "BedsCounter": 24,
     "Balance": 0
 }
