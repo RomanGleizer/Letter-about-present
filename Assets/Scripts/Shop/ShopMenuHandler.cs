@@ -25,12 +25,12 @@ public class ShopMenuHandler : MonoBehaviour
 
     private void Update()
     {
-        _bedsSpawnSpeedText.text = "Уровень : " + _bedsSpawnSpeedLevel.ToString();
-        _vagetableChanceText.text = "Уровень : " + _vegetableChanceLevel.ToString();
-        _playerMoveSpeedText.text = "Уровень : " + _playerMoveSpeedLevel.ToString();
-        _bedsSpawnPriceText.text = "Стоимость : " + _bedsSpawnSpeedPrice.ToString();
-        _vagetableSpawnPriceText.text = "Стоимость : " + _vegetableChancePrice.ToString();
-        _playerMovePriceSpeedText.text = "Стоимость : " + _playerMoveSpeedPrice.ToString();
+        _bedsSpawnSpeedText.text = "Уровень: " + _bedsSpawnSpeedLevel.ToString();
+        _vagetableChanceText.text = "Уровень: " + _vegetableChanceLevel.ToString();
+        _playerMoveSpeedText.text = "Уровень: " + _playerMoveSpeedLevel.ToString();
+        _bedsSpawnPriceText.text = "Стоимость: " + _bedsSpawnSpeedPrice.ToString();
+        _vagetableSpawnPriceText.text = "Стоимость: " + _vegetableChancePrice.ToString();
+        _playerMovePriceSpeedText.text = "Стоимость: " + _playerMoveSpeedPrice.ToString();
 
         if (Input.GetKey(KeyCode.O))
         {
