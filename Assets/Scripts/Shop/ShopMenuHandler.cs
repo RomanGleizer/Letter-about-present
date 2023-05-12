@@ -45,19 +45,19 @@ public class ShopMenuHandler : MonoBehaviour
 
     public void BuyBoost(Button boostButton)
     {
-        if (boostButton.GetComponent("BedsGrowButton")
+        if (boostButton.GetComponent<BedsGrowButton>()
             && _vegetableSeller.Balance >= _bedsSpawnSpeedPrice)
         {
             _vegetableSeller.Balance -= _bedsSpawnSpeedPrice;
             ChangeTextValues(ref _bedsSpawnSpeedLevel, ref _bedsSpawnSpeedPrice, _bedsSpawnSpeedText, _bedsSpawnPriceText);
         }
-        if (boostButton.GetComponent("VegetableChanceButton")
+        if (boostButton.GetComponent<VegetableChanceButton>()
             && _vegetableSeller.Balance >= _vegetableChancePrice)
         {
             _vegetableSeller.Balance -= _vegetableChancePrice;
             ChangeTextValues(ref _vegetableChanceLevel, ref _vegetableChancePrice, _vagetableChanceText, _vagetableSpawnPriceText);
         }
-        if (boostButton.GetComponent("PlayerMoveButton")
+        if (boostButton.GetComponent<PlayerMoveButton>()
             && _vegetableSeller.Balance >= _playerMoveSpeedPrice)
         {
             _vegetableSeller.Balance -= _playerMoveSpeedPrice;

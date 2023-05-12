@@ -712,7 +712,7 @@
             "instanceID": 0
         },
         {
-            "instanceID": 25220
+            "instanceID": 0
         },
         {
             "instanceID": 0
@@ -7570,26 +7570,26 @@
     ],
     "StockTextes": [
         {
-            "instanceID": 26240
+            "instanceID": 26254
         },
         {
-            "instanceID": 25626
+            "instanceID": 25634
         },
         {
-            "instanceID": 25534
+            "instanceID": 25542
         }
     ],
     "VegetableMenuTextes": [
         {
-            "instanceID": 25490
+            "instanceID": 25498
         },
         {
-            "instanceID": 25360
+            "instanceID": 25368
         },
         {
-            "instanceID": 25406
+            "instanceID": 25414
         }
     ],
-    "BedsCounter": 12,
+    "BedsCounter": 15,
     "Balance": 0
 }
