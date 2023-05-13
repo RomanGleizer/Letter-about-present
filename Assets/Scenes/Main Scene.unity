@@ -2658,6 +2658,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1149233516}
+        m_TargetAssemblyTypeName: NoblewomanMover, Assembly-CSharp
+        m_MethodName: LoadNobleWomanData
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &136791535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68469,7 +68481,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _path: {fileID: 791112706}
-  _speed: 1.2
+  _speed: 5
   _animator: {fileID: 1149233517}
 --- !u!95 &1149233517
 Animator:
@@ -70690,6 +70702,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1004642162}
         m_TargetAssemblyTypeName: ShopMenuHandler, Assembly-CSharp
         m_MethodName: SaveBoostShopData
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1149233516}
+        m_TargetAssemblyTypeName: NoblewomanMover, Assembly-CSharp
+        m_MethodName: SaveNobleWomanData
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
