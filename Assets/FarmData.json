@@ -400,13 +400,13 @@
             "instanceID": 0
         },
         {
-            "instanceID": 0
+            "instanceID": 25266
         },
         {
-            "instanceID": 0
+            "instanceID": 25266
         },
         {
-            "instanceID": 0
+            "instanceID": 25266
         },
         {
             "instanceID": 0
@@ -505,13 +505,13 @@
             "instanceID": 0
         },
         {
-            "instanceID": 0
+            "instanceID": 25266
         },
         {
-            "instanceID": 0
+            "instanceID": 25266
         },
         {
-            "instanceID": 0
+            "instanceID": 25266
         },
         {
             "instanceID": 0
@@ -610,16 +610,16 @@
             "instanceID": 0
         },
         {
-            "instanceID": 0
+            "instanceID": 25266
         },
         {
-            "instanceID": 0
+            "instanceID": 25266
         },
         {
-            "instanceID": 0
+            "instanceID": 25266
         },
         {
-            "instanceID": 25262
+            "instanceID": 0
         },
         {
             "instanceID": 0
@@ -715,13 +715,13 @@
             "instanceID": 0
         },
         {
-            "instanceID": 0
+            "instanceID": 25266
         },
         {
-            "instanceID": 0
+            "instanceID": 25266
         },
         {
-            "instanceID": 0
+            "instanceID": 25266
         },
         {
             "instanceID": 0
@@ -820,13 +820,13 @@
             "instanceID": 0
         },
         {
-            "instanceID": 0
+            "instanceID": 25266
         },
         {
-            "instanceID": 0
+            "instanceID": 25266
         },
         {
-            "instanceID": 0
+            "instanceID": 25266
         },
         {
             "instanceID": 0
@@ -925,13 +925,13 @@
             "instanceID": 0
         },
         {
-            "instanceID": 0
+            "instanceID": 25266
         },
         {
-            "instanceID": 0
+            "instanceID": 25266
         },
         {
-            "instanceID": 0
+            "instanceID": 25266
         },
         {
             "instanceID": 0
@@ -1030,13 +1030,13 @@
             "instanceID": 0
         },
         {
-            "instanceID": 0
+            "instanceID": 25266
         },
         {
-            "instanceID": 0
+            "instanceID": 25266
         },
         {
-            "instanceID": 0
+            "instanceID": 25266
         },
         {
             "instanceID": 0
@@ -1135,13 +1135,13 @@
             "instanceID": 0
         },
         {
-            "instanceID": 0
+            "instanceID": 25266
         },
         {
-            "instanceID": 0
+            "instanceID": 25266
         },
         {
-            "instanceID": 0
+            "instanceID": 25266
         },
         {
             "instanceID": 0
@@ -7572,26 +7572,26 @@
     "DroppedVegetablesPositions": [],
     "StockTextes": [
         {
-            "instanceID": 94796
+            "instanceID": 26522
         },
         {
-            "instanceID": 93988
+            "instanceID": 25714
         },
         {
-            "instanceID": 93892
+            "instanceID": 25616
         }
     ],
     "VegetableMenuTextes": [
         {
-            "instanceID": 93844
+            "instanceID": 25568
         },
         {
-            "instanceID": 93702
+            "instanceID": 25426
         },
         {
-            "instanceID": 93748
+            "instanceID": 25472
         }
     ],
-    "BedsCounter": 47,
+    "BedsCounter": 45,
     "Balance": 1
 }

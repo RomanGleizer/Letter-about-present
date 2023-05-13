@@ -1724,6 +1724,7 @@ GameObject:
   - component: {fileID: 73242458}
   - component: {fileID: 73242459}
   - component: {fileID: 73242460}
+  - component: {fileID: 73242461}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1999,6 +2000,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _vegetableSeller: {fileID: 73242459}
+--- !u!114 &73242461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 73242448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fcbc8f5724e0ea43aa7620e4ee59473, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _coinPrefab: {fileID: 2069211904960374369, guid: 24463c3906ba50b4fb662c9bf9e3388d, type: 3}
 --- !u!1 &76037864
 GameObject:
   m_ObjectHideFlags: 0
@@ -10120,6 +10134,7 @@ GameObject:
   - component: {fileID: 519420033}
   - component: {fileID: 519420035}
   - component: {fileID: 519420036}
+  - component: {fileID: 519420037}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -10254,6 +10269,7 @@ MonoBehaviour:
   - {fileID: 1653486253}
   - {fileID: 1469602326}
   - {fileID: 365984280}
+  _loadGameMenu: {fileID: 604387632}
 --- !u!114 &519420036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10268,6 +10284,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _loadScene: {fileID: 604387632}
   _player: {fileID: 73242448}
+--- !u!114 &519420037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f9e73665ad2e2440a56693a736009a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _noblewoman: {fileID: 1149233516}
+  _loadGame: {fileID: 604387632}
 --- !u!1 &534270341
 GameObject:
   m_ObjectHideFlags: 0
@@ -68530,7 +68560,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &1149233519
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70714,6 +70744,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1149233516}
         m_TargetAssemblyTypeName: NoblewomanMover, Assembly-CSharp
         m_MethodName: SaveNobleWomanData
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 73242461}
+        m_TargetAssemblyTypeName: DroppedCoinSaver, Assembly-CSharp
+        m_MethodName: SaveDroppedCoinData
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

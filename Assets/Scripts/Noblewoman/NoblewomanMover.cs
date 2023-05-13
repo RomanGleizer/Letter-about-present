@@ -11,6 +11,8 @@ public class NoblewomanMover : MonoBehaviour
     private int _currentPoint;
     private Transform _target;
 
+    public float Speed { get => _speed; set => _speed = value; }
+
     private void Start()
     {
         _points = new Transform[_path.childCount];
