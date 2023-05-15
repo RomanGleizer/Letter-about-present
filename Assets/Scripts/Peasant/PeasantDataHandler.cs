@@ -1,7 +1,9 @@
+using System.Collections;
+using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
-public class NoblewomanMover : MonoBehaviour
+public class PeasantDataHandler : MonoBehaviour
 {
     [SerializeField] private Transform _path;
     [SerializeField] private float _speed;
@@ -24,7 +26,7 @@ public class NoblewomanMover : MonoBehaviour
     {
         _target = _points[_currentPoint];
         transform.position = Vector3.MoveTowards(transform.position, _target.position, _speed * Time.deltaTime);
-    
+
         if (transform.position == _target.position)
         {
             _currentPoint++;
@@ -46,7 +48,7 @@ public class NoblewomanMover : MonoBehaviour
         _animator.SetBool(second, false);
     }
 
-    public void SaveNobleWomanData()
+    public void SavePeasantData()
     {
         var data = new NoblewomanData()
         {
@@ -61,23 +63,23 @@ public class NoblewomanMover : MonoBehaviour
 
         var json = JsonUtility.ToJson(data, true);
         File.WriteAllText(
-            Application.dataPath + "/NoblewomanData.json",
+            Application.dataPath + "/PeasantData.json",
             json,
             encoding: System.Text.Encoding.UTF8);
     }
 
-    public void LoadNobleWomanData()
+    public void LoadNoblePeasantData()
     {
         var json = File.ReadAllText(
-            Application.dataPath + "/NoblewomanData.json",
+            Application.dataPath + "/PeasantData.json",
             encoding: System.Text.Encoding.UTF8);
 
         var data = JsonUtility.FromJson<NoblewomanData>(json);
 
-        if (data.IsPlayerMoveRight) _animator.Play("NoblewomanMoveRight");
-        if (data.IsPlayerMoveLeft) _animator.Play("NoblewomanMoveLeft");
-        if (data.IsPlayerMoveUp) _animator.Play("NoblewomanMoveUp");
-        if (data.IsPlayerMoveDown) _animator.Play("NoblewomanMoveDown");
+        if (data.IsPlayerMoveRight) _animator.Play("Move Right");
+        if (data.IsPlayerMoveLeft) _animator.Play("Move Left");
+        if (data.IsPlayerMoveUp) _animator.Play("Move Up");
+        if (data.IsPlayerMoveDown) _animator.Play("Move Down");
 
         _target = data.Target;
         _currentPoint = data.CurrentPoint;
