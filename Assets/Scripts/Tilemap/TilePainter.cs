@@ -13,7 +13,7 @@ public class TilePainter : MonoBehaviour
     [SerializeField] private float _bedTimeSpawn;
 
     private float _bedsAmountSpawnTimer;
-    private int _bedsCounter;
+    private int _bedsCounter = 0;
     private Vector3 _harvestSpawn;
     private FarmData _data;
 

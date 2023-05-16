@@ -607,7 +607,7 @@
             "instanceID": 0
         },
         {
-            "instanceID": 0
+            "instanceID": 25278
         },
         {
             "instanceID": 0
@@ -712,13 +712,13 @@
             "instanceID": 0
         },
         {
-            "instanceID": 0
+            "instanceID": 25278
         },
         {
             "instanceID": 0
         },
         {
-            "instanceID": 25274
+            "instanceID": 0
         },
         {
             "instanceID": 0
@@ -817,7 +817,7 @@
             "instanceID": 0
         },
         {
-            "instanceID": 0
+            "instanceID": 25278
         },
         {
             "instanceID": 0
@@ -922,7 +922,7 @@
             "instanceID": 0
         },
         {
-            "instanceID": 0
+            "instanceID": 25278
         },
         {
             "instanceID": 0
@@ -7572,26 +7572,26 @@
     "DroppedVegetablesPositions": [],
     "StockTextes": [
         {
-            "instanceID": 26628
+            "instanceID": 60646
         },
         {
-            "instanceID": 25760
+            "instanceID": 59810
         },
         {
-            "instanceID": 25658
+            "instanceID": 59712
         }
     ],
     "VegetableMenuTextes": [
         {
-            "instanceID": 25602
+            "instanceID": 59664
         },
         {
-            "instanceID": 25448
+            "instanceID": 59522
         },
         {
-            "instanceID": 25506
+            "instanceID": 59568
         }
     ],
-    "BedsCounter": 53,
+    "BedsCounter": 57,
     "Balance": 2
 }

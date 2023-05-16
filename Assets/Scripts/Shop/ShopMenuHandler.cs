@@ -16,12 +16,12 @@ public class ShopMenuHandler : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _playerMoveSpeedText;
     [SerializeField] private TextMeshProUGUI _playerMovePriceSpeedText;
 
-    private int _bedsSpawnSpeedLevel;
-    private int _bedsSpawnSpeedPrice;
-    private int _vegetableChanceLevel;
-    private int _vegetableChancePrice;
-    private int _playerMoveSpeedLevel;
-    private int _playerMoveSpeedPrice;
+    private int _bedsSpawnSpeedLevel = 0;
+    private int _bedsSpawnSpeedPrice = 4;
+    private int _vegetableChanceLevel = 0;
+    private int _vegetableChancePrice = 4;
+    private int _playerMoveSpeedLevel = 0;
+    private int _playerMoveSpeedPrice = 4;
 
     private void Update()
     {
