@@ -12,6 +12,12 @@ public class FarmData
     public List<Vector3> DroppedVegetablesPositions = new List<Vector3>();
     public List<TextMeshProUGUI> StockTextes = new List<TextMeshProUGUI>();
     public List<TextMeshProUGUI> VegetableMenuTextes = new List<TextMeshProUGUI>();
-    public int BedsCounter = 0;
-    public int Balance = 0;
+    public int BedsCounter;
+    public int Balance;
+
+    public FarmData()
+    {
+        BedsCounter = 0;
+        Balance = 0;
+    }
 }

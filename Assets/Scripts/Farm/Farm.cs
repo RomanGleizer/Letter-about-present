@@ -10,7 +10,7 @@ public class Farm : MonoBehaviour
     [SerializeField] private VegetablesMenuHandler _vegetableMenu;
     [SerializeField] private HarvestCollector _harvestCollector;
     [SerializeField] private VegetableSeller _vegetableSeller;
-
+    
     private int _cellsIndex;
     private FarmData _farmData;
 

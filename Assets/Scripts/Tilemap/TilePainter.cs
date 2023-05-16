@@ -33,6 +33,7 @@ public class TilePainter : MonoBehaviour
 
     private void Start()
     {
+        _data = new FarmData();
         var json = File.ReadAllText(
              Application.dataPath + "/FarmData.json",
              encoding: System.Text.Encoding.UTF8);
