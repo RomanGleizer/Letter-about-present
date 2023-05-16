@@ -66,6 +66,7 @@ public class Farm : MonoBehaviour
             Application.dataPath + "/FarmData.json", 
             encoding: System.Text.Encoding.UTF8);
         _farmData = JsonUtility.FromJson<FarmData>(json);
+        _farmTileMap.ClearAllTiles();
 
         for (int i = 0; i < _farmData.Cells.Count; i++)
         {
