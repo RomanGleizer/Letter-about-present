@@ -101,37 +101,41 @@ public class Farm : MonoBehaviour
             Application.dataPath + "/FarmData.json", 
             encoding: System.Text.Encoding.UTF8);
         var data = JsonUtility.FromJson<FarmData>(json);
-        _farmTileMap.ClearAllTiles();
-
-        for (int i = 0; i < data.Cells.Count; i++)
+        
+        if (data.Cells.Count > 0)
         {
-            _farmTileMap.SetTile(data.Cells[i], data.Tiles[i]);
-            if (_farmTileMap.GetTile(data.Cells[i]) != null)
+            _farmTileMap.ClearAllTiles();
+
+            for (int i = 0; i < data.Cells.Count; i++)
             {
-                var tile = _farmTileMap.GetTile(data.Cells[i]);
-                _cellsIndex = i;
-                if (tile.name == "CarrotGround") GrowVegetable(0, data);
-                if (tile.name == "PatatoGround") GrowVegetable(1, data);
-                if (tile.name == "WheatGround") GrowVegetable(2, data);
+                _farmTileMap.SetTile(data.Cells[i], data.Tiles[i]);
+                if (_farmTileMap.GetTile(data.Cells[i]) != null)
+                {
+                    var tile = _farmTileMap.GetTile(data.Cells[i]);
+                    _cellsIndex = i;
+                    if (tile.name == "CarrotGround") GrowVegetable(0, data);
+                    if (tile.name == "PatatoGround") GrowVegetable(1, data);
+                    if (tile.name == "WheatGround") GrowVegetable(2, data);
+                }
             }
-        }
 
-        var droppedVegetables = data.DroppedVegetables.ToList();
-        for (int i = 0; i < droppedVegetables.Count; i++)
-        {
-            if (droppedVegetables[i] == "carrot") InstantiateDroppedVegetables(0, i, data);
-            if (droppedVegetables[i] == "patato") InstantiateDroppedVegetables(1, i, data);
-            if (droppedVegetables[i] == "wheat") InstantiateDroppedVegetables(2, i, data);
-        }
+            var droppedVegetables = data.DroppedVegetables.ToList();
+            for (int i = 0; i < droppedVegetables.Count; i++)
+            {
+                if (droppedVegetables[i] == "carrot") InstantiateDroppedVegetables(0, i, data);
+                if (droppedVegetables[i] == "patato") InstantiateDroppedVegetables(1, i, data);
+                if (droppedVegetables[i] == "wheat") InstantiateDroppedVegetables(2, i, data);
+            }
 
-        for (int i = 0; i < 3; i++)
-        {
-            _vegetableMenu.VegetableCounters[i] = data.VegetableCounters[i];
-            _vegetableMenu.StockTextes[i].text = data.VegetableCounters[i].ToString();
-            _vegetableMenu.VegetableMenuTextes[i].text = data.VegetableCounters[i].ToString();
+            for (int i = 0; i < 3; i++)
+            {
+                _vegetableMenu.VegetableCounters[i] = data.VegetableCounters[i];
+                _vegetableMenu.StockTextes[i].text = data.VegetableCounters[i].ToString();
+                _vegetableMenu.VegetableMenuTextes[i].text = data.VegetableCounters[i].ToString();
+            }
+            _tilePainter.BedsCounter = data.BedsCounter;
+            _vegetableSeller.Balance = data.Balance;
         }
-        _tilePainter.BedsCounter = data.BedsCounter;
-        _vegetableSeller.Balance = data.Balance;
     }
 
     private void GrowVegetable(int vegetableIndex, FarmData data)
