@@ -18,7 +18,7 @@ public class LetterOpener : MonoBehaviour
 
     private void Awake()
     {
-        InvokeRepeating("SetNotifyActive", Random.Range(5, 10), Random.Range(5, 10));
+        InvokeRepeating("SetNotifyActive", Random.Range(20, 30), Random.Range(20, 30));
     }
 
     private void Start()

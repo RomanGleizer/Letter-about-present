@@ -1,12 +1,14 @@
+using System;
 using UnityEngine;
 
+[Serializable]
 public class NoblewomanData
 {
-    public Vector3 Position;
-    public Transform Target;
-    public int CurrentPoint;
-    public bool IsPlayerMoveLeft;
-    public bool IsPlayerMoveRight;
-    public bool IsPlayerMoveUp;
-    public bool IsPlayerMoveDown;
+    public Vector3 Position = new Vector3();
+    public Transform Target = null;
+    public int CurrentPoint = 0;
+    public bool IsPlayerMoveLeft = false;
+    public bool IsPlayerMoveRight = false;
+    public bool IsPlayerMoveUp = false;
+    public bool IsPlayerMoveDown = false;
 }

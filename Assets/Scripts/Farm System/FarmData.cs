@@ -1,8 +1,10 @@
+using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
+[Serializable]
 public class FarmData
 {
     public List<TileBase> Tiles = new List<TileBase>();

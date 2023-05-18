@@ -72407,7 +72407,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 11bec0410aa939e4ab06844718d2834f, type: 2}
   _player: {fileID: 73242449}
   _bedsAmountText: {fileID: 1826891840}
-  _bedTimeSpawn: 10
+  _bedTimeSpawn: 20
 --- !u!1 &1329266615
 GameObject:
   m_ObjectHideFlags: 0
