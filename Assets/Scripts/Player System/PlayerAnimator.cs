@@ -34,18 +34,12 @@ public class PlayerAnimator : MonoBehaviour
     {
         switch (move)
         {
-            case Moves.Left: SetParameterTrue("isPlayerMoveLeft");
-                break;
-            case Moves.Right: SetParameterTrue("isPlayerMoveRight");
-                break;
-            case Moves.Up: SetParameterTrue("isPlayerMoveUp");
-                break;
-            case Moves.Down: SetParameterTrue("isPlayerMoveDown");
-                break;
-            case Moves.Idle: SetParameterTrue("isPlayerIdle");
-                break;
-            default: 
-                break;
+            case Moves.Left: SetParameterTrue("isPlayerMoveLeft"); break;
+            case Moves.Right: SetParameterTrue("isPlayerMoveRight"); break;
+            case Moves.Up: SetParameterTrue("isPlayerMoveUp"); break;
+            case Moves.Down: SetParameterTrue("isPlayerMoveDown"); break;
+            case Moves.Idle: SetParameterTrue("isPlayerIdle"); break;
+            default: break;
         }
     }
 

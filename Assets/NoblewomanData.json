@@ -1,11 +1,11 @@
 ﻿{
     "Position": {
-        "x": -20.290178298950197,
-        "y": -2.934826135635376,
+        "x": -20.285066604614259,
+        "y": -3.424912214279175,
         "z": 0.0
     },
     "Target": {
-        "instanceID": 25896
+        "instanceID": 29568
     },
     "CurrentPoint": 10,
     "IsPlayerMoveLeft": false,

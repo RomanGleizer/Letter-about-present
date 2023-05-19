@@ -13,6 +13,7 @@ public class VegetablesMenuHandler : MonoBehaviour
     [SerializeField] private GameObject _boostShop;
 
     private int[] _vegetableCounters;
+    private bool _isMenuOpen = false;
 
     public TextMeshProUGUI[] StockTextes { get => _stockTextes; }
     public TextMeshProUGUI[] VegetableMenuTextes { get => _vegetableMenuTextes; }
@@ -26,13 +27,18 @@ public class VegetablesMenuHandler : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.I)
-            && !_loadGameCanvas.activeSelf 
-            && !_pauseMenu.activeSelf 
-            && !_stockMenu.activeSelf
-            && !_vegetableShop.activeSelf
-            && !_boostShop.activeSelf)
+        if (Input.GetKeyDown(KeyCode.I) && !_loadGameCanvas.activeSelf && !_pauseMenu.activeSelf 
+            && !_stockMenu.activeSelf && !_vegetableShop.activeSelf && !_boostShop.activeSelf
+            && _isMenuOpen == false)
+        {
+            _isMenuOpen = true;
             _vegetablesMenu.SetActive(true);
+        }
+        else if (Input.GetKeyDown(KeyCode.I) && _isMenuOpen == true)
+        {
+            _isMenuOpen = false;
+            _vegetablesMenu.SetActive(false);
+        }
 
         for (int i = 0; i < _vegetableCounters.Length; i++)
             _vegetableCounters[i] = int.Parse(_stockTextes[i].text);

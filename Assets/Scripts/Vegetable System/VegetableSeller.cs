@@ -28,7 +28,7 @@ public class VegetableSeller : MonoBehaviour
         var data = JsonUtility.FromJson<FarmData>(json);
 
         _balance = data.Balance;
-        _balanceText.text = "Баланс: " + _balance.ToString();
+        _balanceText.text = ": " + _balance.ToString();
     }
 
     public void SellVegetable(int index)
@@ -42,7 +42,7 @@ public class VegetableSeller : MonoBehaviour
             _balance++;
             vegetableAmount--;
 
-            _balanceText.text = "Баланс: " + _balance.ToString();
+            _balanceText.text = ": " + _balance.ToString();
             menuText.text = "Доступно: " + vegetableAmount.ToString();
             stockText.text = vegetableAmount.ToString();
         }

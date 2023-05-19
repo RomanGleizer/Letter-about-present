@@ -10,26 +10,26 @@
     "DroppedVegetablesPositions": [],
     "StockTextes": [
         {
-            "instanceID": 26794
+            "instanceID": 44702
         },
         {
-            "instanceID": 25790
+            "instanceID": 43698
         },
         {
-            "instanceID": 25686
+            "instanceID": 43594
         }
     ],
     "VegetableMenuTextes": [
         {
-            "instanceID": 25626
+            "instanceID": 43534
         },
         {
-            "instanceID": 25468
+            "instanceID": 43376
         },
         {
-            "instanceID": 25522
+            "instanceID": 43430
         }
     ],
     "BedsCounter": 0,
-    "Balance": 13
+    "Balance": 15
 }
