@@ -14,6 +14,7 @@ public class VegetableSeller : MonoBehaviour
         get => _balance; 
         set => _balance = value;
     }
+
     public TextMeshProUGUI BalanceText
     {
         get => _balanceText;

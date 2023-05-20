@@ -4,13 +4,13 @@ public class CoinTaker : MonoBehaviour
 {
     [SerializeField] private VegetableSeller _vegetableSeller;
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<Coin>() && Input.GetKey(KeyCode.T))
+        if (collision.GetComponent<Coin>())
         {
-            Destroy(collision.gameObject);
             _vegetableSeller.Balance++;
-            _vegetableSeller.BalanceText.text = "Баланс: " + _vegetableSeller.Balance.ToString();
+            _vegetableSeller.BalanceText.text = ": " + _vegetableSeller.Balance.ToString();
+            Destroy(collision.gameObject);
         }
     }
 }

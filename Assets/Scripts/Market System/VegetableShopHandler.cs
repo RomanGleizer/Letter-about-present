@@ -56,6 +56,6 @@ public class VegetableShopHandler : MonoBehaviour
         vegetableAmount++;
 
         _vegetablesMenu.StockTextes[vegetableIndex].text = vegetableAmount.ToString();
-        _vegetableSeller.BalanceText.text = "Баланс: " + _vegetableSeller.Balance.ToString();
+        _vegetableSeller.BalanceText.text = ": " + _vegetableSeller.Balance.ToString();
     }
 }

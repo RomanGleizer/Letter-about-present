@@ -14,11 +14,10 @@ public class LetterOpener : MonoBehaviour
     private bool _isNotifyActive;
     private int _index;
     private int _firstLetterContinueIndex;
-    private List<TextMeshProUGUI> _activeLetters;
 
     private void Awake()
     {
-        InvokeRepeating("SetNotifyActive", Random.Range(20, 30), Random.Range(20, 30));
+        InvokeRepeating("SetNotifyActive", Random.Range(5, 7), Random.Range(5, 7));
     }
 
     private void Start()
@@ -31,8 +30,6 @@ public class LetterOpener : MonoBehaviour
             "Но Государь наш должен сказать с прискорбием, что у нас весьма мало хороших и попечительных помещиков, много посредственных и еще более худых, а при духе времени, кроме предписаний совести и закона, мы должны для собственного своего интереса заботиться о благосостоянии вверенных нам людей и стараться всеми силами снискать их любовь и уважение. Ежели окажется среди вас помещик безнравственный или жестокий, Вы обязаны предать его силе закона.",
             "\n\nБереги себя и следи за крестьянами, буйные они стали в последнее время. Как ты? Как поживает дочь твоя? Отправил/а ее учиться? Отсутствие и отделенность довольно гадкая вещь. Прощай, моя дорогой/ая! Поскорей дай нам весть о себе,\r\nС любовью, \r\nТвой вечный друг.\r\n"
         };
-
-        _activeLetters = new List<TextMeshProUGUI>();
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -51,27 +48,13 @@ public class LetterOpener : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.GetComponent<MailBox>())
-        {
-            _letterPaper.SetActive(false);
-            foreach (var item in _activeLetters)
-                item.gameObject.SetActive(false);
-        }
-    }
-
     private void SetNotifyActive()
     {
         if (!_letterPaper.activeSelf && _index != _letters.Length - 1)
         {
-            _activeLetters.Add(_letters[_index]);
-
             _isNotifyActive = true;
             _letterNotify.SetActive(true);
             _letters[_index].gameObject.SetActive(true);
-
-            _index++;
         }
     }
 
@@ -82,5 +65,11 @@ public class LetterOpener : MonoBehaviour
             letter.GetComponent<TextMeshProUGUI>().text = _firstLetterContinue[_firstLetterContinueIndex];
             _firstLetterContinueIndex++;
         }
+    }
+
+    public void IncrementIndex()
+    {
+        _letters[_index].gameObject.SetActive(false);
+        _index++;
     }
 }
