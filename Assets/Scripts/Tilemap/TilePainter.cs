@@ -11,11 +11,11 @@ public class TilePainter : MonoBehaviour
     [SerializeField] private Player _player;
     [SerializeField] private TextMeshProUGUI _bedsAmountText;
     [SerializeField] private float _bedTimeSpawn;
+    [SerializeField] private TilePainter _instance;
 
     private float _bedsAmountSpawnTimer;
-    private int _bedsCounter = 0;
+    private int _bedsCounter;
     private Vector3 _harvestSpawn;
-    private FarmData _data;
 
     public Tile[] VegetableTiles { get => _vegetableTiles; }
     public Tilemap FarmTileMap { get => _framTileMap; }
@@ -31,20 +31,25 @@ public class TilePainter : MonoBehaviour
         set => _bedsCounter = value;
     }
 
+    //private void Awake()
+    //{
+    //    if (_instance == null)
+    //    {
+    //        _instance = this;
+    //        print("Ok");
+    //    }
+    //    else Destroy(this);
+    //}
+
     private void Start()
     {
-        _data = new FarmData();
-        var json = File.ReadAllText(
-             Application.dataPath + "/FarmData.json",
-             encoding: System.Text.Encoding.UTF8);
-
-        _data = JsonUtility.FromJson<FarmData>(json);
-
-        _bedsAmountText.text = "Доступно грядок: " + _data.BedsCounter.ToString();
+        _bedsCounter = 0;
     }
 
     private void Update()
     {
+        _bedsAmountText.text = "Доступно грядок: " + _bedsCounter.ToString();
+
         _bedsAmountSpawnTimer += Time.deltaTime;
         if (_bedsAmountSpawnTimer > _bedTimeSpawn && _bedsAmountSpawnTimer < _bedTimeSpawn + 0.1)
         {

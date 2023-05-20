@@ -1,3 +1,4 @@
+using System;
 using System.IO;
 using TMPro;
 using UnityEngine;
@@ -6,6 +7,7 @@ public class VegetableSeller : MonoBehaviour
 {
     [SerializeField] private VegetablesMenuHandler _vegetableMenu;
     [SerializeField] private TextMeshProUGUI _balanceText;
+    [SerializeField] private FarmData _farm;
 
     private int _balance;
     
@@ -23,13 +25,19 @@ public class VegetableSeller : MonoBehaviour
 
     private void Start()
     {
-        var json = File.ReadAllText(
-            Application.dataPath + "/FarmData.json",
-            encoding: System.Text.Encoding.UTF8);
-        var data = JsonUtility.FromJson<FarmData>(json);
+        _balance = 0;
 
-        _balance = data.Balance;
-        _balanceText.text = ": " + _balance.ToString();
+        try
+        {
+            var json = File.ReadAllText(
+                Application.dataPath + "/FarmData.json",
+                encoding: System.Text.Encoding.UTF8);
+
+            var data = JsonUtility.FromJson<FarmData>(json);
+            _balance = data.Balance;
+            _balanceText.text = ": " + _balance.ToString();
+        }
+        catch { }
     }
 
     public void SellVegetable(int index)

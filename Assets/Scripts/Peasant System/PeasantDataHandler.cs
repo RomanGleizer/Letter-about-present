@@ -70,19 +70,23 @@ public class PeasantDataHandler : MonoBehaviour
 
     public void LoadNoblePeasantData()
     {
-        var json = File.ReadAllText(
-            Application.dataPath + "/PeasantData.json",
-            encoding: System.Text.Encoding.UTF8);
+        try
+        {
+            var json = File.ReadAllText(
+                Application.dataPath + "/PeasantData.json",
+                encoding: System.Text.Encoding.UTF8);
 
-        var data = JsonUtility.FromJson<NoblewomanData>(json);
+            var data = JsonUtility.FromJson<NoblewomanData>(json);
 
-        if (data.IsPlayerMoveRight) _animator.Play("Move Right");
-        if (data.IsPlayerMoveLeft) _animator.Play("Move Left");
-        if (data.IsPlayerMoveUp) _animator.Play("Move Up");
-        if (data.IsPlayerMoveDown) _animator.Play("Move Down");
+            if (data.IsPlayerMoveRight) _animator.Play("Move Right");
+            if (data.IsPlayerMoveLeft) _animator.Play("Move Left");
+            if (data.IsPlayerMoveUp) _animator.Play("Move Up");
+            if (data.IsPlayerMoveDown) _animator.Play("Move Down");
 
-        _target = data.Target;
-        _currentPoint = data.CurrentPoint;
-        transform.position = data.Position;
+            _target = data.Target;
+            _currentPoint = data.CurrentPoint;
+            transform.position = data.Position;
+        }
+        catch { }
     }
 }

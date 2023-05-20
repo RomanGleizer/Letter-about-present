@@ -68,19 +68,23 @@ public class NoblewomanMover : MonoBehaviour
 
     public void LoadNobleWomanData()
     {
-        var json = File.ReadAllText(
-            Application.dataPath + "/NoblewomanData.json",
-            encoding: System.Text.Encoding.UTF8);
+        try
+        {
+            var json = File.ReadAllText(
+                Application.dataPath + "/NoblewomanData.json",
+                encoding: System.Text.Encoding.UTF8);
 
-        var data = JsonUtility.FromJson<NoblewomanData>(json);
+            var data = JsonUtility.FromJson<NoblewomanData>(json);
 
-        if (data.IsPlayerMoveRight) _animator.Play("NoblewomanMoveRight");
-        if (data.IsPlayerMoveLeft) _animator.Play("NoblewomanMoveLeft");
-        if (data.IsPlayerMoveUp) _animator.Play("NoblewomanMoveUp");
-        if (data.IsPlayerMoveDown) _animator.Play("NoblewomanMoveDown");
+            if (data.IsPlayerMoveRight) _animator.Play("NoblewomanMoveRight");
+            if (data.IsPlayerMoveLeft) _animator.Play("NoblewomanMoveLeft");
+            if (data.IsPlayerMoveUp) _animator.Play("NoblewomanMoveUp");
+            if (data.IsPlayerMoveDown) _animator.Play("NoblewomanMoveDown");
 
-        _target = data.Target;
-        _currentPoint = data.CurrentPoint;
-        transform.position = data.Position;
+            _target = data.Target;
+            _currentPoint = data.CurrentPoint;
+            transform.position = data.Position;
+        }
+        catch { }
     }
 }

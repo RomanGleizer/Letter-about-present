@@ -1,3 +1,4 @@
+using System;
 using System.IO;
 using TMPro;
 using UnityEngine;
@@ -83,22 +84,24 @@ public class ShopMenuHandler : MonoBehaviour
             json,
             encoding: System.Text.Encoding.UTF8);
     }
-
     public void LoadBoostShopData()
     {
-        var json = File.ReadAllText(
+        try
+        {
+            var json = File.ReadAllText(
             Application.dataPath + "/BoostShopData.json",
             encoding: System.Text.Encoding.UTF8);
-        var data = JsonUtility.FromJson<BoostShopData>(json);
-
-        #region Values
-        _bedsSpawnSpeedPrice = data.BedsSpawnSpeedPrice;
-        _vegetableChancePrice = data.VegetableChancePrice;
-        _playerMoveSpeedPrice = data.PlayerMovePrice;
-        _bedsSpawnSpeedLevel = data.BedsSpawnSpeedLevel;
-        _vegetableChanceLevel = data.VegetableChanceLevel;
-        _playerMoveSpeedLevel = data.PlayerMoveLevel;
-        #endregion
+            var data = JsonUtility.FromJson<BoostShopData>(json);
+            #region Values
+            _bedsSpawnSpeedPrice = data.BedsSpawnSpeedPrice;
+            _vegetableChancePrice = data.VegetableChancePrice;
+            _playerMoveSpeedPrice = data.PlayerMovePrice;
+            _bedsSpawnSpeedLevel = data.BedsSpawnSpeedLevel;
+            _vegetableChanceLevel = data.VegetableChanceLevel;
+            _playerMoveSpeedLevel = data.PlayerMoveLevel;
+            #endregion
+        }
+        catch { }
     }
 
     private void ChangeTextValues(

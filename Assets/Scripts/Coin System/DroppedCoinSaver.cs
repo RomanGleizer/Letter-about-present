@@ -20,12 +20,16 @@ public class DroppedCoinSaver : MonoBehaviour
 
     public void LoadDroppedCoinData()
     {
-        var json = File.ReadAllText(
-            Application.dataPath + "/CoinData.json",
-            encoding: System.Text.Encoding.UTF8);
-        var data = JsonUtility.FromJson<CoinData>(json);
+        try
+        {
+            var json = File.ReadAllText(
+                Application.dataPath + "/CoinData.json",
+                encoding: System.Text.Encoding.UTF8);
+            var data = JsonUtility.FromJson<CoinData>(json);
 
-        foreach (var position in data.CoinsPositions)
-            Instantiate(_coinPrefab, position, Quaternion.identity);
-    }
+            foreach (var position in data.CoinsPositions)
+                Instantiate(_coinPrefab, position, Quaternion.identity);
+        }
+        catch { }
+    }   
 }
