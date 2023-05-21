@@ -17,16 +17,20 @@ public class Player : MonoBehaviour
 
     public void LoadPlayer()
     {
-        PlayerData playerData = SaveSystem.LoadPlayer();
-        HealthAmount = playerData.HealthAmount;
-
-        Vector3 position = new Vector3
+        try
         {
-            x = playerData.PlayerPosition[0],
-            y = playerData.PlayerPosition[1],
-            z = playerData.PlayerPosition[2]
-        };
+            PlayerData playerData = SaveSystem.LoadPlayer();
+            HealthAmount = playerData.HealthAmount;
 
-        transform.position = position;
+            Vector3 position = new Vector3
+            {
+                x = playerData.PlayerPosition[0],
+                y = playerData.PlayerPosition[1],
+                z = playerData.PlayerPosition[2]
+            };
+
+            transform.position = position;
+        }
+        catch { }
     }
 }
