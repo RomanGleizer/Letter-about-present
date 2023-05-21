@@ -1,18 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using System;
 
-public class LetterData : MonoBehaviour
+[Serializable]
+public class LetterData
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public bool[] IsLettersWereRead = new bool[15];
+    public int Index = 0;
 }

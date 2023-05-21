@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.IO;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -9,19 +10,22 @@ public class LetterOpener : MonoBehaviour
     [SerializeField] private GameObject _letterNotify;
     [SerializeField] private TextMeshProUGUI[] _letters;
     [SerializeField] private GameObject[] _menues;
+    [SerializeField] private GameObject _readButton;
 
     private string[] _firstLetterContinue;
+    private bool[] _isLettersWereRead;
     private bool _isNotifyActive;
     private int _index;
     private int _firstLetterContinueIndex;
 
     private void Awake()
     {
-        InvokeRepeating("SetNotifyActive", Random.Range(40, 45), Random.Range(40, 45));
+        InvokeRepeating("SetNotifyActive", Random.Range(5, 7), Random.Range(5, 7));
     }
 
     private void Start()
     {
+        _isLettersWereRead = new bool[15];
         _firstLetterContinue = new string[]
         {
             "\n\n\nСмута в Европе Маринку пугает, боится, что и до нас дойдет. Я ей говорю, мол глупости все это. Государь не даст воли разыграться беспорядкам или, не дай бог, мятежам. Нужно ограничить иностранные издания, чтобы молодые умы не соблазнялись.",
@@ -32,17 +36,22 @@ public class LetterOpener : MonoBehaviour
         };
     }
 
+    private void Update()
+    {
+        print(_index);    
+    }
+
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.GetComponent<MailBox>())
         {
-            if (Input.GetKey(KeyCode.L) && _isNotifyActive 
-                && !_menues[0].activeSelf && !_menues[1].activeSelf
-                && !_menues[2].activeSelf && !_menues[3].activeSelf
-                && !_menues[4].activeSelf && !_menues[5].activeSelf
-                && !_menues[6].activeSelf)
+            if (Input.GetKey(KeyCode.L) && _isNotifyActive && _index != _letters.Length)
             {
+                foreach (var menu in _menues)
+                    menu.SetActive(false);
+
                 _letterPaper.SetActive(true);
+                _readButton.SetActive(true);
                 _letterNotify.SetActive(false);
             }  
         }
@@ -50,7 +59,7 @@ public class LetterOpener : MonoBehaviour
 
     private void SetNotifyActive()
     {
-        if (!_letterPaper.activeSelf && _index != _letters.Length - 1)
+        if (!_letterPaper.activeSelf && _index != _letters.Length)
         {
             _isNotifyActive = true;
             _letterNotify.SetActive(true);
@@ -67,9 +76,69 @@ public class LetterOpener : MonoBehaviour
         }
     }
 
-    public void IncrementIndex()
+    public void EndReadLetter()
     {
-        _letters[_index].gameObject.SetActive(false);
-        _index++;
+        if (!_isLettersWereRead[_index])
+        {
+            ChangeReadValue(true);
+            _letters[_index].gameObject.SetActive(false);
+            _index++;
+        }
     }
+
+    public void SkipLetter()
+    {
+        if (!_isLettersWereRead[_index])
+        {
+            ChangeReadValue(false);
+            _letters[_index].gameObject.SetActive(false);
+        }
+    }
+
+    public void StartReadNewLetterAfterSave()
+    {
+        if (!_isLettersWereRead[_index])
+        {
+            ChangeReadValue(true);
+            _letters[_index].gameObject.SetActive(false);
+        }
+    }
+
+    public void SaveLetterData()
+    {
+        var data = new LetterData();
+
+        for (int i = 0; i < _isLettersWereRead.Length; i++)
+            data.IsLettersWereRead[i] = _isLettersWereRead[i];
+
+        if (_index != _letters.Length)
+        {
+            StartReadNewLetterAfterSave();
+            data.Index = _index;
+        }
+
+        var json = JsonUtility.ToJson(data, true);
+        File.WriteAllText(
+            Application.dataPath + "/LetterData.json",
+            json,
+            encoding: System.Text.Encoding.UTF8);
+    }
+
+    public void LoadPlayerData()
+    {
+        try
+        {
+            var json = File.ReadAllText(
+                Application.dataPath + "/LetterData.json",
+                encoding: System.Text.Encoding.UTF8);
+            var data = JsonUtility.FromJson<LetterData>(json);
+
+            for (int i = 0; i < _isLettersWereRead.Length; i++)
+                _isLettersWereRead[i] = data.IsLettersWereRead[i];
+            _index = data.Index;
+        }
+        catch { }
+    }
+
+    private void ChangeReadValue(bool value) => _isLettersWereRead[_index] = value;
 }

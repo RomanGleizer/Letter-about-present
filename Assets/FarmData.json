@@ -3,33 +3,33 @@
     "Cells": [],
     "VegetableCounters": [
         1,
-        1,
+        3,
         2
     ],
     "DroppedVegetables": [],
     "DroppedVegetablesPositions": [],
     "StockTextes": [
         {
-            "instanceID": 50002
+            "instanceID": 26970
         },
         {
-            "instanceID": 48978
+            "instanceID": 25858
         },
         {
-            "instanceID": 48878
+            "instanceID": 25750
         }
     ],
     "VegetableMenuTextes": [
         {
-            "instanceID": 48818
+            "instanceID": 25674
         },
         {
-            "instanceID": 48642
+            "instanceID": 25484
         },
         {
-            "instanceID": 48696
+            "instanceID": 25538
         }
     ],
-    "BedsCounter": 2,
-    "Balance": 0
+    "BedsCounter": 10,
+    "Balance": 3
 }

@@ -23,6 +23,7 @@ public class ShopMenuHandler : MonoBehaviour
     private int _vegetableChancePrice = 4;
     private int _playerMoveSpeedLevel = 1;
     private int _playerMoveSpeedPrice = 4;
+    private bool _isMenuOpen = false;
 
     private void Update()
     {
@@ -33,13 +34,19 @@ public class ShopMenuHandler : MonoBehaviour
         _vagetableSpawnPriceText.text = "Стоимость: " + _vegetableChancePrice.ToString();
         _playerMovePriceSpeedText.text = "Стоимость: " + _playerMoveSpeedPrice.ToString();
 
-        if (Input.GetKey(KeyCode.O))
+        if (Input.GetKeyDown(KeyCode.O) && _isMenuOpen == false)
         {
+            _isMenuOpen = true;
             _boostShop.SetActive(true);
             foreach (var menu in _menues)
                 menu.SetActive(false);
         }
-        
+        else if (Input.GetKeyDown(KeyCode.O) && _isMenuOpen == true)
+        {
+            _isMenuOpen = false;
+            _boostShop.SetActive(false);
+        }
+
         if (_boostShop.activeSelf) _loadGameCanvas.SetPlayerComponentState(false);
         else _loadGameCanvas.SetPlayerComponentState(true);
     }

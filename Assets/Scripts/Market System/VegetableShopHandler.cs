@@ -16,6 +16,7 @@ public class VegetableShopHandler : MonoBehaviour
     private int _carrotPrice;
     private int _patatoPrice;
     private int _wheatPrice;
+    private bool _isMenuOpen = false;
 
     private void Start()
     {
@@ -28,11 +29,17 @@ public class VegetableShopHandler : MonoBehaviour
         _patatoPriceText.text = "Стоимость: " + _patatoPrice.ToString();
         _wheatPriceText.text = "Стоимость: " + _wheatPrice.ToString();
 
-        if (Input.GetKey(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.P) && _isMenuOpen == false)
         {
+            _isMenuOpen = true;
             _vegetableShop.SetActive(true);
             foreach (var menu in _menues)
                 menu.SetActive(false);
+        }
+        else if (Input.GetKeyDown(KeyCode.P) && _isMenuOpen == true)
+        {
+            _vegetableShop.SetActive(false);
+            _isMenuOpen = false;
         }
 
         if (_vegetableShop.activeSelf) _loadGameCanvas.SetPlayerComponentState(false);

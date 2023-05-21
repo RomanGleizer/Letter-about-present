@@ -13,11 +13,6 @@ public class Farm : MonoBehaviour
     
     private int _cellsIndex;
 
-    public void OnApplicationQuit()
-    {
-        SaveFarm();
-    }
-
     public void SaveFarm()
     {
         BoundsInt bounds = _farmTileMap.cellBounds;
