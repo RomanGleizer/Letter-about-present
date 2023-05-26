@@ -1,8 +1,14 @@
 ﻿{
     "BedsSpawnSpeedPrice": 7,
     "VegetableChancePrice": 5,
-    "PlayerMovePrice": 5,
+    "PlayerMovePrice": 7,
     "BedsSpawnSpeedLevel": 2,
     "VegetableChanceLevel": 1,
-    "PlayerMoveLevel": 1
+    "PlayerMoveLevel": 2,
+    "Speed": 1.600000023841858,
+    "BedTimeSpawn": 19.0,
+    "NobleWomanFirstTime": 40.0,
+    "NobleWomanSecondTime": 41.0,
+    "PeasantFirstTime": 40.0,
+    "PeasantSecondTime": 41.0
 }

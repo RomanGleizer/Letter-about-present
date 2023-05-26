@@ -36,11 +36,6 @@ public class LetterOpener : MonoBehaviour
         };
     }
 
-    private void Update()
-    {
-        print(_index);    
-    }
-
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.GetComponent<MailBox>())

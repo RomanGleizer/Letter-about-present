@@ -2,19 +2,25 @@ using UnityEngine;
 
 public class PlayerMover : MonoBehaviour
 {
-    [SerializeField] private float speed;
-    [SerializeField] private Rigidbody2D rigidbody;
+    [SerializeField] private float _speed;
+    [SerializeField] private Rigidbody2D _rb;
 
-    private Vector2 movement;
+    private Vector2 _movement;
+
+    public float Speed
+    {
+        get => _speed;
+        set => _speed = value;
+    }
 
     private void Update()
     {
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
+        _movement.x = Input.GetAxisRaw("Horizontal");
+        _movement.y = Input.GetAxisRaw("Vertical");
     }
 
     private void FixedUpdate()
     {
-        rigidbody.MovePosition(rigidbody.position + movement * speed * Time.fixedDeltaTime);
+        _rb.MovePosition(_rb.position + _movement * _speed * Time.fixedDeltaTime);
     }
 }
