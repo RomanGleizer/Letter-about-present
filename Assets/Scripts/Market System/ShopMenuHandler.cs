@@ -1,4 +1,3 @@
-using System;
 using System.IO;
 using TMPro;
 using UnityEngine;
@@ -6,6 +5,10 @@ using UnityEngine.UI;
 
 public class ShopMenuHandler : MonoBehaviour
 {
+    [SerializeField] private TilePainter _tilePainter;
+    [SerializeField] private PlayerMover _player;
+    [SerializeField] private CoinSpawner _nobleWoman;
+    [SerializeField] private CoinSpawner _peasant;
     [SerializeField] private GameObject _boostShop;
     [SerializeField] private GameObject[] _menues;
     [SerializeField] private VegetableSeller _vegetableSeller;
@@ -57,27 +60,40 @@ public class ShopMenuHandler : MonoBehaviour
             && _vegetableSeller.Balance >= _bedsSpawnSpeedPrice)
         {
             _vegetableSeller.Balance -= _bedsSpawnSpeedPrice;
+            _tilePainter.BedTimeSpawn--;
             ChangeTextValues(ref _bedsSpawnSpeedLevel, ref _bedsSpawnSpeedPrice, _bedsSpawnSpeedText, _bedsSpawnPriceText);
         }
         if (boostButton.GetComponent<VegetableChanceButton>()
             && _vegetableSeller.Balance >= _vegetableChancePrice)
         {
+            _nobleWoman.FirstTime -= 3;
+            _nobleWoman.SecondTime -= 3;
+            _peasant.FirstTime -= 3;
+            _peasant.SecondTime -= 3;
+
             _vegetableSeller.Balance -= _vegetableChancePrice;
             ChangeTextValues(ref _vegetableChanceLevel, ref _vegetableChancePrice, _vagetableChanceText, _vagetableSpawnPriceText);
         }
         if (boostButton.GetComponent<PlayerMoveButton>()
             && _vegetableSeller.Balance >= _playerMoveSpeedPrice)
         {
+            _player.Speed += 0.1f;
             _vegetableSeller.Balance -= _playerMoveSpeedPrice;
             ChangeTextValues(ref _playerMoveSpeedLevel, ref _playerMoveSpeedPrice, _playerMoveSpeedText, _playerMovePriceSpeedText);
         }
-        _vegetableSeller.BalanceText.text = "Баланс: " + _vegetableSeller.Balance.ToString();
+        _vegetableSeller.BalanceText.text = ": " + _vegetableSeller.Balance.ToString();
     }
 
     public void SaveBoostShopData()
     {
         BoostShopData data = new BoostShopData();
         #region Values
+        data.Speed = _player.Speed;
+        data.NobleWomanFirstTime = _nobleWoman.FirstTime;
+        data.NobleWomanSecondTime = _nobleWoman.SecondTime;
+        data.PeasantFirstTime = _peasant.FirstTime;
+        data.PeasantSecondTime = _peasant.SecondTime;
+        data.BedTimeSpawn = _tilePainter.BedTimeSpawn;
         data.BedsSpawnSpeedPrice = _bedsSpawnSpeedPrice;
         data.VegetableChancePrice = _vegetableChancePrice;
         data.PlayerMovePrice = _playerMoveSpeedPrice;
@@ -100,6 +116,12 @@ public class ShopMenuHandler : MonoBehaviour
             encoding: System.Text.Encoding.UTF8);
             var data = JsonUtility.FromJson<BoostShopData>(json);
             #region Values
+            _player.Speed = data.Speed;
+            _nobleWoman.FirstTime = data.NobleWomanFirstTime;
+            _nobleWoman.SecondTime = data.NobleWomanSecondTime;
+            _peasant.FirstTime = data.PeasantFirstTime;
+            _peasant.SecondTime = data.PeasantSecondTime;
+            _tilePainter.BedTimeSpawn = data.BedTimeSpawn;
             _bedsSpawnSpeedPrice = data.BedsSpawnSpeedPrice;
             _vegetableChancePrice = data.VegetableChancePrice;
             _playerMoveSpeedPrice = data.PlayerMovePrice;
