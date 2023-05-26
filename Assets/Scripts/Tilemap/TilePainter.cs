@@ -20,26 +20,24 @@ public class TilePainter : MonoBehaviour
     public Tile[] VegetableTiles { get => _vegetableTiles; }
     public Tilemap FarmTileMap { get => _framTileMap; }
     public Tile GroundTile { get => _groundTile; }
+
     public Vector3 HarvestSpawn
     {
         get => _harvestSpawn;
         private set => _harvestSpawn = value;
     }
+
     public int BedsCounter
     {
         get => _bedsCounter;
         set => _bedsCounter = value;
     }
 
-    //private void Awake()
-    //{
-    //    if (_instance == null)
-    //    {
-    //        _instance = this;
-    //        print("Ok");
-    //    }
-    //    else Destroy(this);
-    //}
+    public float BedTimeSpawn
+    {
+        get => _bedTimeSpawn;
+        set => _bedTimeSpawn = value;
+    }
 
     private void Start()
     {
