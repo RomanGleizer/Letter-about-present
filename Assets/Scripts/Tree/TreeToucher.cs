@@ -7,7 +7,7 @@ public class TreeToucher : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.GetComponent<Tree>())
-            gameObject.GetComponent<SpriteRenderer>().sortingOrder = 5;
+            gameObject.GetComponent<SpriteRenderer>().sortingOrder = 6;
     }
 
     private void OnTriggerExit2D(Collider2D collision)
