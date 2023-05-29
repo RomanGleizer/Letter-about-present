@@ -2143,6 +2143,7 @@ MonoBehaviour:
   - {fileID: 604387632}
   - {fileID: 1692088815}
   _readButton: {fileID: 1220124404}
+  _skipButton: {fileID: 0}
 --- !u!114 &73242463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2616,7 +2617,7 @@ SpriteRenderer:
   m_SortingLayerID: -966891023
   m_SortingLayer: 0
   m_SortingOrder: 7
-  m_Sprite: {fileID: 21300000, guid: ca09801926d283b48b2f2354aede0757, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 32634fbc5c7e04b478ab31117e22a86f, type: 3}
   m_Color: {r: 0.9622642, g: 0.9622642, b: 0.9622642, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2624,7 +2625,7 @@ SpriteRenderer:
   m_Size: {x: 14.15, y: 7.92}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &132272735
@@ -11047,6 +11048,7 @@ GameObject:
   m_Component:
   - component: {fileID: 448572608}
   - component: {fileID: 448572607}
+  - component: {fileID: 448572609}
   m_Layer: 0
   m_Name: MapController
   m_TagString: Untagged
@@ -11054,14 +11056,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
-=======
->>>>>>> parent of a5540ef (Game)
-=======
->>>>>>> parent of a5540ef (Game)
 --- !u!114 &448572607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11074,37 +11068,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0be7757627e69784f949174a0dfa1967, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> parent of 80b5c7d (Revert "Game")
-=======
->>>>>>> parent of 5ea3a37 (Revert "Game")
->>>>>>> Stashed changes
-=======
->>>>>>> parent of a5540ef (Game)
-=======
->>>>>>> parent of a5540ef (Game)
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
-  map: {fileID: 97817809}
->>>>>>> parent of 4a1226e (Merge pull request #4 from RomanGleizer/Ilya)
-=======
-  map: {fileID: 97817809}
->>>>>>> parent of 4a1226e (Merge pull request #4 from RomanGleizer/Ilya)
->>>>>>> parent of 80b5c7d (Revert "Game")
-=======
->>>>>>> parent of 5ea3a37 (Revert "Game")
-=======
-  map: {fileID: 97817809}
->>>>>>> parent of 4a1226e (Merge pull request #4 from RomanGleizer/Ilya)
 --- !u!4 &448572608
 Transform:
   m_ObjectHideFlags: 0
@@ -11120,6 +11083,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &448572609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 448572606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61783401862356e40803e78d6485b684, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  map: {fileID: 97817809}
 --- !u!1 &462893153
 GameObject:
   m_ObjectHideFlags: 0
@@ -67092,7 +67068,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &604387634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71288,7 +71264,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 7
+  m_SortingOrder: 8
   m_TargetDisplay: 0
 --- !u!114 &1004642159
 MonoBehaviour:
@@ -77773,7 +77749,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1692088817
 MonoBehaviour:
   m_ObjectHideFlags: 0
