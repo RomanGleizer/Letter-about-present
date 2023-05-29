@@ -4,5 +4,7 @@ using System;
 public class LetterData
 {
     public bool[] IsLettersWereRead = new bool[15];
-    public int Index = 0;
+    public bool[] IsLettersWereSkiped = new bool[15];
+    public int ReadIndex = 0;
+    public int SkipIndex = 0;
 }

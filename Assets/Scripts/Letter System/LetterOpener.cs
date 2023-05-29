@@ -11,11 +11,14 @@ public class LetterOpener : MonoBehaviour
     [SerializeField] private TextMeshProUGUI[] _letters;
     [SerializeField] private GameObject[] _menues;
     [SerializeField] private GameObject _readButton;
+    [SerializeField] private GameObject _skipButton;
 
     private string[] _firstLetterContinue;
     private bool[] _isLettersWereRead;
+    private bool[] _isLettersWereSkipped;
     private bool _isNotifyActive;
-    private int _index;
+    private int _readLetterIndex;
+    private int _skippedLetterIndex;
     private int _firstLetterContinueIndex;
 
     private void Awake()
@@ -26,6 +29,8 @@ public class LetterOpener : MonoBehaviour
     private void Start()
     {
         _isLettersWereRead = new bool[15];
+        _isLettersWereSkipped = new bool[15];
+
         _firstLetterContinue = new string[]
         {
             "\n\n\nСмута в Европе Маринку пугает, боится, что и до нас дойдет. Я ей говорю, мол глупости все это. Государь не даст воли разыграться беспорядкам или, не дай бог, мятежам. Нужно ограничить иностранные издания, чтобы молодые умы не соблазнялись.",
@@ -40,25 +45,24 @@ public class LetterOpener : MonoBehaviour
     {
         if (collision.GetComponent<MailBox>())
         {
-            if (Input.GetKey(KeyCode.L) && _isNotifyActive && _index != _letters.Length)
-            {
-                foreach (var menu in _menues)
-                    menu.SetActive(false);
+            if ((Input.GetKey(KeyCode.L) && _isNotifyActive && _readLetterIndex != _letters.Length))
+                OpenMenus();
 
-                _letterPaper.SetActive(true);
-                _readButton.SetActive(true);
-                _letterNotify.SetActive(false);
-            }  
+            if ((Input.GetKey(KeyCode.L) && !_isNotifyActive && _isLettersWereSkipped[_skippedLetterIndex]))
+            {
+                OpenMenus();
+                _letters[_readLetterIndex].gameObject.SetActive(true);
+            }
         }
     }
 
     private void SetNotifyActive()
     {
-        if (!_letterPaper.activeSelf && _index != _letters.Length)
+        if (!_letterPaper.activeSelf && _readLetterIndex != _letters.Length && !_isLettersWereSkipped[_skippedLetterIndex])
         {
             _isNotifyActive = true;
             _letterNotify.SetActive(true);
-            _letters[_index].gameObject.SetActive(true);
+            _letters[_readLetterIndex].gameObject.SetActive(true);
         }
     }
 
@@ -73,29 +77,37 @@ public class LetterOpener : MonoBehaviour
 
     public void EndReadLetter()
     {
-        if (!_isLettersWereRead[_index])
+        if (!_isLettersWereRead[_readLetterIndex])
         {
             ChangeReadValue(true);
-            _letters[_index].gameObject.SetActive(false);
-            _index++;
+            _letters[_readLetterIndex].gameObject.SetActive(false);
+            _readLetterIndex++;
+            _skippedLetterIndex++;
         }
     }
 
     public void SkipLetter()
     {
-        if (!_isLettersWereRead[_index])
+        if (!_isLettersWereRead[_readLetterIndex]) ChangeSkipValue(true);
+
+        if (_readLetterIndex == 0)
         {
-            ChangeReadValue(false);
-            _letters[_index].gameObject.SetActive(false);
+            _firstLetterContinueIndex = 0;
+            _letters[_readLetterIndex].text = "1848 год.\r\n\r\nДражайший мой/моя,\r\n" +
+                "Я даже и не знаю, где Вы и что, поэтому пишу на старый адрес в надежде, " +
+                "что письмо мое будет доставлено адресату вскорости. " +
+                "Пишу тебе из города Н. Погода у нас испортилась, дождь идет всякий день, но зелень по-прежнему хороша, " +
+                "и мы продолжаем есть вишни, сливы и яблоки. Никола совсем большой стал, плавать начал, да так быстро, " +
+                "что почти не угонишься. Смешной он. ";
         }
     }
 
     public void StartReadNewLetterAfterSave()
     {
-        if (!_isLettersWereRead[_index])
+        if (!_isLettersWereRead[_readLetterIndex])
         {
             ChangeReadValue(true);
-            _letters[_index].gameObject.SetActive(false);
+            _letters[_readLetterIndex].gameObject.SetActive(false);
         }
     }
 
@@ -104,12 +116,16 @@ public class LetterOpener : MonoBehaviour
         var data = new LetterData();
 
         for (int i = 0; i < _isLettersWereRead.Length; i++)
+        {
             data.IsLettersWereRead[i] = _isLettersWereRead[i];
+            data.IsLettersWereSkiped[i] = _isLettersWereSkipped[i];
+        }
 
-        if (_index != _letters.Length)
+        if (_readLetterIndex != _letters.Length)
         {
             StartReadNewLetterAfterSave();
-            data.Index = _index;
+            data.ReadIndex = _readLetterIndex;
+            data.SkipIndex = _skippedLetterIndex;
         }
 
         var json = JsonUtility.ToJson(data, true);
@@ -129,11 +145,27 @@ public class LetterOpener : MonoBehaviour
             var data = JsonUtility.FromJson<LetterData>(json);
 
             for (int i = 0; i < _isLettersWereRead.Length; i++)
+            {
                 _isLettersWereRead[i] = data.IsLettersWereRead[i];
-            _index = data.Index;
+                _isLettersWereSkipped[i] = data.IsLettersWereSkiped[i];
+            }
+            _readLetterIndex = data.ReadIndex;
+            _skippedLetterIndex = data.SkipIndex;
         }
         catch { }
     }
 
-    private void ChangeReadValue(bool value) => _isLettersWereRead[_index] = value;
+    private void ChangeReadValue(bool value) => _isLettersWereRead[_readLetterIndex] = value;
+    private void ChangeSkipValue(bool value) => _isLettersWereSkipped[_skippedLetterIndex] = value;
+
+    private void OpenMenus()
+    {
+        foreach (var menu in _menues)
+            menu.SetActive(false);
+
+        _letterPaper.SetActive(true);
+        _readButton.SetActive(true);
+        _skipButton.SetActive(true);
+        _letterNotify.SetActive(false);
+    }
 }
