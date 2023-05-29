@@ -11081,6 +11081,7 @@ MonoBehaviour:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 >>>>>>> parent of f41a171 (Game)
@@ -11137,6 +11138,9 @@ MonoBehaviour:
   map: {fileID: 97817809}
 >>>>>>> parent of 4a1226e (Merge pull request #4 from RomanGleizer/Ilya)
 >>>>>>> parent of 91e57cc (Merge pull request #4 from RomanGleizer/Ilya)
+=======
+  map: {fileID: 97817809}
+>>>>>>> parent of f52997a (Map)
 --- !u!4 &448572608
 Transform:
   m_ObjectHideFlags: 0
