@@ -11079,6 +11079,7 @@ MonoBehaviour:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 >>>>>>> parent of f41a171 (Game)
@@ -11086,6 +11087,8 @@ MonoBehaviour:
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> parent of 80b5c7d (Revert "Game")
+=======
+>>>>>>> parent of 4e0497a (Game)
 >>>>>>> Stashed changes
 =======
 >>>>>>> parent of a5540ef (Game)
@@ -11096,6 +11099,7 @@ MonoBehaviour:
 =======
   map: {fileID: 97817809}
 >>>>>>> parent of 4a1226e (Merge pull request #4 from RomanGleizer/Ilya)
+<<<<<<< HEAD
 =======
   map: {fileID: 97817809}
 >>>>>>> parent of 4a1226e (Merge pull request #4 from RomanGleizer/Ilya)
@@ -11109,6 +11113,8 @@ MonoBehaviour:
 =======
   map: {fileID: 97817809}
 >>>>>>> parent of bf471f3 (Merge branch 'Ilya' of https://github.com/RomanGleizer/Letter-about-present into Ilya)
+=======
+>>>>>>> parent of 4e0497a (Game)
 --- !u!4 &448572608
 Transform:
   m_ObjectHideFlags: 0
