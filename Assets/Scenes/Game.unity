@@ -11047,7 +11047,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 448572608}
-  - component: {fileID: 448572607}
   - component: {fileID: 448572609}
   m_Layer: 0
   m_Name: MapController
@@ -11056,11 +11055,8 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
-<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
-=======
->>>>>>> parent of a5540ef (Game)
 --- !u!114 &448572607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11073,10 +11069,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0be7757627e69784f949174a0dfa1967, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
 >>>>>>> Stashed changes
-=======
->>>>>>> parent of a5540ef (Game)
 --- !u!4 &448572608
 Transform:
   m_ObjectHideFlags: 0
