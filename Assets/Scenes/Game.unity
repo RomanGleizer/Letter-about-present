@@ -11081,17 +11081,17 @@ MonoBehaviour:
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
+>>>>>>> parent of f41a171 (Game)
+=======
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> parent of 80b5c7d (Revert "Game")
-=======
->>>>>>> parent of 5ea3a37 (Revert "Game")
 >>>>>>> Stashed changes
 =======
 >>>>>>> parent of a5540ef (Game)
 =======
 >>>>>>> parent of a5540ef (Game)
 <<<<<<< HEAD
-<<<<<<< HEAD
 =======
 =======
   map: {fileID: 97817809}
@@ -11100,11 +11100,15 @@ MonoBehaviour:
   map: {fileID: 97817809}
 >>>>>>> parent of 4a1226e (Merge pull request #4 from RomanGleizer/Ilya)
 >>>>>>> parent of 80b5c7d (Revert "Game")
+<<<<<<< HEAD
 =======
->>>>>>> parent of 5ea3a37 (Revert "Game")
 =======
   map: {fileID: 97817809}
 >>>>>>> parent of 4a1226e (Merge pull request #4 from RomanGleizer/Ilya)
+>>>>>>> parent of f41a171 (Game)
+=======
+  map: {fileID: 97817809}
+>>>>>>> parent of bf471f3 (Merge branch 'Ilya' of https://github.com/RomanGleizer/Letter-about-present into Ilya)
 --- !u!4 &448572608
 Transform:
   m_ObjectHideFlags: 0
@@ -71288,7 +71292,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 7
+  m_SortingOrder: 8
   m_TargetDisplay: 0
 --- !u!114 &1004642159
 MonoBehaviour:
