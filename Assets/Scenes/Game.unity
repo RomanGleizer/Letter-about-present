@@ -11078,11 +11078,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 80b5c7d (Revert "Game")
 >>>>>>> Stashed changes
 =======
 >>>>>>> parent of a5540ef (Game)
 =======
 >>>>>>> parent of a5540ef (Game)
+<<<<<<< HEAD
+=======
+=======
+  map: {fileID: 97817809}
+>>>>>>> parent of 4a1226e (Merge pull request #4 from RomanGleizer/Ilya)
+=======
+  map: {fileID: 97817809}
+>>>>>>> parent of 4a1226e (Merge pull request #4 from RomanGleizer/Ilya)
+>>>>>>> parent of 80b5c7d (Revert "Game")
 --- !u!4 &448572608
 Transform:
   m_ObjectHideFlags: 0
