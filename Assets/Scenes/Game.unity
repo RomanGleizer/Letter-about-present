@@ -11079,12 +11079,23 @@ MonoBehaviour:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> parent of f41a171 (Game)
+=======
+>>>>>>> parent of 91e57cc (Merge pull request #4 from RomanGleizer/Ilya)
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> parent of 80b5c7d (Revert "Game")
 =======
+<<<<<<< HEAD
+>>>>>>> parent of 4e0497a (Game)
+=======
 >>>>>>> parent of 5ea3a37 (Revert "Game")
+>>>>>>> parent of 91e57cc (Merge pull request #4 from RomanGleizer/Ilya)
 >>>>>>> Stashed changes
 =======
 >>>>>>> parent of a5540ef (Game)
@@ -11093,18 +11104,39 @@ MonoBehaviour:
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
+>>>>>>> parent of 91e57cc (Merge pull request #4 from RomanGleizer/Ilya)
+=======
 =======
   map: {fileID: 97817809}
 >>>>>>> parent of 4a1226e (Merge pull request #4 from RomanGleizer/Ilya)
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 91e57cc (Merge pull request #4 from RomanGleizer/Ilya)
 =======
   map: {fileID: 97817809}
 >>>>>>> parent of 4a1226e (Merge pull request #4 from RomanGleizer/Ilya)
 >>>>>>> parent of 80b5c7d (Revert "Game")
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+  map: {fileID: 97817809}
+>>>>>>> parent of 4a1226e (Merge pull request #4 from RomanGleizer/Ilya)
+>>>>>>> parent of f41a171 (Game)
+=======
+  map: {fileID: 97817809}
+>>>>>>> parent of bf471f3 (Merge branch 'Ilya' of https://github.com/RomanGleizer/Letter-about-present into Ilya)
+=======
+>>>>>>> parent of 4e0497a (Game)
+=======
 =======
 >>>>>>> parent of 5ea3a37 (Revert "Game")
 =======
   map: {fileID: 97817809}
 >>>>>>> parent of 4a1226e (Merge pull request #4 from RomanGleizer/Ilya)
+>>>>>>> parent of 91e57cc (Merge pull request #4 from RomanGleizer/Ilya)
 --- !u!4 &448572608
 Transform:
   m_ObjectHideFlags: 0
