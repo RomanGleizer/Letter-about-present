@@ -11078,20 +11078,16 @@ MonoBehaviour:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
-<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> parent of 80b5c7d (Revert "Game")
-=======
->>>>>>> parent of 5ea3a37 (Revert "Game")
 >>>>>>> Stashed changes
 =======
 >>>>>>> parent of a5540ef (Game)
 =======
 >>>>>>> parent of a5540ef (Game)
 <<<<<<< HEAD
-<<<<<<< HEAD
 =======
 =======
   map: {fileID: 97817809}
@@ -11100,8 +11096,6 @@ MonoBehaviour:
   map: {fileID: 97817809}
 >>>>>>> parent of 4a1226e (Merge pull request #4 from RomanGleizer/Ilya)
 >>>>>>> parent of 80b5c7d (Revert "Game")
-=======
->>>>>>> parent of 5ea3a37 (Revert "Game")
 =======
   map: {fileID: 97817809}
 >>>>>>> parent of 4a1226e (Merge pull request #4 from RomanGleizer/Ilya)
