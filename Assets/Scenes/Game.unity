@@ -1157,7 +1157,7 @@ GameObject:
   - component: {fileID: 35892855}
   - component: {fileID: 35892854}
   - component: {fileID: 35892853}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1181,7 +1181,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -299}
+  m_AnchoredPosition: {x: 0, y: -357}
   m_SizeDelta: {x: 365, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &35892853
@@ -1515,7 +1515,7 @@ GameObject:
   - component: {fileID: 60658197}
   - component: {fileID: 60658199}
   - component: {fileID: 60658198}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1650,7 +1650,7 @@ GameObject:
   - component: {fileID: 72672567}
   - component: {fileID: 72672569}
   - component: {fileID: 72672568}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Sixth Letter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2271,7 +2271,7 @@ GameObject:
   - component: {fileID: 78485608}
   - component: {fileID: 78485607}
   - component: {fileID: 78485609}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Price text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2420,7 +2420,7 @@ GameObject:
   - component: {fileID: 93104607}
   - component: {fileID: 93104609}
   - component: {fileID: 93104608}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Patato amount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2639,7 +2639,7 @@ GameObject:
   - component: {fileID: 132272736}
   - component: {fileID: 132272738}
   - component: {fileID: 132272737}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Wheat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2716,7 +2716,7 @@ GameObject:
   - component: {fileID: 136791536}
   - component: {fileID: 136791535}
   - component: {fileID: 136791534}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Load
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2932,7 +2932,7 @@ GameObject:
   - component: {fileID: 142978699}
   - component: {fileID: 142978701}
   - component: {fileID: 142978700}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3067,7 +3067,7 @@ GameObject:
   - component: {fileID: 145541456}
   - component: {fileID: 145541458}
   - component: {fileID: 145541457}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Level text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3202,7 +3202,7 @@ GameObject:
   - component: {fileID: 151770210}
   - component: {fileID: 151770212}
   - component: {fileID: 151770211}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: First Letter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3389,7 +3389,7 @@ GameObject:
   - component: {fileID: 173427791}
   - component: {fileID: 173427793}
   - component: {fileID: 173427792}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Wheat amount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3582,7 +3582,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: -3.6949463, y: -0.000022888184}
   m_SpriteTilingProperty:
@@ -4006,7 +4006,7 @@ GameObject:
   - component: {fileID: 222401561}
   - component: {fileID: 222401563}
   - component: {fileID: 222401562}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Thirteenth Letter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4223,7 +4223,7 @@ GameObject:
   - component: {fileID: 223754989}
   - component: {fileID: 223754991}
   - component: {fileID: 223754990}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4360,7 +4360,7 @@ GameObject:
   - component: {fileID: 229887545}
   - component: {fileID: 229887544}
   - component: {fileID: 229887547}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Sell Carrot Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4506,7 +4506,7 @@ GameObject:
   - component: {fileID: 232461544}
   - component: {fileID: 232461546}
   - component: {fileID: 232461545}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4621,7 +4621,7 @@ GameObject:
   - component: {fileID: 235678651}
   - component: {fileID: 235678653}
   - component: {fileID: 235678652}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4756,7 +4756,7 @@ GameObject:
   - component: {fileID: 240040835}
   - component: {fileID: 240040837}
   - component: {fileID: 240040836}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4892,7 +4892,7 @@ GameObject:
   - component: {fileID: 250332511}
   - component: {fileID: 250332510}
   - component: {fileID: 250332509}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Make Beds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5025,7 +5025,7 @@ GameObject:
   - component: {fileID: 256195685}
   - component: {fileID: 256195687}
   - component: {fileID: 256195686}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Eight Letter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5369,7 +5369,7 @@ GameObject:
   - component: {fileID: 298176463}
   - component: {fileID: 298176465}
   - component: {fileID: 298176464}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Carrot amount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5504,7 +5504,7 @@ GameObject:
   - component: {fileID: 300550499}
   - component: {fileID: 300550501}
   - component: {fileID: 300550500}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Level text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5639,7 +5639,7 @@ GameObject:
   - component: {fileID: 306546315}
   - component: {fileID: 306546317}
   - component: {fileID: 306546316}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6123,7 +6123,7 @@ GameObject:
   - component: {fileID: 328505433}
   - component: {fileID: 328505432}
   - component: {fileID: 328505431}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Sell Patato Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6440,7 +6440,7 @@ GameObject:
   - component: {fileID: 370825563}
   - component: {fileID: 370825565}
   - component: {fileID: 370825564}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Wheat amount text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6576,7 +6576,7 @@ GameObject:
   - component: {fileID: 397338385}
   - component: {fileID: 397338384}
   - component: {fileID: 397338383}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Play
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6600,7 +6600,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 303}
+  m_AnchoredPosition: {x: 0, y: 245}
   m_SizeDelta: {x: 365, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &397338383
@@ -6798,7 +6798,7 @@ GameObject:
   - component: {fileID: 406145963}
   - component: {fileID: 406145965}
   - component: {fileID: 406145964}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Fifth Letter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6947,7 +6947,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 413127034}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Upgrade 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11330,7 +11330,7 @@ GameObject:
   - component: {fileID: 477503652}
   - component: {fileID: 477503654}
   - component: {fileID: 477503653}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Patato
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11406,7 +11406,7 @@ GameObject:
   - component: {fileID: 484809379}
   - component: {fileID: 484809381}
   - component: {fileID: 484809380}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Shop of upgrades text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11613,7 +11613,7 @@ GameObject:
   - component: {fileID: 518243662}
   - component: {fileID: 518243664}
   - component: {fileID: 518243663}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Tenth Letter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12071,7 +12071,7 @@ GameObject:
   - component: {fileID: 534270342}
   - component: {fileID: 534270344}
   - component: {fileID: 534270343}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Patato Amount Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12299,7 +12299,7 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: -966891023
+  m_SortingLayerID: 0
   m_SortingOrder: 5
   m_TargetDisplay: 0
 --- !u!1 &559507522
@@ -12313,7 +12313,7 @@ GameObject:
   - component: {fileID: 559507523}
   - component: {fileID: 559507525}
   - component: {fileID: 559507524}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: New Letter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12539,7 +12539,7 @@ GameObject:
   - component: {fileID: 569300291}
   - component: {fileID: 569300290}
   - component: {fileID: 569300292}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Price text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -66835,7 +66835,7 @@ GameObject:
   - component: {fileID: 591713174}
   - component: {fileID: 591713176}
   - component: {fileID: 591713175}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Coin (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -66913,7 +66913,7 @@ GameObject:
   - component: {fileID: 596043354}
   - component: {fileID: 596043353}
   - component: {fileID: 596043352}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Upgrade Button (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67058,7 +67058,7 @@ GameObject:
   - component: {fileID: 596541394}
   - component: {fileID: 596541396}
   - component: {fileID: 596541395}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67311,7 +67311,7 @@ GameObject:
   - component: {fileID: 609960552}
   - component: {fileID: 609960554}
   - component: {fileID: 609960553}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Patato panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67389,7 +67389,7 @@ GameObject:
   - component: {fileID: 613837338}
   - component: {fileID: 613837340}
   - component: {fileID: 613837339}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67736,7 +67736,7 @@ GameObject:
   - component: {fileID: 678729385}
   - component: {fileID: 678729384}
   - component: {fileID: 678729386}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Money Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67885,7 +67885,7 @@ GameObject:
   - component: {fileID: 680428662}
   - component: {fileID: 680428664}
   - component: {fileID: 680428663}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Fifteenth Letter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68116,7 +68116,7 @@ GameObject:
   - component: {fileID: 682705112}
   - component: {fileID: 682705111}
   - component: {fileID: 682705114}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Buy wheat seeds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68263,7 +68263,7 @@ GameObject:
   - component: {fileID: 692622117}
   - component: {fileID: 692622119}
   - component: {fileID: 692622118}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68565,7 +68565,7 @@ GameObject:
   - component: {fileID: 715639044}
   - component: {fileID: 715639046}
   - component: {fileID: 715639045}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68639,7 +68639,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 716182368}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Letters
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68694,7 +68694,7 @@ GameObject:
   - component: {fileID: 720918068}
   - component: {fileID: 720918070}
   - component: {fileID: 720918069}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Carrot Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68954,7 +68954,7 @@ GameObject:
   - component: {fileID: 752612729}
   - component: {fileID: 752612728}
   - component: {fileID: 752612731}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Buy carrot seeds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69101,7 +69101,7 @@ GameObject:
   - component: {fileID: 763553375}
   - component: {fileID: 763553377}
   - component: {fileID: 763553376}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69292,7 +69292,7 @@ GameObject:
   - component: {fileID: 794549521}
   - component: {fileID: 794549523}
   - component: {fileID: 794549522}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Third Letter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69441,7 +69441,7 @@ GameObject:
   - component: {fileID: 796865060}
   - component: {fileID: 796865062}
   - component: {fileID: 796865061}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Eleventh Letter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69685,7 +69685,7 @@ GameObject:
   - component: {fileID: 815068755}
   - component: {fileID: 815068757}
   - component: {fileID: 815068756}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69820,7 +69820,7 @@ GameObject:
   - component: {fileID: 826182682}
   - component: {fileID: 826182684}
   - component: {fileID: 826182683}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Carrot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69896,7 +69896,7 @@ GameObject:
   - component: {fileID: 837101227}
   - component: {fileID: 837101229}
   - component: {fileID: 837101228}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Ninth Letter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70062,7 +70062,7 @@ GameObject:
   - component: {fileID: 846423677}
   - component: {fileID: 846423676}
   - component: {fileID: 846423679}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Buy patato seeds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70209,7 +70209,7 @@ GameObject:
   - component: {fileID: 878047517}
   - component: {fileID: 878047519}
   - component: {fileID: 878047518}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Wheat panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70377,7 +70377,7 @@ GameObject:
   - component: {fileID: 922523490}
   - component: {fileID: 922523492}
   - component: {fileID: 922523491}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Seventh Letter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70629,7 +70629,7 @@ GameObject:
   - component: {fileID: 943480034}
   - component: {fileID: 943480036}
   - component: {fileID: 943480035}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Twelth Letter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71064,7 +71064,7 @@ GameObject:
   - component: {fileID: 986885898}
   - component: {fileID: 986885900}
   - component: {fileID: 986885899}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71642,7 +71642,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: -0.9649048, y: -0.000022888184}
   m_SpriteTilingProperty:
@@ -71886,7 +71886,7 @@ GameObject:
   - component: {fileID: 1100516929}
   - component: {fileID: 1100516931}
   - component: {fileID: 1100516930}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Close
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72259,7 +72259,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: -3.6949463, y: -0.000022888184}
   m_SpriteTilingProperty:
@@ -72323,7 +72323,7 @@ GameObject:
   - component: {fileID: 1128027108}
   - component: {fileID: 1128027110}
   - component: {fileID: 1128027109}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Fourteenth Letter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72872,7 +72872,7 @@ GameObject:
   - component: {fileID: 1153917299}
   - component: {fileID: 1153917301}
   - component: {fileID: 1153917300}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73008,7 +73008,7 @@ GameObject:
   - component: {fileID: 1172408890}
   - component: {fileID: 1172408889}
   - component: {fileID: 1172408888}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Sell Wheat Buton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73141,7 +73141,7 @@ GameObject:
   - component: {fileID: 1182021293}
   - component: {fileID: 1182021295}
   - component: {fileID: 1182021294}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73307,7 +73307,7 @@ GameObject:
   - component: {fileID: 1191134592}
   - component: {fileID: 1191134594}
   - component: {fileID: 1191134593}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73384,7 +73384,7 @@ GameObject:
   - component: {fileID: 1220124408}
   - component: {fileID: 1220124407}
   - component: {fileID: 1220124406}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Read Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73619,7 +73619,7 @@ GameObject:
   - component: {fileID: 1248305353}
   - component: {fileID: 1248305355}
   - component: {fileID: 1248305354}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73754,7 +73754,7 @@ GameObject:
   - component: {fileID: 1252004646}
   - component: {fileID: 1252004648}
   - component: {fileID: 1252004647}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Upgrade 1 text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73890,7 +73890,7 @@ GameObject:
   - component: {fileID: 1252329036}
   - component: {fileID: 1252329038}
   - component: {fileID: 1252329037}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Level text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74150,7 +74150,7 @@ GameObject:
   - component: {fileID: 1281476075}
   - component: {fileID: 1281476077}
   - component: {fileID: 1281476076}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Upgrade 1 text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74377,7 +74377,7 @@ GameObject:
   - component: {fileID: 1312906989}
   - component: {fileID: 1312906988}
   - component: {fileID: 1312906987}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Plant Carrot Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74594,7 +74594,7 @@ GameObject:
   - component: {fileID: 1329266618}
   - component: {fileID: 1329266617}
   - component: {fileID: 1329266619}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Price text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74887,7 +74887,7 @@ GameObject:
   - component: {fileID: 1357709527}
   - component: {fileID: 1357709526}
   - component: {fileID: 1357709528}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Price text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75128,7 +75128,7 @@ GameObject:
   - component: {fileID: 1366605398}
   - component: {fileID: 1366605397}
   - component: {fileID: 1366605399}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Price text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75278,7 +75278,7 @@ GameObject:
   - component: {fileID: 1369631425}
   - component: {fileID: 1369631424}
   - component: {fileID: 1369631423}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Save
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75302,7 +75302,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 101}
+  m_AnchoredPosition: {x: 0, y: 43}
   m_SizeDelta: {x: 365, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1369631423
@@ -75572,7 +75572,7 @@ GameObject:
   - component: {fileID: 1423455482}
   - component: {fileID: 1423455484}
   - component: {fileID: 1423455483}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Upgrade 1 text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76282,7 +76282,7 @@ GameObject:
   - component: {fileID: 1551992774}
   - component: {fileID: 1551992776}
   - component: {fileID: 1551992775}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76508,7 +76508,7 @@ GameObject:
   - component: {fileID: 1559735545}
   - component: {fileID: 1559735544}
   - component: {fileID: 1559735543}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Next Part Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76641,7 +76641,7 @@ GameObject:
   - component: {fileID: 1567719115}
   - component: {fileID: 1567719117}
   - component: {fileID: 1567719116}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76807,7 +76807,7 @@ GameObject:
   - component: {fileID: 1583433228}
   - component: {fileID: 1583433230}
   - component: {fileID: 1583433229}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Coin (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76883,7 +76883,7 @@ GameObject:
   - component: {fileID: 1600804756}
   - component: {fileID: 1600804758}
   - component: {fileID: 1600804757}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Close
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -77186,7 +77186,7 @@ GameObject:
   - component: {fileID: 1641172004}
   - component: {fileID: 1641172003}
   - component: {fileID: 1641172002}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Learn Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -77210,7 +77210,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -99.9}
+  m_AnchoredPosition: {x: 0, y: -157.9}
   m_SizeDelta: {x: 365, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1641172002
@@ -77343,7 +77343,7 @@ GameObject:
   - component: {fileID: 1651363920}
   - component: {fileID: 1651363919}
   - component: {fileID: 1651363918}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Skip Letter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -77529,7 +77529,7 @@ GameObject:
   - component: {fileID: 1658560910}
   - component: {fileID: 1658560912}
   - component: {fileID: 1658560911}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Close
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -77860,7 +77860,7 @@ GameObject:
   - component: {fileID: 1695571112}
   - component: {fileID: 1695571114}
   - component: {fileID: 1695571113}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Coin (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -77936,7 +77936,7 @@ GameObject:
   - component: {fileID: 1702316560}
   - component: {fileID: 1702316562}
   - component: {fileID: 1702316561}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Coin (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78014,7 +78014,7 @@ GameObject:
   - component: {fileID: 1750735947}
   - component: {fileID: 1750735946}
   - component: {fileID: 1750735949}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Upgrade Button (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78337,7 +78337,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1792613634}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Upgrade 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78380,7 +78380,7 @@ GameObject:
   - component: {fileID: 1793421795}
   - component: {fileID: 1793421797}
   - component: {fileID: 1793421796}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78515,7 +78515,7 @@ GameObject:
   - component: {fileID: 1794937921}
   - component: {fileID: 1794937923}
   - component: {fileID: 1794937922}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Coin (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78591,7 +78591,7 @@ GameObject:
   - component: {fileID: 1805257407}
   - component: {fileID: 1805257409}
   - component: {fileID: 1805257408}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Fourth Letter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78801,7 +78801,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0.026855469, y: -0.000022888184}
   m_SpriteTilingProperty:
@@ -78865,7 +78865,7 @@ GameObject:
   - component: {fileID: 1826891839}
   - component: {fileID: 1826891841}
   - component: {fileID: 1826891840}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Beds amount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79001,7 +79001,7 @@ GameObject:
   - component: {fileID: 1896264132}
   - component: {fileID: 1896264131}
   - component: {fileID: 1896264130}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Plant Wheat Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79238,7 +79238,7 @@ GameObject:
   - component: {fileID: 1899088852}
   - component: {fileID: 1899088851}
   - component: {fileID: 1899088854}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Upgrade Button (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79384,7 +79384,7 @@ GameObject:
   - component: {fileID: 1928629077}
   - component: {fileID: 1928629076}
   - component: {fileID: 1928629078}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Price text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79714,7 +79714,7 @@ GameObject:
   - component: {fileID: 2023462511}
   - component: {fileID: 2023462513}
   - component: {fileID: 2023462512}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Second Letter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79860,7 +79860,7 @@ GameObject:
   - component: {fileID: 2031134853}
   - component: {fileID: 2031134855}
   - component: {fileID: 2031134854}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79936,7 +79936,7 @@ GameObject:
   - component: {fileID: 2045182817}
   - component: {fileID: 2045182819}
   - component: {fileID: 2045182818}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Shop of upgrades text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80238,7 +80238,7 @@ GameObject:
   - component: {fileID: 2065239082}
   - component: {fileID: 2065239084}
   - component: {fileID: 2065239083}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80374,7 +80374,7 @@ GameObject:
   - component: {fileID: 2100328884}
   - component: {fileID: 2100328883}
   - component: {fileID: 2100328882}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Plant Patato Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80615,7 +80615,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: -1.0163574, y: -0.000022888184}
   m_SpriteTilingProperty:
@@ -80641,7 +80641,7 @@ GameObject:
   - component: {fileID: 2108254296}
   - component: {fileID: 2108254298}
   - component: {fileID: 2108254297}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Coin (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80717,7 +80717,7 @@ GameObject:
   - component: {fileID: 2114595306}
   - component: {fileID: 2114595308}
   - component: {fileID: 2114595307}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80793,7 +80793,7 @@ GameObject:
   - component: {fileID: 2121978333}
   - component: {fileID: 2121978335}
   - component: {fileID: 2121978334}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Carrot Amount Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -81016,7 +81016,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2137149809}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Upgrade 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
