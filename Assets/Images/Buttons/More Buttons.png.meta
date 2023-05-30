@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 035c63af073c2e54ab51b6be36db49e7
+guid: f4029552189a090499e676a2bbebc4e8
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -119,160 +119,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: keybd_0
+      name: More Buttons_0
       rect:
         serializedVersion: 2
-        x: 346
-        y: 185
-        width: 50
-        height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 09decc5990b7ffa4fb44c41f84f6d3f7
-      internalID: -114536902
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: keybd_1
-      rect:
-        serializedVersion: 2
-        x: 469
-        y: 187
-        width: 52
-        height: 45
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bd5643734580ea84fa27b15ab8669664
-      internalID: -2108875157
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: keybd_2
-      rect:
-        serializedVersion: 2
-        x: 532
-        y: 187
-        width: 50
-        height: 46
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 10b1ccf0d555a494fbf42af509b91f38
-      internalID: -113750157
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: keybd_3
-      rect:
-        serializedVersion: 2
-        x: 594
-        y: 186
-        width: 50
-        height: 47
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9cab4a977f9cc1740a0297de8dfb789b
-      internalID: -2137977238
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: keybd_4
-      rect:
-        serializedVersion: 2
-        x: 656
-        y: 185
-        width: 48
-        height: 47
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 30cb96e49808446448ab54686f992732
-      internalID: 790566748
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: keybd_5
-      rect:
-        serializedVersion: 2
-        x: 10
-        y: 303
-        width: 77
-        height: 48
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 11533cb54911dd24c985a5f92339f0bf
-      internalID: -1432580185
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: keybd_6
-      rect:
-        serializedVersion: 2
-        x: 611
-        y: 126
-        width: 48
-        height: 49
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 19eccd43d6750234e9b5c73ad794a475
-      internalID: 1982329323
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: keybd_7
-      rect:
-        serializedVersion: 2
-        x: 8
-        y: 186
-        width: 79
-        height: 47
+        x: 20
+        y: 532
+        width: 224
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -280,8 +133,176 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6c6f57e4c5884f54bada1160e005b626
-      internalID: -2110477053
+      spriteID: 4e67abe6d36402c4d8d3775793dd4f92
+      internalID: -248466303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: More Buttons_1
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 532
+        width: 224
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb85b92a27afa24459b4f236dc0ea79c
+      internalID: 1520255413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: More Buttons_2
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 456
+        width: 224
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd1c2d397a8247e438c8efde34f61f89
+      internalID: -2028275620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: More Buttons_3
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 384
+        width: 252
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e8aca162a716714583590bee8df6f10
+      internalID: 1363609565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: More Buttons_4
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 316
+        width: 424
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e1b60672bdbb4644a7d3422c33d7064
+      internalID: 498574112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: More Buttons_5
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 244
+        width: 284
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5900a7a867f7f2547b5d4725f60389c3
+      internalID: -1237410573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: More Buttons_6
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 144
+        width: 64
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1722e5426d2b3049b6decd2feb83f89
+      internalID: -515525823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: More Buttons_7
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 144
+        width: 64
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf86b60345e02af4da2ec696b9f8db69
+      internalID: -997729782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: More Buttons_8
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 60
+        width: 64
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6cd66f6776aa684f8e48d49d10a6f8b
+      internalID: 1556319574
       vertices: []
       indices: 
       edges: []
@@ -297,14 +318,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      keybd_0: -114536902
-      keybd_1: 1926756106
-      keybd_2: -2108875157
-      keybd_3: -113750157
-      keybd_4: 790566748
-      keybd_5: -1432580185
-      keybd_6: 1982329323
-      keybd_7: -2110477053
+      More Buttons_0: -248466303
+      More Buttons_1: 1520255413
+      More Buttons_2: -2028275620
+      More Buttons_3: 1363609565
+      More Buttons_4: 498574112
+      More Buttons_5: -1237410573
+      More Buttons_6: -515525823
+      More Buttons_7: -997729782
+      More Buttons_8: 1556319574
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
