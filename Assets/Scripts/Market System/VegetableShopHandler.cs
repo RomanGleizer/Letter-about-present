@@ -9,9 +9,6 @@ public class VegetableShopHandler : MonoBehaviour
     [SerializeField] private LoadGameCanvasHandler _loadGameCanvas;
     [SerializeField] private VegetablesMenuHandler _vegetablesMenu;
     [SerializeField] private VegetableSeller _vegetableSeller;
-    [SerializeField] private TextMeshProUGUI _carrotPriceText;
-    [SerializeField] private TextMeshProUGUI _patatoPriceText;
-    [SerializeField] private TextMeshProUGUI _wheatPriceText;
 
     private int _carrotPrice;
     private int _patatoPrice;
@@ -25,10 +22,6 @@ public class VegetableShopHandler : MonoBehaviour
 
     private void Update()
     {
-        _carrotPriceText.text = "Стоимость: " + _carrotPrice.ToString();
-        _patatoPriceText.text = "Стоимость: " + _patatoPrice.ToString();
-        _wheatPriceText.text = "Стоимость: " + _wheatPrice.ToString();
-
         if (Input.GetKeyDown(KeyCode.P) && _isMenuOpen == false)
         {
             _isMenuOpen = true;

@@ -71086,9 +71086,6 @@ MonoBehaviour:
   _loadGameCanvas: {fileID: 519420036}
   _vegetablesMenu: {fileID: 1004642161}
   _vegetableSeller: {fileID: 73242459}
-  _carrotPriceText: {fileID: 0}
-  _patatoPriceText: {fileID: 0}
-  _wheatPriceText: {fileID: 0}
 --- !u!114 &1004642164
 MonoBehaviour:
   m_ObjectHideFlags: 0
