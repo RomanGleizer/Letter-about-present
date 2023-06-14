@@ -1,26 +1,26 @@
 ﻿{
-    "IsLettersWereRead": [
-        true,
-        true,
-        true,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false
-    ],
+  "IsLettersWereRead": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+  ],
     "IsLettersWereSkiped": [
-        true,
-        true,
-        true,
-        true,
+        false,
+        false,
+        false,
+        false,
         false,
         false,
         false,
@@ -33,6 +33,6 @@
         false,
         false
     ],
-    "ReadIndex": 3,
-    "SkipIndex": 3
+    "ReadIndex": 0,
+    "SkipIndex": 0
 }

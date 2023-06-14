@@ -2219,7 +2219,7 @@ MonoBehaviour:
   - {fileID: 604387632}
   - {fileID: 1692088815}
   _readButton: {fileID: 1220124404}
-  _skipButton: {fileID: 0}
+  _skipButton: {fileID: 1651363916}
 --- !u!114 &73242463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73037,7 +73037,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1220124405
 RectTransform:
   m_ObjectHideFlags: 0
@@ -76772,7 +76772,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1651363917
 RectTransform:
   m_ObjectHideFlags: 0

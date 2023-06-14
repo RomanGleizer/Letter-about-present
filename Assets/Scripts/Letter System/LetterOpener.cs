@@ -14,8 +14,8 @@ public class LetterOpener : MonoBehaviour
     [SerializeField] private GameObject _skipButton;
 
     private string[] _firstLetterContinue;
-    private bool[] _isLettersWereRead;
-    private bool[] _isLettersWereSkipped;
+    private bool[] _isLettersWereRead = new bool[15];
+    private bool[] _isLettersWereSkipped = new bool[15];
     private bool _isNotifyActive;
     private int _readLetterIndex;
     private int _skippedLetterIndex;
@@ -23,13 +23,12 @@ public class LetterOpener : MonoBehaviour
 
     private void Awake()
     {
-        InvokeRepeating("SetNotifyActive", Random.Range(60, 61), Random.Range(100, 150));
     }
 
     private void Start()
     {
-        _isLettersWereRead = new bool[15];
-        _isLettersWereSkipped = new bool[15];
+        LoadPlayerData();
+        InvokeRepeating(nameof(SetNotifyActive), Random.Range(60, 61), Random.Range(60, 61));
 
         _firstLetterContinue = new string[]
         {
@@ -58,6 +57,7 @@ public class LetterOpener : MonoBehaviour
 
     private void SetNotifyActive()
     {
+        print(_readLetterIndex);
         if (!_letterPaper.activeSelf && _readLetterIndex != _letters.Length && !_isLettersWereSkipped[_skippedLetterIndex])
         {
             _isNotifyActive = true;
@@ -149,6 +149,7 @@ public class LetterOpener : MonoBehaviour
                 _isLettersWereRead[i] = data.IsLettersWereRead[i];
                 _isLettersWereSkipped[i] = data.IsLettersWereSkiped[i];
             }
+
             _readLetterIndex = data.ReadIndex;
             _skippedLetterIndex = data.SkipIndex;
         }

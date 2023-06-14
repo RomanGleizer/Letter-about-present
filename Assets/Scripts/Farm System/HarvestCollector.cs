@@ -30,7 +30,7 @@ public class HarvestCollector : MonoBehaviour
         var tile = _tilePainter.FarmTileMap.GetTile(cell);
         if (tile != _tilePainter.GroundTile && tile != null)
         {
-            yield return new WaitForSeconds(15);
+            yield return new WaitForSeconds(20);
             Instantiate(obj, position, Quaternion.identity);
             _tilePainter.FarmTileMap.SetTile(cell, _tilePainter.GroundTile);
         }
